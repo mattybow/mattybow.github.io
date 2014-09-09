@@ -1,0 +1,28 @@
+.loader{
+	display:none;
+}
+#scroll-1{
+	height:300px;
+}
+#balloonBG{
+	background-image:url('/images/balloon.png');
+	background-position: 50% 0px;
+	background-repeat:no-repeat;
+	height:100%;
+	width:100%;
+}
+.vertCentContWrapper{
+	display:table;
+	width:100%;
+	height:100%
+}
+.vertCentCont{
+	display:table-cell;
+	vertical-align: middle;
+}
+.horCentCont{
+	text-align:center;
+}
+.lightText{
+	color:rgba(251,251,251,1);
+}

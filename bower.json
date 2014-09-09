@@ -1,0 +1,26 @@
+{
+  "name": "mattybow.github.io",
+  "version": "0.0.0",
+  "authors": [
+    "mattybow <mattybow@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "homepage": "http://mattybow.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0+2",
+    "fishbone.js": "~1.0.1",
+    "imagesloaded": "~3.1.8",
+    "requirejs": "~2.1.14",
+    "skrollr": "~0.6.26"
+  }
+}
