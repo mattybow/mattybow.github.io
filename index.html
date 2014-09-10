@@ -1,23 +1,25 @@
 ---
-layout: default
+layout: base
 ---
-
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <div class="bg-wrapper">
+    <div class="full-page-image" id="feature1">
+      <div class="feature-inner">
+        <div class="v-center-wrapper">
+          <div class="v-centered">
+            <button class="btn btn-hollow btn-white">hello</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="full-page-image" id="feature2">
+      <div class="feature-inner">
+        <div class="v-center-wrapper">
+          <div class="v-centered">
+            <button class="btn btn-hollow btn-white">yo yo yo</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

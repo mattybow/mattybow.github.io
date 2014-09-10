@@ -14,3 +14,14 @@ github_username:  mattybow
 markdown: kramdown
 sass:
     sass_dir: _sass
+
+include:
+  - .nojekyll
+
+exclude:
+  - "bower_components"
+  - "bower.json"
+  - "node_modules"
+  - "package.json"
+  - "Gemfile"
+  - "Gruntfile"

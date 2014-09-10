@@ -234,3 +234,45 @@
         }
     }
 }
+.bg-wrapper{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+.feature-inner{
+    height:100%;
+    width:100%;
+    text-align: center;
+}
+.full-page-image{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+#feature1{
+    background-image: url("/images/yosemite.jpg");
+    background-size: cover;
+    background-position: 50% 10%;
+}
+#feature2{
+    background-image: url("/images/low_contrast_linen.png");
+    background-repeat: repeat;
+}
+.v-center-wrapper{
+    display:table;
+    height:100%;
+    width:100%
+}
+.v-centered{
+    display:table-cell;
+    vertical-align: middle;
+}
+.btn-hollow{
+    background-color:transparent;
+}
+.btn-white{
+    color:#fff;
+    border:1px solid #fff;
+}
