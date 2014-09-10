@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('something', ['requirejs:js']);
-  grunt.registerTask('build',['exec:build','copy']);
+  grunt.registerTask('build',['exec:build']);
   grunt.registerTask('serve',['build','connect:server','watch']);
 
 };
