@@ -17,10 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.2.0+2",
     "fishbone.js": "~1.0.1",
     "imagesloaded": "~3.1.8",
     "requirejs": "~2.1.14",
-    "skrollr": "~0.6.26"
+    "skrollr": "~0.6.26",
+    "bootstrap-sass-official": "~3.2.0"
   }
 }
