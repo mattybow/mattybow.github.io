@@ -65,6 +65,18 @@ module.exports = function(grunt) {
         "exec:build"
       ]
     },
+    sass: {
+      options: {
+        includePaths: [
+          '_sass'
+        ]
+      },
+      vendor: {
+        files: {
+          "_sass/_bootstrap.scss":"bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap"
+        }
+      }
+    },
     connect:{
       server:{
         options:{
@@ -78,7 +90,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('something', ['requirejs:js']);
-  grunt.registerTask('build',['exec:build']);
+  grunt.registerTask('build',['sass:vendor','exec:build']);
   grunt.registerTask('serve',['build','connect:server','watch']);
 
 };
