@@ -8,14 +8,14 @@ task :deploy do
   system "grunt build"
 
   cd "_site" do
-    system "git add -A"
+    system "git add --all :/"
 
     message = "Site updated at #{Time.now.utc}"
     puts "## Commiting: #{message}"
     system "git commit -m \"#{message}\""
 
     puts "## Pushing generated site"
-    system "git push"
+    system "git push origin master"
 
     puts "## Deploy Complete!"
   end
