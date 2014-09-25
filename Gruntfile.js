@@ -39,6 +39,9 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'js/*.js']
     },
     exec: {
+      vulcan:{
+        cmd: 'grunt build'
+      },
       build: {
         cmd: 'jekyll build --drafts --trace'
       },
@@ -55,13 +58,16 @@ module.exports = function(grunt) {
         "_includes/**/*",
         "_layouts/**/*",
         "_posts/**/*",
+        "_sass/**/*",
         "css/**/*",
+        "elements/**/*",
         "js/**/*",
         "_config.yml",
         "*.html",
         "*.md",
       ],
       tasks:[
+        "exec:vulcan",
         "exec:build"
       ]
     },
@@ -74,6 +80,32 @@ module.exports = function(grunt) {
       vendor: {
         files: {
           "_sass/_bootstrap.scss":"bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap"
+        }
+      },
+      dist: {
+        options: {
+          style: 'compressed',
+          sourceMap: true,
+        },
+        files: [{
+          expand: true,
+          cwd:'.',
+          src: ['elements/{,*/}*.{scss,sass}'],
+          dest: '.',
+          ext: '.css'
+        }]
+      }
+    },
+    vulcanize: {
+      default: {
+        options: {
+          strip: true
+        },
+        files: {
+          'elements/elements.vulcanized.html': [
+            'elements/elements.html',
+            'index.html'
+          ]
         }
       }
     },
@@ -90,7 +122,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('something', ['requirejs:js']);
-  grunt.registerTask('build',['sass:vendor','exec:build']);
+  grunt.registerTask('build',['sass:vendor','sass:dist','vulcanize','exec:build']);
   grunt.registerTask('serve',['build','connect:server','watch']);
 
 };

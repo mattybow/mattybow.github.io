@@ -1,0 +1,183 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-fa-icon-button/paper-fa-icon-button.html">
+<polymer-element name="app-bar" attributes="items itemPos logo logoPos social">
+	<template>
+		<style>
+			:host {
+				display: block;
+				background:transparent;
+				z-index:100;
+				color:#aaa;
+				position:absolute;
+				width:100%;
+			}
+			.right{
+				right:0px;
+				margin-right:10px;
+			}
+			.left{
+				left:0px;
+				margin-left:20px;
+			}
+			.item-wrapper{
+				padding-top:20px;
+				display:inline-block;
+				position:absolute;
+				color:#aaa;
+				white-space:nowrap;
+			}
+			paper-button::shadow #ripple ,paper-icon-button::shadow #ripple{
+			    color: #aaa;
+			}
+			paper-button::shadow >*{
+				text-transform:none;
+			}
+			paper-button::shadow #content{
+
+			}
+			.logo{
+				padding-top:20px;
+				padding-left:30px;
+				font-size:30px;
+				font-weight:bolder;
+				display:inline-block;
+			}
+			.social{
+				display:inline-block;
+				vertical-align: top;
+			}
+			paper-fa-icon-button::shadow .button{
+			  width:35px;
+			  height:35px;
+			}
+			paper-fa-icon-button::shadow .fa{
+				width:20px;
+				height:20px;
+				font-size:20px;
+			}
+			paper-fa-icon-button::shadow paper-ripple{
+				height:35px;
+				width:35px;
+			}
+			.stage{
+				display:inline-block;
+				overflow:hidden;
+				-webkit-transition-property:transform;
+				-webkit-transition-duration:0.4s;
+				-webkit-transform:translate3d(0,0,0);
+				transition-property:transform;
+				transition-duration:0.4s;
+				transform:translate3d(0,0,0);
+			}
+			.txfm{
+				-webkit-transition-property:transform;
+				-webkit-transition-duration:0.4s;
+				-webkit-transform:translate3d(0,-50px,0);
+				transition-property:transform;
+				transition-duration:0.4s;
+				transform:translate3d(0,-50px,0);
+			}
+			.hamburger-hider{
+				overflow:hidden;
+				display:inline-block;
+				position:fixed;
+				right: 20px;
+				top: 20px;
+				padding: 0px 10px;
+			}
+			menu-hamburger{
+				opacity:1;
+				-webkit-transition:opacity .5,left .3s;
+				transition:opacity .5s,left .3s;
+				position: relative;
+				top: 0px;
+				left:40px;
+			}
+			menu-hamburger.show{
+				opacity:1;
+				left: 0px;
+			}
+
+		</style>
+		<div class="logo">
+			<content select="img"></content>
+			<content select=".brand"></content>
+		</div>
+		<div class="{{itemPos}} item-wrapper">
+			<template repeat={{items}}>
+				<div class="stage">
+				<paper-button label="{{}}" id="{{}}"></paper-button>
+				</div>
+			</template>
+			<div class="social">
+				<template repeat={{social}}>
+					<div class="stage">
+						<paper-fa-icon-button faclass="{{}}" size="35"></paper-fa-icon-button>
+					</div>
+				</template>
+			</div>
+		</div>
+		<div class="hamburger-hider">
+			<menu-hamburger></menu-hamburger>
+		</div>
+		
+	</template>
+	<script>
+		Polymer('app-bar', {
+			created:function(){
+				this.items=[];
+				this.social=[];
+				this.itemsHidden=false;
+			},
+			ready:function(){
+				this.setScrollListener();
+			},
+			setScrollListener:function(){
+				window.addEventListener('scroll', this.scrollHandler.bind(this));
+			},
+			scrollHandler:function(){
+				var position = document.documentElement.scrollTop || document.body.scrollTop || 0;
+				if(position>=320 && !this.itemsHidden){
+					this.transitionItems('add');
+				} else if (position<=320 && this.itemsHidden){
+					this.transitionItems('remove');
+				}
+			},
+			transitionItems:function(action){
+				var shadow = document.querySelector('app-bar').shadowRoot;
+				var buttons = shadow.getElementsByTagName('paper-button');
+				var socialButtons = shadow.getElementsByTagName('paper-fa-icon-button');
+				if(action==='add'){
+					this.addClass(buttons);
+					this.addClass(socialButtons);
+					this.showHamburger(shadow);
+					this.itemsHidden=true;
+				} else if (action==='remove'){
+					this.hideHamburger(shadow);
+					this.removeClass(buttons);
+					this.removeClass(socialButtons);
+					this.itemsHidden=false;
+				}
+			},
+			addClass:function(els){
+				[].forEach.call(els,function(el){
+					el.classList.add('txfm');
+				});
+			},
+			removeClass:function(els){
+				[].forEach.call(els,function(el){
+					el.classList.remove('txfm');
+				});
+			},
+			showHamburger:function(shadow){
+				shadow.getElementsByTagName('menu-hamburger')[0].classList.add('show');
+			},
+			hideHamburger:function(shadow){
+				shadow.getElementsByTagName('menu-hamburger')[0].classList.remove('show');
+			},
+
+		});
+	</script>
+</polymer-element>

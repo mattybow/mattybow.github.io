@@ -5,21 +5,42 @@ require.config({
 		bootstrap:"bootstrap-sass-official/assets/javascripts/bootstrap",
 		imgloaded:"imagesloaded/imagesloaded",
 		skrollr:"skrollr/dist/skrollr.min",
-		fishbone:"fishbone.js/fishbone"
+		fishbone:"fishbone.js/fishbone",
+		BlurStack:"../js/blurstack"
 	}
 });
 
 require(["jquery",
 		"imgloaded",
 		"skrollr",
-		"fishbone"],
+		"fishbone",
+		"BlurStack"],
 	function($,
 			imagesloaded,
 			skrollr,
-			Fishbone){
+			Fishbone,
+			blur){
 	imagesloaded('body',function(){
 		console.log('images have loaded sir');
-		skrollr.init();
+		/*var canvas = document.getElementById('heroCanvas');
+		var canvasContext = canvas.getContext('2d');
+		var canvasBG = new Image();
+		canvasBG.src="/images/yosemiteColor.jpg";
+
+		var drawBlur = function() {
+			// Store the width and height of the canvas for below
+			var w = canvas.width;
+			var h = canvas.height;
+			// This draws the image we just loaded to our canvas
+			canvasContext.drawImage(canvasBG, 0, 0, 400, h);
+			// This blurs the contents of the entire canvas
+			blur("heroCanvas", 0, 0, w, h, 100);
+		};
+
+		canvasBG.onload = function() {
+			drawBlur();
+		};*/
+
 		/*window.App={};
 
 		var Worker = Fishbone({

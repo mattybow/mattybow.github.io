@@ -240,6 +240,8 @@
     bottom:0px;
     left:0px;
     right:0px;
+    width:100%;
+    z-index:0;
 }
 .feature-inner{
     height:100%;
@@ -275,4 +277,51 @@
 .btn-white{
     color:#fff;
     border:1px solid #fff;
+}
+.blur-hero{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    height:1000px;
+}
+.blurBG{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+.whiteText{
+    color:#eee;
+}
+#welcome{
+    margin-left:10%;
+}
+.contentpane{
+    position:relative;
+}
+#top-pane{
+    height:400px;
+}
+#blog-pane{
+    height:100%;
+    background-color:#E5E5E5;
+}
+#work-pane{
+    height:500px;
+}
+.inner{
+    position:absolute;
+    height:100%;
+    content:" ";
+}
+.full-height{
+    height:100%;
+}
+#work-dev{
+    background-color:rgba(0,0,0,.2);
+}
+#work-photo{
+    background-color:rgba(0,0,0,.4);
+}
+#work-vid{
+    background-color:rgba(0,0,0,.6);
 }

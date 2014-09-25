@@ -1,25 +1,20 @@
 ---
 layout: base
 ---
-<div class="home">
-  <div class="bg-wrapper">
-    <div class="full-page-image" id="feature1">
-      <div class="feature-inner">
-        <div class="v-center-wrapper">
-          <div class="v-centered">
-            <button class="btn btn-hollow btn-white">hello</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="full-page-image" id="feature2">
-      <div class="feature-inner">
-        <div class="v-center-wrapper">
-          <div class="v-centered">
-            <button class="btn btn-hollow btn-white">yo yo</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="contentpane" id="top-pane">
+  <app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right" unresolved>
+  </app-bar>
+  <div class="transparentBG"></div>
+  <div class="v-cent lato whiteText" id="welcome">
+    <div class="h2">welcome</div>
+    <div class="h4" id="pane1-text">this is my playground</div>
   </div>
+</div>
+<div class="contentpane" id="blog-pane">
+  <div class="inner">&nbsp;</div>
+</div>
+<div class="contentpane" id="work-pane">
+  <div class="col-sm-4 full-height" id="work-dev"></div>
+  <div class="col-sm-4 full-height" id="work-photo"></div>
+  <div class="col-sm-4 full-height" id="work-vid"></div>
 </div>

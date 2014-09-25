@@ -1,0 +1,75 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-ripple/paper-ripple.html">
+
+<polymer-element name="paper-fa-icon-button" attributes="faclass size">
+	<template>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<style>
+			.button{
+			  padding:0px;
+			  -webkit-appearance:none;
+			  border:none;
+			  border-radius:50%;
+			  background: transparent;
+			  border: 1px solid rgba(255,255,255,.1);
+			  position:relative;
+			  margin-right:5px;
+			  overflow:hidden;
+			  z-index:1;
+			  text-align: center;
+			}
+			.button:hover{
+			  cursor:pointer;
+			}
+			.button:focus{
+			  outline:0;
+			}
+			.fa{
+			  color:#aaa;
+			  text-decoration:none;
+			  display:block;
+			  margin-right:auto;
+			  margin-left:auto;
+			  margin-top:18%;
+			}
+			:host {
+				display: inline-block;
+			}
+			paper-ripple {
+			  border-radius:50%;
+			  overflow:hidden;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  bottom: 0;
+			  right: 0;
+			  color: #d1d1d1;
+			  z-index:1000;
+			}
+
+			:host([raisedButton]) #ripple {
+			  color: #cecece;
+			}
+
+			#ripple::shadow canvas {
+			  top: 0;
+			  left: 0;
+			}
+			paper-ripple::shadow #bg{
+				overflow:hidden;
+				border-radius:50%;
+				background-color:#fff !important;
+			}
+		</style>
+		<div class="button">
+			<paper-ripple id="ripple" class="circle recenteringTouch"></paper-ripple>
+			<i class="fa {{faclass}}"></i>
+		</div>
+	</template>
+	<script>
+		Polymer('paper-fa-icon-button', {
+			faclass:"fa-twitter"
+		});
+	</script>
+</polymer-element>

@@ -40,7 +40,6 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-    max-width: 100%;
     vertical-align: middle;
 }
 
@@ -201,3 +200,13 @@ pre {
         }
     }
 }
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+html,body{
+  height:100%;
+}
+

@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<polymer-element name="menu-hamburger" attributes="" on-tap={{toggleClass}}>
+	<template>
+		<link rel="stylesheet" href="menu-hamburger.css">
+		<span class="lines"></span>
+	</template>
+	<script>
+		Polymer('menu-hamburger', {
+			toggleClass:function(e,d,s){
+				if(s.classList.contains('closeTxfm')){
+					s.classList.remove('closeTxfm');
+					this.fire('closeMenu');
+				} else {
+					s.classList.add('closeTxfm');
+					this.fire('openMenu');
+				}
+			}
+		});
+	</script>
+</polymer-element>
