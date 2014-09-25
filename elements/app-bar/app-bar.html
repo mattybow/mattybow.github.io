@@ -83,9 +83,12 @@
 				overflow:hidden;
 				display:inline-block;
 				position:fixed;
-				right: 20px;
+				right: -50px;
 				top: 20px;
 				padding: 0px 10px;
+			}
+			.hamburger-hider.show{
+				right:20px;
 			}
 			menu-hamburger{
 				opacity:1;
@@ -172,9 +175,11 @@
 				});
 			},
 			showHamburger:function(shadow){
+				shadow.getElementsByClassName('hamburger-hider')[0].classList.add('show');
 				shadow.getElementsByTagName('menu-hamburger')[0].classList.add('show');
 			},
 			hideHamburger:function(shadow){
+				shadow.getElementsByClassName('hamburger-hider')[0].classList.remove('show');
 				shadow.getElementsByTagName('menu-hamburger')[0].classList.remove('show');
 			},
 
