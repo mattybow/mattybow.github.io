@@ -22,10 +22,6 @@ require(["jquery",
 			blur){
 	imagesloaded('body',function(){
 		console.log('images have loaded sir');
-		/*var canvas = document.getElementById('heroCanvas');
-		var canvasContext = canvas.getContext('2d');
-		var canvasBG = new Image();
-		canvasBG.src="/images/yosemiteColor.jpg";
 
 		var drawBlur = function() {
 			// Store the width and height of the canvas for below
@@ -37,10 +33,17 @@ require(["jquery",
 			blur("heroCanvas", 0, 0, w, h, 100);
 		};
 
-		canvasBG.onload = function() {
-			drawBlur();
-		};*/
-
+		var blurElements = {'heroCanvas':'/images/yosemiteColor.jpg'};
+		for (var key in blurElements){
+			var canvas = document.getElementById(key);
+			var canvasContext = canvas.getContext('2d');
+			var canvasBG = new Image();
+			canvasBG.src=blurElements[key];
+			canvasBG.onload = function() {
+				drawBlur();
+			};
+		}
+	
 		/*window.App={};
 
 		var Worker = Fishbone({

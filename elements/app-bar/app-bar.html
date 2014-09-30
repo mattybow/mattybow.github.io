@@ -135,13 +135,16 @@
 				this.itemsHidden=false;
 			},
 			ready:function(){
+				this.scrollObj = document.getElementsByClassName('parallax')[0];
 				this.setScrollListener();
 			},
 			setScrollListener:function(){
-				window.addEventListener('scroll', this.scrollHandler.bind(this));
+				this.scrollObj.addEventListener('scroll', this.scrollHandler.bind(this));
+				// console.log('listener set');
 			},
-			scrollHandler:function(){
-				var position = document.documentElement.scrollTop || document.body.scrollTop || 0;
+			scrollHandler:function(element){
+				var position = this.scrollObj.scrollTop;
+				// console.log(position);
 				if(position>=320 && !this.itemsHidden){
 					this.transitionItems('add');
 				} else if (position<=320 && this.itemsHidden){

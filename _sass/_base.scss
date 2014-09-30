@@ -202,7 +202,7 @@ pre {
 }
 
 body {
-  background: #fafafa;
+  background: #E5E5E5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -210,3 +210,42 @@ html,body{
   height:100%;
 }
 
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+@mixin transition($value) {
+    -webkit-transition: #{$value};
+    -moz-transition: #{$value};
+    -ms-transition: #{$value};
+    -o-transition: #{$value};
+    transition: #{$value};
+}
+
+@mixin transform($value) {
+     -moz-transform: #{$value};
+       -o-transform: #{$value};
+      -ms-transform: #{$value};
+  -webkit-transform: #{$value};
+          transform: #{$value};
+}

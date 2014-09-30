@@ -1,0 +1,50 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<polymer-element name="preview-card" attributes="">
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+				-webkit-flex: 0 2 200px;
+				flex: 0 2 200px;
+				background-color:#EFEFEF;
+				margin-left:5px;
+				margin-right:5px;
+				margin-bottom:20px;
+				-webkit-box-shadow: 3px 4px 3px -3px #999;
+				box-shadow:3px 4px 3px -3px #999;
+			}
+			.text-holder{
+				padding:10px 20px;
+			}
+			.image-holder{
+				width:100%;
+				overflow:hidden;
+				max-height:150px;
+			}
+			.preview{
+				height:100px;
+				display:block;
+				max-height:100px;
+				text-overflow:ellipsis;
+			    overflow:hidden;
+			}
+
+		</style>
+		<div class="image-holder">
+			<content select="img"></content>
+		</div>
+		<div class="text-holder">
+			<div class="h2 title"><content select=".post-link"></content></div>
+			<div class="date"><content select=".post-meta"></content><content select=".tags"></content></div>
+			<div class="preview"><content select="p"></content></div>
+			<paper-fa-icon-button className="fa-twitter"></paper-fa-icon-button>
+		</div>
+
+
+	</template>
+	<script>
+		Polymer('preview-card', {
+			
+		});
+	</script>
+</polymer-element>

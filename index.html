@@ -1,20 +1,60 @@
 ---
 layout: base
 ---
-<div class="contentpane" id="top-pane">
-  <app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right" unresolved>
-  </app-bar>
-  <div class="transparentBG"></div>
-  <div class="v-cent lato whiteText" id="welcome">
-    <div class="h2">welcome</div>
-    <div class="h4" id="pane1-text">this is my playground</div>
+<app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right" unresolved>
+</app-bar>  
+<div class="parallax">
+  <div class="contentpane parallax-group" id="top-pane">
+    <div class="transparentBG parallax-layer parallax-back"></div>
+    <div class="v-cent lato whiteText parallax-layer parallax-base" id="welcome">
+      <div class="h2">welcome</div>
+      <div class="h4" id="pane1-text">this is my playground</div>
+    </div>
+  </div>
+
+  <div class="contentpane parallax-group" id="blog-pane">
+    <div class="inner">
+      <div class="post-list">
+        {% for post in site.posts %}
+          <preview-card>
+            <img src="images/balloon.png" alt="some bloggy image">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <p class="preview">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+          </preview-card>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="contentpane full-height parallax-group" id="work-section">
+    <div class="col-sm-4 full-height work-pane" id="work-dev">
+      <div class="dark-grad"></div>
+      <div class="work-text">
+        <div class="work-title"><h2>dev</h2></div>
+        <div class="work-descript">web development projects</div>
+      </div>
+    </div>
+    <div class="col-sm-4 full-height work-pane" id="work-photo">
+      <div class="dark-grad"></div>
+      <div class="work-text">
+        <div class="work-title"><h2>photo</h2></div>
+        <div class="work-descript">amateur photos of people and places I love</div>
+      </div>
+    </div>
+    <div class="col-sm-4 full-height work-pane" id="work-vid">
+      <div class="dark-grad"></div>
+      <div class="work-text">
+        <div class="work-title"><h2>vid</h2></div>
+        <div class="work-descript">no budget short documentary style film projects</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contentpane full-height parallax-group" id="somethingElse-pane">
+    <canvas class="hero__background" width="200" height="200" id="heroCanvas"></canvas>
   </div>
 </div>
-<div class="contentpane" id="blog-pane">
-  <div class="inner">&nbsp;</div>
-</div>
-<div class="contentpane" id="work-pane">
-  <div class="col-sm-4 full-height" id="work-dev"></div>
-  <div class="col-sm-4 full-height" id="work-photo"></div>
-  <div class="col-sm-4 full-height" id="work-vid"></div>
-</div>
+
+
+
