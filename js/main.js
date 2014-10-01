@@ -61,4 +61,5 @@ require(["jquery",
 		App.robot = new Machine('wall-e');
 		App.human = new Worker('mattbow');*/
 	});
+	
 });

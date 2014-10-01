@@ -48,21 +48,21 @@
   .lines:after {
     top: -0.875rem; }
 
-:host.closeTxfm .lines {
+:host(.closeTxfm) .lines {
   /*hide the middle line*/
-  background: transparent;
+  background-color: transparent;
   /*overlay the lines by setting both their top values to 0*/ }
-  :host.closeTxfm .lines:before, :host.closeTxfm .lines:after {
+  :host(.closeTxfm) .lines:before, :host(.closeTxfm) .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 3.5rem; }
-  :host.closeTxfm .lines:before {
+  :host(.closeTxfm) .lines:before {
     -webkit-transform: rotate3d(0, 0, 1, 45deg);
     -moz-transform: rotate3d(0, 0, 1, 45deg);
     -ms-transform: rotate3d(0, 0, 1, 45deg);
     -o-transform: rotate3d(0, 0, 1, 45deg);
     transform: rotate3d(0, 0, 1, 45deg); }
-  :host.closeTxfm .lines:after {
+  :host(.closeTxfm) .lines:after {
     -webkit-transform: rotate3d(0, 0, 1, -45deg);
     -moz-transform: rotate3d(0, 0, 1, -45deg);
     -ms-transform: rotate3d(0, 0, 1, -45deg);

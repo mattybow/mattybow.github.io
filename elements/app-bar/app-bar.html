@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-fa-icon-button/paper-fa-icon-button.html">
+<link rel="import" href="../menu-hamburger/menu-hamburger.html">
 <polymer-element name="app-bar" attributes="items itemPos logo logoPos social">
 	<template>
 		<style>
@@ -134,13 +135,12 @@
 				this.social=[];
 				this.itemsHidden=false;
 			},
-			ready:function(){
+			domReady:function(){
 				this.scrollObj = document.getElementsByClassName('parallax')[0];
-				this.setScrollListener();
+				if(this.scrollObj) this.setScrollListener();
 			},
 			setScrollListener:function(){
 				this.scrollObj.addEventListener('scroll', this.scrollHandler.bind(this));
-				// console.log('listener set');
 			},
 			scrollHandler:function(element){
 				var position = this.scrollObj.scrollTop;

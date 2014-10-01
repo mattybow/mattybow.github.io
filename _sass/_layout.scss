@@ -294,6 +294,7 @@
 }
 #welcome{
     margin-left:10%;
+    top:50%;
 }
 .contentpane{
     position:relative;
@@ -381,6 +382,9 @@ $screen-sm:768px;
     -webkit-justify-content: center;
     justify-content:center;
 }
+#parallax-maybe{
+    height:100%;
+}
 .parallax{
     -webkit-perspective:300px;
     perspective:300px;
@@ -388,38 +392,44 @@ $screen-sm:768px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-}
-.parallax-group{
-    position: relative;
-    height: 100vh;
-    height: 100%;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    /*-webkit-transform:translate3d(800px, 0, -500px) rotateY(30deg);
-    transform: translate3d(800px, 0, -500px) rotateY(30deg);
-    @include transition("all .5s");*/
-}
-.parallax-layer{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.parallax-base{
-    -webkit-transform:translateZ(0);
-    transform:translateZ(0);
-}
-.parallax-back{
-    -webkit-transform:translate3d(0,-200px,-300px) scale(2);
-    transform:translate3d(0,-200px,-300px) scale(2);
-}
-@media (max-width:320px){
+
+    .parallax-group{
+        position: relative;
+        height: 100vh;
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        /*-webkit-transform:translate3d(800px, 0, -500px) rotateY(30deg);
+        transform: translate3d(800px, 0, -500px) rotateY(30deg);
+        @include transition("all .5s");*/
+    }
+    .parallax-layer{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .parallax-base{
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0);
+    }
     .parallax-back{
-        -webkit-transform:translate3d(0,0,-300px) scale(2);   /*agh this is such a hack*/
-        transform:translate3d(0,0,-300px) scale(2);
+        -webkit-transform:translate3d(0,-232px,-300px) scale(2);
+        transform:translate3d(0,-232px,-300px) scale(2);
     }
 }
+.transparentBG{
+  opacity:1;
+  background-image:url('/images/conf.jpg');
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
 .work-title>h2{
     text-transform:uppercase;
     margin-bottom:5px;

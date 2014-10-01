@@ -1,9 +1,9 @@
 ---
 layout: base
 ---
-<app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right" unresolved>
+<app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right">
 </app-bar>  
-<div class="parallax">
+<div class="" id="parallax-maybe">
   <div class="contentpane parallax-group" id="top-pane">
     <div class="transparentBG parallax-layer parallax-back"></div>
     <div class="v-cent lato whiteText parallax-layer parallax-base" id="welcome">
@@ -12,7 +12,7 @@ layout: base
     </div>
   </div>
 
-  <div class="contentpane parallax-group" id="blog-pane">
+  <div class="contentpane" id="blog-pane">
     <div class="inner">
       <div class="post-list">
         {% for post in site.posts %}
@@ -27,7 +27,7 @@ layout: base
     </div>
   </div>
 
-  <div class="contentpane full-height parallax-group" id="work-section">
+  <div class="contentpane full-height" id="work-section">
     <div class="col-sm-4 full-height work-pane" id="work-dev">
       <div class="dark-grad"></div>
       <div class="work-text">

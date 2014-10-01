@@ -2,10 +2,10 @@ $button-size : 3.5rem;
 $transition: .3s; // increase this to see the transformations in slow-motion
 
 @mixin transition($transition){
-	-webkit-transition: all $transition ease-out;
-	-o-transition: all $transition ease-out;
-	-moz-transition: all $transition ease-out;
-	transition: all $transition ease-out;
+  -webkit-transition: all $transition ease-out;
+  -o-transition: all $transition ease-out;
+  -moz-transition: all $transition ease-out;
+  transition: all $transition ease-out;
 }
 
 @mixin line {
@@ -40,7 +40,7 @@ $transition: .3s; // increase this to see the transformations in slow-motion
   }
 
   &:focus{
-  	outline:none;
+    outline:none;
   }
  
   &:active {
@@ -69,10 +69,10 @@ $transition: .3s; // increase this to see the transformations in slow-motion
   &:after { top: -$button-size/4; }
 }
 
-:host.closeTxfm .lines{
+:host(.closeTxfm) .lines{
  
     /*hide the middle line*/
-    background: transparent;
+    background-color: transparent;
  
     /*overlay the lines by setting both their top values to 0*/
     &:before, &:after{
