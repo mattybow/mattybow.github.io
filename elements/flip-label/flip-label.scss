@@ -1,0 +1,51 @@
+@mixin transition($value) {
+    -webkit-transition: #{$value};
+    -moz-transition: #{$value};
+    -ms-transition: #{$value};
+    -o-transition: #{$value};
+    transition: #{$value};
+}
+
+@mixin transform($value) {
+     -moz-transform: #{$value};
+       -o-transform: #{$value};
+      -ms-transform: #{$value};
+  -webkit-transform: #{$value};
+          transform: #{$value};
+}
+
+:host{
+    display:block;
+}
+.title>h2{
+    text-transform:uppercase;
+    margin-bottom:5px;
+    font-weight: 300;
+    font-size: 30px;
+    margin-top:0;
+    line-height: 1.1;
+}
+.text-container{
+    margin-left:10%;
+    margin-right:10%;
+    color:#999;
+    border-top: 1px solid #999;
+    @include transition("-webkit-transform 300ms ease, opacity 100ms ease");
+    @include transition("transform 300ms ease");
+    @include transform("rotateX(0deg)");
+    -webkit-transform-origin:0% 0%;
+    transform-origin:0% 0%;
+    opacity:1;
+}
+.text-3d{
+    -webkit-perspective: 400px;
+    perspective:400px;
+    -webkit-perspective-origin:50% 50%;
+    perspective-origin:50% 50%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+.text-container.flip-up{
+    @include transform("rotateX(-90deg)");
+    opacity:0;
+}

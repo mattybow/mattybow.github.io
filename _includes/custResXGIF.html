@@ -1,0 +1,16 @@
+<link rel="import" href="/elements/gif-flex/gif-flex.html">
+<link rel="import" href="/bower_components/x-gif/dist/x-gif.html">
+<style>
+	x-gif{
+		flex:1 1 33%;
+		min-width: 300px;
+		overflow:hidden;
+	}
+	gif-flex x-gif /deep/ img{
+		width:100%;
+		height:auto;
+	}
+	gif-flex x-gif /deep/ .frames-wrapper{
+		text-align:center;
+	}
+</style>

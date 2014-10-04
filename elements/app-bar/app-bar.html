@@ -65,6 +65,8 @@
 			.stage{
 				display:inline-block;
 				overflow:hidden;
+			}
+			paper-fa-icon-button, paper-button{
 				-webkit-transition-property:transform;
 				-webkit-transition-duration:0.4s;
 				-webkit-transform:translate3d(0,0,0);
@@ -87,20 +89,20 @@
 				right: -50px;
 				top: 20px;
 				padding: 0px 10px;
+				-webkit-transition:right .05s;
+				transition:right .05s;
 			}
 			.hamburger-hider.show{
 				right:20px;
 			}
 			menu-hamburger{
-				opacity:1;
-				-webkit-transition:opacity .5,left .3s;
-				transition:opacity .5s,left .3s;
+				-webkit-transition:left .3s;
+				transition:left .3s;
 				position: relative;
 				top: 0px;
 				left:40px;
 			}
 			menu-hamburger.show{
-				opacity:1;
 				left: 0px;
 			}
 
@@ -116,9 +118,9 @@
 				</div>
 			</template>
 			<div class="social">
-				<template repeat={{social}}>
+				<template repeat="{{social}}">
 					<div class="stage">
-						<paper-fa-icon-button faclass="{{}}" size="35"></paper-fa-icon-button>
+						<paper-fa-icon-button faclass="{{}}" class="{{}}" size="35"></paper-fa-icon-button>
 					</div>
 				</template>
 			</div>
@@ -155,10 +157,12 @@
 				var shadow = document.querySelector('app-bar').shadowRoot;
 				var buttons = shadow.getElementsByTagName('paper-button');
 				var socialButtons = shadow.getElementsByTagName('paper-fa-icon-button');
+				var that = this;
 				if(action==='add'){
-					this.addClass(buttons);
-					this.addClass(socialButtons);
-					this.showHamburger(shadow);
+					var preTime = this.addClass(buttons,socialButtons);
+					setTimeout(function(){
+						that.showHamburger(shadow);
+					}.bind(this),preTime);
 					this.itemsHidden=true;
 				} else if (action==='remove'){
 					this.hideHamburger(shadow);
@@ -167,10 +171,19 @@
 					this.itemsHidden=false;
 				}
 			},
-			addClass:function(els){
-				[].forEach.call(els,function(el){
-					el.classList.add('txfm');
-				});
+			addClass:function(){
+				var count=1;
+				if(arguments.length){
+					[].forEach.call(arguments,function(elements,index){
+						[].forEach.call(elements,function(el){
+							setTimeout(function(){
+								el.classList.add('txfm');
+							}.bind(this),count);
+							count+=50;
+						});
+					});
+				}
+				return count;
 			},
 			removeClass:function(els){
 				[].forEach.call(els,function(el){
@@ -184,7 +197,7 @@
 			hideHamburger:function(shadow){
 				shadow.getElementsByClassName('hamburger-hider')[0].classList.remove('show');
 				shadow.getElementsByTagName('menu-hamburger')[0].classList.remove('show');
-			},
+			}
 
 		});
 	</script>

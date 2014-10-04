@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<polymer-element name="flip-label" attributes="">
+	<template>
+		<link rel="stylesheet" href="flip-label.css">
+		<div class="text-3d">
+			<div class="text-container flip-up" id="flipTarget">
+				<div class="title"><h2><content select=".title"></content></h2></div>
+				<div class="descript"><content select=".descript"></content></div>
+			</div>
+		</div>
+	</template>
+	<script>
+		Polymer('flip-label', {
+			ready:function(){
+				this.flipped = false;
+			},
+			flipShow:function(){
+				this.$.flipTarget.classList.remove('flip-up');
+			}
+		});
+	</script>
+</polymer-element>

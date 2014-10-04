@@ -45,7 +45,7 @@
         position: absolute;
         top: 9px;
         right: 30px;
-        background-color: $background-color;
+        background-color: transparent;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
@@ -335,6 +335,17 @@
 .full-height{
     height:100%;
 }
+preview-card img{
+    height:200px;
+    width:auto;
+}
+preview-card .preview{
+    height:100px;
+    display:block;
+    max-height:100px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
 .dark-grad{
     position:absolute;
     background-image:linear-gradient(transparent,rgba(0,0,0,.4));
@@ -342,11 +353,6 @@
     bottom:0;
     left:0;
     right:0;
-    opacity:1;
-    @include transition("all .4s");
-}
-.dark-grad:hover {
-    opacity: .9;
 }
 .work-pane{
     background-color:#EFEFEF;
@@ -439,4 +445,30 @@ $screen-sm:768px;
     margin-right:10%;
     color:#999;
     border-top: 1px solid #999;
+    @include transition("transform 300ms ease, -webkit-transform 300ms ease, opacity 100ms ease");
+    @include transform("rotateX(0deg)");
+    -webkit-transform-origin:0% 0%;
+    transform-origin:0% 0%;
+    opacity:1;
+}
+app-bar /deep/ .social .fa-twitter /deep/ paper-ripple {
+    color:#4099FF;
+}
+app-bar /deep/ .social .fa-facebook /deep/ paper-ripple {
+    color:#3B5998;
+}
+app-bar /deep/ .social .fa-google-plus /deep/ paper-ripple {
+    color:#d34836;
+}
+.work-text-3d{
+    -webkit-perspective: 400px;
+    perspective:400px;
+    -webkit-perspective-origin:50% 50%;
+    perspective-origin:50% 50%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+.work-text.flip-up{
+    @include transform("rotateX(-90deg)");
+    opacity:0;
 }
