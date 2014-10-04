@@ -2,15 +2,23 @@
 <link rel="import" href="/bower_components/x-gif/dist/x-gif.html">
 <style>
 	x-gif{
+		-webkit-flex:1 1 33%;
 		flex:1 1 33%;
 		min-width: 300px;
 		overflow:hidden;
 	}
+
+	img{
+		width:100%;
+		height:auto;
+	}
+	
 	gif-flex x-gif /deep/ img{
 		width:100%;
 		height:auto;
 	}
-	gif-flex x-gif /deep/ .frames-wrapper{
+
+	gif-flex x-gif::shadow /deep/ .frames-wrapper{
 		text-align:center;
 	}
 </style>
