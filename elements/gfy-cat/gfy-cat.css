@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  text-align: center; }
+
+video {
+  float: left;
+  height: auto; }
+
+#gfyContainer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; }
+
+#gfyCtrlBox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 100%;
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease; }
+
+.shown {
+  right: 0; }
+
+.hidden {
+  right: -60px; }
+
+.default {
+  width: 20px;
+  height: 20px;
+  right: 10px; }
+
+.clearfix {
+  clear: both; }
+
+#gfyCtrlBox svg {
+  width: 30px;
+  height: auto;
+  display: block;
+  margin-bottom: 5%; }
+  #gfyCtrlBox svg:hover {
+    cursor: pointer; }
+
+playpause-svg {
+  width: 20%; }
+
+.speedCtrl {
+  position: relative; }
+
+#speed {
+  position: relative;
+  width: 100%;
+  text-align: center; }
+
+#gfyCtrlBox {
+  display: -webkit-flex;
+  display: flex; }
+
+/*# sourceMappingURL=gfy-cat.css.map */

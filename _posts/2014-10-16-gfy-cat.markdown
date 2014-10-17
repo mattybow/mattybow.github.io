@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "gfy-cat webcomponent"
+date:   2014-10-16 12:10:47
+categories: polymer gfycat webcomponents
+image: Kitten.jpg
+polymer: yes
+customResource: custResXGIF.html
+---
+Testing 123.
+
+Awesome, this kind of works.  This is my first blog post, hopefully one of many.  In the coming months I'll be posting my experiments, trials, failures, and frustrations with using various front end technologies.  This is record of the things that I'm interested in.  I'm hoping that this will also serve as a platform for me to find others that are interested in similar things.
+
+Initially, I wanted to put a few animated [`x-gifs`][xgifs] in the first post, but the box and the dragon totally hosed the memory.  That's where [gfycat][gfycat] and [`gfy-cat`][gfy-cat] comes in.  I thought, this might be a good candidate for encapsulation in a polymer component.  If you want to give it a try, here's the [source][gfy-cat].  If you have no idea what I'm talking about, click here or scroll down to see the more detailed explanation.
+
+And here's a demo:
+
+{% include xGifCatsFlex.html %}
+
+A couple improvements I put in:
+
+1. gif or gfycat identifier
+2. controls done with svgs
+3. optional svg animations
+4. web component
+
+One thing that x-gif has over gfy-cat is background transparency is preserved.  The cube is a prime example, its background can be transparent, but in a `<video>` element, that's not possible. 
+
+#####Details:
+######Gifs:
+I love gifs, choosy moms choose gif, but there are several problems with gifs.  Performance sucks, especially with multiple gifs and/or large gifs.  No playback controls.  Not a new problem.
+
+Solution: display the gif as a `video` element.
+
+Gfycat does just this.  It is a conversion service that also hosts the converted gifs thru AWS.
+ 
+
+[flexbox]:   http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[xgifs]: https://github.com/geelen/x-gif
+[gfycat]: http://gfycat.com/
+[gfy-cat]: http://www.github.com/mattybow

@@ -1,0 +1,101 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<polymer-element name="playpause-svg" attributes="state stroke strokeWidth fill">
+	<template>
+		<style>
+			:host {
+				position:absolute;
+				text-align:center;
+				top:0;
+				bottom:0;
+				right:0;
+				left:0;
+				margin:auto;
+				overflow:auto;
+			}
+			svg{
+				display:inline-block;
+				vertical-align: middle;
+				width: inherit;
+			}
+			.playpause-container{
+				width:100%;
+				height:100%;
+				display:-webkit-flex;
+				display:flex;
+				-webkit-flex-flow:row wrap;
+    			flex-flow:row wrap;
+    			-webkit-align-items:center;
+    			align-items:center;
+			}
+		</style>
+		<div class="playpause-container">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" on-tap="{{morph}}" id="playPauseCtrl">
+				<g>
+					<path d="M50.5504,30L9.44958,55.5539L9.44958,4.44605L50.5504,30Z" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+				</g>
+			</svg>
+		</div>
+	</template>
+	<script>
+		Polymer('playpause-svg', {
+			created:function(){
+				this.state='play';
+				this.stroke="#555";
+				this.strokeWidth=1;
+				this.fill="transparent";
+			},
+			ready:function(){
+				//console.log(this.$.playPauseCtrl);
+				this.snap = new Snap(this.$.playPauseCtrl);
+			},
+
+			pauseVid:function(){
+				this.fire('pauseVid');
+			},
+
+			playVid:function(){
+				this.fire('playVid');
+			},
+
+			morphPlay:function (){
+			  this.snap.transform('rotate(0,30,30) translate(25)').animate({d:"M10 10 v40 l34.64 -20 Z",transform:"translate(0)"},100,mina.easeout,this.toggleState.bind(this));
+			  var dupe = this.snap.paper.select('#dupe');
+			  dupe.animate({d:"M30 10 v40 h1 v-40 Z"},100,function(){dupe.remove();});
+			},
+
+			morphPause:function(){
+			  this.snap.attr({transform:""})
+			  .animate({d:"M10 10 v40 h15 v-40 Z",
+			  	transform:"rotate(180,27.5,30)"},100,mina.easeout,this.duplicate.bind(this));
+			},
+
+			duplicate:function(){
+			  this.snap.paper.path("M30 10 v40 h15 v-40 Z")
+			  		.attr({fill:this.fill,
+			  			stroke:this.stroke,
+			  			strokeWidth:this.strokeWidth,
+			  			id:"dupe"})
+			  		.animate({transform:"translate(-22.5)"},100,mina.easeout,this.toggleState.bind(this));
+			},
+
+			toggleState:function(){
+			  if(this.state==='play'){
+			    this.state = 'pause';
+			  } else {
+			    this.state = 'play';
+			  }
+			},
+
+			morph:function(e,d,s){
+			  e.stopPropagation();
+			  if(this.state==='play'){
+			  	this.pauseVid();
+			    this.morphPause();
+			  } else {
+			  	this.playVid();
+			    this.morphPlay();
+			  }
+			}
+		});
+	</script>
+</polymer-element>

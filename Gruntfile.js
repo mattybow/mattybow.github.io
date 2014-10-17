@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+  require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
   // Project configuration.
   grunt.initConfig({
@@ -42,6 +42,9 @@ module.exports = function(grunt) {
       vulcan:{
         cmd: 'grunt build'
       },
+      sass:{
+        cmd: 'grunt sass:dist'
+      },
       build: {
         cmd: 'jekyll build --drafts --trace'
       },
@@ -67,7 +70,7 @@ module.exports = function(grunt) {
         "*.md",
       ],
       tasks:[
-        "exec:vulcan",
+        "exec:sass",
         "exec:build"
       ]
     },

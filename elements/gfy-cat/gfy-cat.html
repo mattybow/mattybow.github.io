@@ -1,0 +1,205 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="/elements/playpause-svg/playpause-svg.html">
+<polymer-element name="gfy-cat" attributes="src gfyName width color fill strokeWidth">
+	<template>
+		<link rel="stylesheet" href="gfy-cat.css">
+        <template if="{{src}}">
+            <core-ajax url="http://upload.gfycat.com/transcode?fetchUrl={{src | cleanSrcUrl}}" id="gfyAjax" handleAs="json"></core-ajax>
+        </template>
+        <div id="gfyContainer" on-tap={{showCtrls}} on-mouseover={{hoverHandle}} on-mouseout={{hoverOutHandle}}>
+            <video autoplay loop width="{{ width }}" id="vid" src="//zippy.gfycat.com/{{gfyName}}{{ext}}"></video>
+            <video autoplay loop hidden width="{{ width }}" id="vidReverse" src="//zippy.gfycat.com/{{gfyName}}-reverse{{ext}}"></video>
+            <div class="clearfix"></div>
+            <playpause-svg stroke="{{color}}" strokeWidth="{{fill ? 0:strokeWidth}}" fill="{{fill ? color:'transparent'}}"></playpause-svg>
+            <div class="{{visibility}}" id="gfyCtrlBox" style="-webkit-flex-flow: column nowrap; flex-flow:column nowrap; -webkit-justify-content:space-around; justify-content:space-around;">
+
+                <div class="speedCtrl">
+                    <div class="bttn" id="up" on-tap={{increaseSpeed}}>
+                        <svg version="1.1" id="speedUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;">
+                            <g>
+                                <g>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M54.368,30L26.3873,49.5821L26.3873,10.4179L54.368,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                </g>
+                                <g>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M23.866,30L5.63198,42.7609L5.63198,17.2391L23.866,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div id="speed" style="color:{{color}}; font-family:lato;">{{speed}}x</div>
+                    <div class="bttn" id="down" on-tap={{decreaseSpeed}}>
+                        <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                            <g>
+                                <g>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M5.63198,30L33.6127,10.4179L33.6127,49.5821L5.63198,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                </g>
+                                <g>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M36.134,29.5376L54.368,16.7767L54.368,42.2985L36.134,29.5376Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="bttn" id="pingpong" on-tap={{togglePingPong}}>
+                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                        <g>
+                            <g>
+                                <path fill="{{fill ? color:'transparent'}}" d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                            </g>
+                            <g>
+                                <path fill="{{fill ? color:'transparent'}}" d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="bttn" id="reverse" on-tap={{reversePlayback}}>
+                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                        <g>
+                            <g>
+                                <path fill="{{fill ? color:'transparent'}}" d="M9.44958,30L50.5504,4.44605L50.5504,55.5539L9.44958,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.592157;"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                
+            </div>
+            <content></content>
+        </div>
+	</template>
+	<script>
+		Polymer('gfy-cat', {
+            created:function(){
+                this.gfyName="";
+                this.width="";
+                this.speed=1;
+                this.color="#eee";
+                this.visibility="hidden";
+                this.fill=false;
+                this.strokeWidth=2;
+                this.playMode='forward';
+                this.isPingPong=false;
+                this.src='';
+                this.getExt();
+            },
+            ready:function(){
+                this.addEventListener('playVid',function(){
+                    this.$.vid.play();
+                    this.$.vidReverse.play();
+                }.bind(this));
+                this.addEventListener('pauseVid',function(){
+                    this.$.vid.pause();
+                    this.$.vidReverse.pause();
+                }.bind(this));
+                this.$.vid.addEventListener('ended',function(){
+                    this.reversePlayback();
+                }.bind(this));
+                this.$.vidReverse.addEventListener('ended',function(){
+                    this.reversePlayback();
+                }.bind(this));
+                if(this.src){                                           //if src defined, fetch converted gfyName
+                    this.$.gfyAjax.addEventListener("core-response", function(e) {
+                            this.gfyName=e.detail.response.gfyName;
+                            //this.$.vid.src="http://zippy.gfycat.com/"+this.gfyName+".mp4";
+                            //this.$.vidReverse.src="http://zippy.gfycat.com/"+this.gfyName+"-reverse.mp4";
+                        }.bind(this));
+                    this.$.gfyAjax.go();
+                }
+            },
+            getExt:function(){
+                var testVid = document.createElement('video');
+                switch (true){
+                    case testVid.canPlayType('video/mp4')!="":
+                        this.ext='.mp4';
+                        break;
+                    case testVid.canPlayType('video/webm')!="":
+                        this.ext='.webm';
+                        break;
+                }
+            },
+            cleanSrcUrl:function(url){
+                return url.replace(/http:\/\//,'');
+            },
+            showCtrls:function(e,d,s){
+                this.visibility='shown';
+                this.hideTimeOut=setTimeout(this.hideCtrls.bind(this),3000);
+            },
+            hideCtrls:function(){
+                this.visibility='hidden';
+                this.hideTimeOut=undefined;
+            },
+            hoverHandle:function(){
+                if(!this.hideTimeOut){
+                    this.showCtrls();
+                }
+                clearTimeout(this.hideTimeOut);
+            },
+            hoverOutHandle:function(){
+                if(this.hideTimeOut){
+                    clearTimeout(this.hideTimeOut);
+                }
+                this.hideTimeOut=setTimeout(this.hideCtrls.bind(this),400);
+            },
+            increaseSpeed:function(e,d,s){
+                e.stopPropagation();
+                if(this.speed<1){
+                    this.speed *= 2;
+                } else {
+                    this.speed += .5;
+                }
+                this.$.vid.playbackRate=this.speed;
+                this.$.vidReverse.playbackRate=this.speed;
+            },
+            decreaseSpeed:function(e,d,s){
+                e.stopPropagation();
+                if(this.speed<1){
+                    this.speed /= 2;
+                } else {
+                    this.speed -= .5;
+                }
+                this.$.vid.playbackRate=this.speed;
+                this.$.vidReverse.playbackRate=this.speed;
+            },
+            reversePlayback:function(e,d,s){
+                if(e) e.stopPropagation();
+                if(this.playMode === 'reverse'){
+                    this.$.vidReverse.pause();
+                    this.$.vidReverse.setAttribute('hidden',"true");
+                    this.$.vid.removeAttribute('hidden');
+                    this.$.vid.currentTime=0;
+                    this.$.vid.play();
+                    this.playMode = 'forward';
+                } else {
+                    this.$.vid.pause();
+                    this.$.vid.setAttribute('hidden',"true");
+                    this.$.vidReverse.removeAttribute('hidden');
+                    this.$.vidReverse.currentTime=0;
+                    this.$.vidReverse.play();
+                    this.playMode = 'reverse';
+                }
+            },
+            togglePingPong:function(e,d,s){
+                e.stopPropagation();
+                if(this.isPingPong){
+                    this.deactivatePingPong();
+                } else {
+                    this.activatePingPong();
+                }
+            },
+            activatePingPong:function(){
+                this.$.vid.removeAttribute('loop');
+                this.$.vid.play();
+                this.$.vidReverse.removeAttribute('loop');
+                this.$.vidReverse.play();
+                this.isPingPong=true;
+            },
+            deactivatePingPong:function(){
+                this.$.vid.setAttribute('loop','true');         //when video is looping, 'ended' event does not trigger
+                this.$.vidReverse.setAttribute('loop','true');
+                this.isPingPong=false;
+            }
+
+		});
+	</script>
+</polymer-element>
