@@ -15,6 +15,7 @@ video {
   position: absolute;
   top: 0;
   bottom: 0;
+  width: 10%;
   background-color: rgba(0, 0, 0, 0.4);
   padding-right: 10px;
   padding-left: 10px;
@@ -22,10 +23,10 @@ video {
   -webkit-transition: right 0.3s ease;
   transition: right 0.3s ease; }
 
-.shown {
+.gfyCtrl.shown {
   right: 0; }
 
-.hidden {
+.gfyCtrl.hidden {
   right: -60px; }
 
 .default {
@@ -37,7 +38,7 @@ video {
   clear: both; }
 
 #gfyCtrlBox svg {
-  width: 30px;
+  width: 100%;
   height: auto;
   display: block;
   margin-bottom: 5%; }
@@ -45,7 +46,14 @@ video {
     cursor: pointer; }
 
 playpause-svg {
-  width: 20%; }
+  width: 20%;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0; }
+
+playpause-svg.shown {
+  opacity: 1; }
 
 .speedCtrl {
   position: relative; }
@@ -58,5 +66,13 @@ playpause-svg {
 #gfyCtrlBox {
   display: -webkit-flex;
   display: flex; }
+
+.bttn {
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  opacity: 0.7; }
+
+.bttn:hover {
+  opacity: 1; }
 
 /*# sourceMappingURL=gfy-cat.css.map */

@@ -1,40 +1,41 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <polymer-element name="playpause-svg" attributes="state stroke strokeWidth fill">
 	<template>
-		<style>
-			:host {
-				position:absolute;
-				text-align:center;
-				top:0;
-				bottom:0;
-				right:0;
-				left:0;
-				margin:auto;
-				overflow:auto;
-			}
-			svg{
-				display:inline-block;
-				vertical-align: middle;
-				width: inherit;
-			}
-			.playpause-container{
-				width:100%;
-				height:100%;
-				display:-webkit-flex;
-				display:flex;
-				-webkit-flex-flow:row wrap;
-    			flex-flow:row wrap;
-    			-webkit-align-items:center;
-    			align-items:center;
-			}
-		</style>
+		<link rel="stylesheet" href="playpause-svg.css">
 		<div class="playpause-container">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" on-tap="{{morph}}" id="playPauseCtrl">
-				<g>
-					<path d="M50.5504,30L9.44958,55.5539L9.44958,4.44605L50.5504,30Z" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
-				</g>
-			</svg>
+			<div class="play-container present" id="play">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" id="playPauseCtrl">
+					<g>
+						<path d="M50.5504,30L9.44958,55.5539L9.44958,4.44605L50.5504,30Z" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+					</g>
+				</svg>
+			</div>
+			<div class="pause-container future" id="pause">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" id="playPauseCtrl">
+					<g>
+			            <g>
+			                <rect x="6.67827" y="6.375" width="20.3217" height="47.25" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+			            </g>
+			            <g>
+			                <rect x="33" y="6.375" width="20.3217" height="47.25" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+			            </g>
+			        </g>
+				</svg>
+			</div>
+			<div class="dummy">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" id="playPauseCtrl">
+					<g>
+			            <g>
+			                <rect x="6.67827" y="6.375" width="20.3217" height="47.25" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+			            </g>
+			            <g>
+			                <rect x="33" y="6.375" width="20.3217" height="47.25" stroke="{{stroke}}" stroke-width="{{strokeWidth}}" stroke-linecap="round" stroke-linejoin="round" fill="{{fill}}"/>
+			            </g>
+			        </g>
+				</svg>
+			</div>
 		</div>
+		<toggle-play></toggle-play>
 	</template>
 	<script>
 		Polymer('playpause-svg', {
@@ -46,55 +47,29 @@
 			},
 			ready:function(){
 				//console.log(this.$.playPauseCtrl);
-				this.snap = new Snap(this.$.playPauseCtrl);
+				this.addEventListener('togglePlay',this.togglePlay);
 			},
 
-			pauseVid:function(){
-				this.fire('pauseVid');
+			togglePlay:function(e){
+				if(e.detail.state==='play'){
+					this.playAnim();
+				} else {
+					this.pauseAnim();
+				}
 			},
 
-			playVid:function(){
-				this.fire('playVid');
+			pauseAnim:function(){
+				this.$.play.classList.remove('present');
+				this.$.play.classList.add('past');
+				this.$.pause.classList.remove('future');
+				this.$.pause.classList.add('present');
 			},
 
-			morphPlay:function (){
-			  this.snap.transform('rotate(0,30,30) translate(25)').animate({d:"M10 10 v40 l34.64 -20 Z",transform:"translate(0)"},100,mina.easeout,this.toggleState.bind(this));
-			  var dupe = this.snap.paper.select('#dupe');
-			  dupe.animate({d:"M30 10 v40 h1 v-40 Z"},100,function(){dupe.remove();});
-			},
-
-			morphPause:function(){
-			  this.snap.attr({transform:""})
-			  .animate({d:"M10 10 v40 h15 v-40 Z",
-			  	transform:"rotate(180,27.5,30)"},100,mina.easeout,this.duplicate.bind(this));
-			},
-
-			duplicate:function(){
-			  this.snap.paper.path("M30 10 v40 h15 v-40 Z")
-			  		.attr({fill:this.fill,
-			  			stroke:this.stroke,
-			  			strokeWidth:this.strokeWidth,
-			  			id:"dupe"})
-			  		.animate({transform:"translate(-22.5)"},100,mina.easeout,this.toggleState.bind(this));
-			},
-
-			toggleState:function(){
-			  if(this.state==='play'){
-			    this.state = 'pause';
-			  } else {
-			    this.state = 'play';
-			  }
-			},
-
-			morph:function(e,d,s){
-			  e.stopPropagation();
-			  if(this.state==='play'){
-			  	this.pauseVid();
-			    this.morphPause();
-			  } else {
-			  	this.playVid();
-			    this.morphPlay();
-			  }
+			playAnim:function(){
+				this.$.play.classList.remove('past');
+				this.$.play.classList.add('present');
+				this.$.pause.classList.remove('present');
+				this.$.pause.classList.add('future');
 			}
 		});
 	</script>

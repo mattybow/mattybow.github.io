@@ -209,6 +209,10 @@ body {
 html,body{
   height:100%;
 }
+hr{
+  margin-top:-10px;
+  margin-bottom:10px;
+}
 
 @mixin flexbox() {
   display: -webkit-box;

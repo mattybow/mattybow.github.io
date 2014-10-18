@@ -7,15 +7,15 @@
         <template if="{{src}}">
             <core-ajax url="http://upload.gfycat.com/transcode?fetchUrl={{src | cleanSrcUrl}}" id="gfyAjax" handleAs="json"></core-ajax>
         </template>
-        <div id="gfyContainer" on-tap={{showCtrls}} on-mouseover={{hoverHandle}} on-mouseout={{hoverOutHandle}}>
+        <div id="gfyContainer" on-tap="{{toggleState}}" on-mouseover="{{hoverHandle}}" on-mouseout="{{hoverOutHandle}}">
             <video autoplay loop width="{{ width }}" id="vid" src="//zippy.gfycat.com/{{gfyName}}{{ext}}"></video>
             <video autoplay loop hidden width="{{ width }}" id="vidReverse" src="//zippy.gfycat.com/{{gfyName}}-reverse{{ext}}"></video>
             <div class="clearfix"></div>
-            <playpause-svg stroke="{{color}}" strokeWidth="{{fill ? 0:strokeWidth}}" fill="{{fill ? color:'transparent'}}"></playpause-svg>
-            <div class="{{visibility}}" id="gfyCtrlBox" style="-webkit-flex-flow: column nowrap; flex-flow:column nowrap; -webkit-justify-content:space-around; justify-content:space-around;">
+            <playpause-svg stroke="{{color}}" class="{{visibility}}" strokeWidth="{{fill ? 0:strokeWidth}}" fill="{{fill ? color:'transparent'}}" id="playPauseSvg"></playpause-svg>
+            <div class="gfyCtrl {{visibility}}" id="gfyCtrlBox" style="-webkit-flex-flow: column nowrap; flex-flow:column nowrap; -webkit-justify-content:space-around; justify-content:space-around;">
 
                 <div class="speedCtrl">
-                    <div class="bttn" id="up" on-tap={{increaseSpeed}}>
+                    <div class="bttn" id="up" on-tap="{{increaseSpeed}}">
                         <svg version="1.1" id="speedUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;">
                             <g>
                                 <g>
@@ -28,7 +28,7 @@
                         </svg>
                     </div>
                     <div id="speed" style="color:{{color}}; font-family:lato;">{{speed}}x</div>
-                    <div class="bttn" id="down" on-tap={{decreaseSpeed}}>
+                    <div class="bttn" id="down" on-tap="{{decreaseSpeed}}">
                         <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                             <g>
                                 <g>
@@ -41,7 +41,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="bttn" id="pingpong" on-tap={{togglePingPong}}>
+                <div class="bttn" id="pingpong" on-tap="{{togglePingPong}}">
                     <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
@@ -54,7 +54,7 @@
                     </svg>
                 </div>
 
-                <div class="bttn" id="reverse" on-tap={{reversePlayback}}>
+                <div class="bttn" id="reverse" on-tap="{{reversePlayback}}">
                     <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
@@ -84,14 +84,6 @@
                 this.getExt();
             },
             ready:function(){
-                this.addEventListener('playVid',function(){
-                    this.$.vid.play();
-                    this.$.vidReverse.play();
-                }.bind(this));
-                this.addEventListener('pauseVid',function(){
-                    this.$.vid.pause();
-                    this.$.vidReverse.pause();
-                }.bind(this));
                 this.$.vid.addEventListener('ended',function(){
                     this.reversePlayback();
                 }.bind(this));
@@ -198,6 +190,28 @@
                 this.$.vid.setAttribute('loop','true');         //when video is looping, 'ended' event does not trigger
                 this.$.vidReverse.setAttribute('loop','true');
                 this.isPingPong=false;
+            },
+            playVid:function(){
+                this.$.vid.play();
+                this.$.vidReverse.play();
+                this.state='play';
+            },
+            pauseVid:function(){
+                this.$.vid.pause();
+                this.$.vidReverse.pause();
+                this.state='pause';
+            },
+            toggleState:function(){
+              if(this.state==='play' || this.state === undefined){
+                this.pauseVid();
+              } else if (this.state ==='pause') {
+                this.playVid();
+              }
+              this.hoverHandle();
+              var that = this;
+              [].forEach.call(this.shadowRoot.querySelectorAll('playpause-svg'),function(el,i){
+                el.fire('togglePlay',{state:that.state});
+                });
             }
 
 		});
