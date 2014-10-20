@@ -1,60 +1,60 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="/bower_components/core-ajax/core-ajax.html">
 <link rel="import" href="/elements/playpause-svg/playpause-svg.html">
-<polymer-element name="gfy-cat" attributes="src gfyName width color fill strokeWidth">
+<polymer-element name="gfy-cat" attributes="src gfyName width color fill strokeWidth ntimes">
 	<template>
 		<link rel="stylesheet" href="gfy-cat.css">
         <template if="{{src}}">
             <core-ajax url="http://upload.gfycat.com/transcode?fetchUrl={{src | cleanSrcUrl}}" id="gfyAjax" handleAs="json"></core-ajax>
         </template>
-        <div id="gfyContainer" on-tap="{{toggleState}}" on-mouseover="{{hoverHandle}}" on-mouseout="{{hoverOutHandle}}">
+        <div id="gfyContainer" on-mouseup="{{toggleState}}" on-mouseover="{{hoverHandle}}" on-mouseout="{{hoverOutHandle}}">
             <video autoplay loop width="{{ width }}" id="vid" src="//zippy.gfycat.com/{{gfyName}}{{ext}}"></video>
             <video autoplay loop hidden width="{{ width }}" id="vidReverse" src="//zippy.gfycat.com/{{gfyName}}-reverse{{ext}}"></video>
             <div class="clearfix"></div>
-            <playpause-svg stroke="{{color}}" class="{{visibility}}" strokeWidth="{{fill ? 0:strokeWidth}}" fill="{{fill ? color:'transparent'}}" id="playPauseSvg"></playpause-svg>
+            <playpause-svg stroke="{{color}}" class="{{visibility}}" strokeWidth="{{fill ? 0:strokeWidth*.5}}" fill="{{fill ? color:'transparent'}}" id="playPauseSvg"></playpause-svg>
             <div class="gfyCtrl {{visibility}}" id="gfyCtrlBox" style="-webkit-flex-flow: column nowrap; flex-flow:column nowrap; -webkit-justify-content:space-around; justify-content:space-around;">
 
                 <div class="speedCtrl">
-                    <div class="bttn" id="up" on-tap="{{increaseSpeed}}">
+                    <div class="bttn" id="up" on-mouseup="{{increaseSpeed}}" title="accelerate playback">
                         <svg version="1.1" id="speedUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;">
                             <g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M54.368,30L26.3873,49.5821L26.3873,10.4179L54.368,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M54.368,30L26.3873,49.5821L26.3873,10.4179L54.368,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                                 </g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M23.866,30L5.63198,42.7609L5.63198,17.2391L23.866,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M23.866,30L5.63198,42.7609L5.63198,17.2391L23.866,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                                 </g>
                             </g>
                         </svg>
                     </div>
                     <div id="speed" style="color:{{color}}; font-family:lato;">{{speed}}x</div>
-                    <div class="bttn" id="down" on-tap="{{decreaseSpeed}}">
+                    <div class="bttn" id="down" on-mouseup="{{decreaseSpeed}}" title="slow playback">
                         <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                             <g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M5.63198,30L33.6127,10.4179L33.6127,49.5821L5.63198,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M5.63198,30L33.6127,10.4179L33.6127,49.5821L5.63198,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                                 </g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M36.134,29.5376L54.368,16.7767L54.368,42.2985L36.134,29.5376Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M36.134,29.5376L54.368,16.7767L54.368,42.2985L36.134,29.5376Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                                 </g>
                             </g>
                         </svg>
                     </div>
                 </div>
-                <div class="bttn" id="pingpong" on-tap="{{togglePingPong}}">
+                <div class="bttn" id="pingpong" on-mouseup="{{togglePingPong}}" title="pingpong playback">
                     <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
-                                <path fill="{{fill ? color:'transparent'}}" d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                <path fill="{{fill ? color:'transparent'}}" d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                             </g>
                             <g>
-                                <path fill="{{fill ? color:'transparent'}}" d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.662745;"/>
+                                <path fill="{{fill ? color:'transparent'}}" d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
                             </g>
                         </g>
                     </svg>
                 </div>
 
-                <div class="bttn" id="reverse" on-tap="{{reversePlayback}}">
+                <div class="bttn" id="reverse" on-mouseup="{{reversePlayback}}" title="reverse playback">
                     <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
@@ -77,13 +77,19 @@
                 this.color="#eee";
                 this.visibility="hidden";
                 this.fill=false;
-                this.strokeWidth=2;
+                this.strokeWidth=3;
                 this.playMode='forward';
-                this.isPingPong=false;
+                this.pingPongActive=false;
                 this.src='';
                 this.getExt();
+                this.state='play';
+                this.playCount=0;
+                this.ntimes=3;
             },
             ready:function(){
+                this.$.vid.addEventListener('play',function(){
+                    this.intervalId = setInterval(this.incrementPlayCount.bind(this),this.$.vid.duration*1000);
+                }.bind(this));
                 this.$.vid.addEventListener('ended',function(){
                     this.reversePlayback();
                 }.bind(this));
@@ -98,6 +104,17 @@
                         }.bind(this));
                     this.$.gfyAjax.go();
                 }
+            },
+            incrementPlayCount:function(){
+                this.playCount++;
+                if(this.playCount===this.ntimes){
+                    this.pauseVid();
+                    this.resetPlayCount();
+                }
+            },
+            resetPlayCount:function(){
+                this.playCount=0;
+                clearInterval(this.intervalId);
             },
             getExt:function(){
                 var testVid = document.createElement('video');
@@ -115,17 +132,25 @@
             },
             showCtrls:function(e,d,s){
                 this.visibility='shown';
+                if(this.hideTimeOut){
+                    clearTimeout(this.hideTimeOut);
+                }
                 this.hideTimeOut=setTimeout(this.hideCtrls.bind(this),3000);
             },
             hideCtrls:function(){
                 this.visibility='hidden';
                 this.hideTimeOut=undefined;
             },
-            hoverHandle:function(){
-                if(!this.hideTimeOut){
-                    this.showCtrls();
+            hoverHandle:function(e,d,s){
+                if(!this.isMobile()){
+                    if(!this.hideTimeOut){
+                        this.showCtrls();
+                    }  
+                    clearTimeout(this.hideTimeOut);                 //let the mouseout event hide the ctrls
                 }
-                clearTimeout(this.hideTimeOut);
+            },
+            isMobile:function(){
+                return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
             },
             hoverOutHandle:function(){
                 if(this.hideTimeOut){
@@ -133,8 +158,18 @@
                 }
                 this.hideTimeOut=setTimeout(this.hideCtrls.bind(this),400);
             },
+            mobileCtrlReset:function(){
+                if(this.isMobile()){
+                    this.showCtrls();
+                }
+            },
+            autoResume:function(){
+                if(this.state==='pause') this.playVid();
+            },
             increaseSpeed:function(e,d,s){
                 e.stopPropagation();
+                this.mobileCtrlReset();
+                this.autoResume();
                 if(this.speed<1){
                     this.speed *= 2;
                 } else {
@@ -145,6 +180,8 @@
             },
             decreaseSpeed:function(e,d,s){
                 e.stopPropagation();
+                this.mobileCtrlReset();
+                this.autoResume();
                 if(this.speed<1){
                     this.speed /= 2;
                 } else {
@@ -154,7 +191,10 @@
                 this.$.vidReverse.playbackRate=this.speed;
             },
             reversePlayback:function(e,d,s){
-                if(e) e.stopPropagation();
+                if(e) {
+                    e.stopPropagation();
+                    this.mobileCtrlReset();
+                }
                 if(this.playMode === 'reverse'){
                     this.$.vidReverse.pause();
                     this.$.vidReverse.setAttribute('hidden',"true");
@@ -170,10 +210,15 @@
                     this.$.vidReverse.play();
                     this.playMode = 'reverse';
                 }
+                this.checkState();
+            },
+            checkState:function(){
+                if(this.state==='pause') this.state='play';
             },
             togglePingPong:function(e,d,s){
                 e.stopPropagation();
-                if(this.isPingPong){
+                this.mobileCtrlReset();
+                if(this.pingPongActive){
                     this.deactivatePingPong();
                 } else {
                     this.activatePingPong();
@@ -184,12 +229,13 @@
                 this.$.vid.play();
                 this.$.vidReverse.removeAttribute('loop');
                 this.$.vidReverse.play();
-                this.isPingPong=true;
+                this.pingPongActive=true;
+                this.checkState();
             },
             deactivatePingPong:function(){
                 this.$.vid.setAttribute('loop','true');         //when video is looping, 'ended' event does not trigger
                 this.$.vidReverse.setAttribute('loop','true');
-                this.isPingPong=false;
+                this.pingPongActive=false;
             },
             playVid:function(){
                 this.$.vid.play();
@@ -199,19 +245,29 @@
             pauseVid:function(){
                 this.$.vid.pause();
                 this.$.vidReverse.pause();
+                this.resetPlayCount();
                 this.state='pause';
             },
-            toggleState:function(){
-              if(this.state==='play' || this.state === undefined){
+            stateChanged:function(attrName, oldVal, newVal){
+                this.triggerToggleEvent();
+            },
+            toggleState:function(e,d,s){
+                if(!this.hideTimeOut){                          //for mobile case
+                    this.showCtrls();
+                }
+                e.target.blur();
+                if(this.state==='play' || this.state === undefined){
                 this.pauseVid();
-              } else if (this.state ==='pause') {
+                } else if (this.state ==='pause') {
                 this.playVid();
-              }
-              this.hoverHandle();
-              var that = this;
-              [].forEach.call(this.shadowRoot.querySelectorAll('playpause-svg'),function(el,i){
-                el.fire('togglePlay',{state:that.state});
-                });
+                }
+              //this.triggerToggleEvent();
+            },
+            triggerToggleEvent:function(){
+                var that = this;
+                [].forEach.call(this.shadowRoot.querySelectorAll('playpause-svg'),function(el,i){
+                    el.fire('togglePlay',{state:that.state});
+                }); 
             }
 
 		});
