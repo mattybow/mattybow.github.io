@@ -16,49 +16,49 @@
 
                 <div class="speedCtrl">
                     <div class="bttn" id="up" on-mouseup="{{increaseSpeed}}" title="accelerate playback">
-                        <svg version="1.1" id="speedUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;">
+                        <svg version="1.1" id="speedUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" preserveAspectRatio="meet" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;">
                             <g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M54.368,30L26.3873,49.5821L26.3873,10.4179L54.368,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M54.368,30L26.3873,49.5821L26.3873,10.4179L54.368,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                                 </g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M23.866,30L5.63198,42.7609L5.63198,17.2391L23.866,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M23.866,30L5.63198,42.7609L5.63198,17.2391L23.866,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                                 </g>
                             </g>
                         </svg>
                     </div>
-                    <div id="speed" style="color:{{color}}; font-family:lato;">{{speed}}x</div>
+                    <div id="speed" _style="color:{{color}}">{{speed}}x</div>
                     <div class="bttn" id="down" on-mouseup="{{decreaseSpeed}}" title="slow playback">
-                        <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                        <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" preserveAspectRatio="meet" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                             <g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M5.63198,30L33.6127,10.4179L33.6127,49.5821L5.63198,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M5.63198,30L33.6127,10.4179L33.6127,49.5821L5.63198,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                                 </g>
                                 <g>
-                                    <path fill="{{fill ? color:'transparent'}}" d="M36.134,29.5376L54.368,16.7767L54.368,42.2985L36.134,29.5376Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                    <path fill="{{fill ? color:'transparent'}}" d="M36.134,29.5376L54.368,16.7767L54.368,42.2985L36.134,29.5376Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                                 </g>
                             </g>
                         </svg>
                     </div>
                 </div>
                 <div class="bttn" id="pingpong" on-mouseup="{{togglePingPong}}" title="pingpong playback">
-                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
-                                <path fill="{{fill ? color:'transparent'}}" d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                <path fill="{{fill ? color:'transparent'}}" d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                             </g>
                             <g>
-                                <path fill="{{fill ? color:'transparent'}}" d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:1;"/>
+                                <path fill="{{fill ? color:'transparent'}}" d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                             </g>
                         </g>
                     </svg>
                 </div>
 
                 <div class="bttn" id="reverse" on-mouseup="{{reversePlayback}}" title="reverse playback">
-                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
+                    <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                         <g>
                             <g>
-                                <path fill="{{fill ? color:'transparent'}}" d="M9.44958,30L50.5504,4.44605L50.5504,55.5539L9.44958,30Z" style="stroke-width:{{fill ? 0:strokeWidth}};stroke:{{color}};stroke-opacity:0.592157;"/>
+                                <path fill="{{fill ? color:'transparent'}}" d="M9.44958,30L50.5504,4.44605L50.5504,55.5539L9.44958,30Z" stroke-width="{{fill ? 0:strokeWidth}}" stroke="{{color}}"/>
                             </g>
                         </g>
                     </svg>
@@ -88,15 +88,20 @@
             },
             ready:function(){
                 this.$.vid.addEventListener('play',function(){
-                    this.intervalId = setInterval(this.incrementPlayCount.bind(this),this.$.vid.duration*1000);
+                    this.startCounting();
+                }.bind(this));
+                this.$.vidReverse.addEventListener('play',function(){
+                    this.startCounting();
                 }.bind(this));
                 this.$.vid.addEventListener('ended',function(){
+                    console.log('forward ended');
                     this.reversePlayback();
                 }.bind(this));
                 this.$.vidReverse.addEventListener('ended',function(){
+                    console.log('reverse ended');
                     this.reversePlayback();
                 }.bind(this));
-                if(this.src){                                           //if src defined, fetch converted gfyName
+                if(this.src && !this.src.match(/\.gifv/)){                                           //if src defined, fetch converted gfyName
                     this.$.gfyAjax.addEventListener("core-response", function(e) {
                             this.gfyName=e.detail.response.gfyName;
                             //this.$.vid.src="http://zippy.gfycat.com/"+this.gfyName+".mp4";
@@ -107,14 +112,34 @@
             },
             incrementPlayCount:function(){
                 this.playCount++;
-                if(this.playCount===this.ntimes){
+                if(this.playCount===this.ntimes || this.interrupt){
                     this.pauseVid();
-                    this.resetPlayCount();
+                    if(this.interrupt){
+                        this.interrupt = false;
+                        this.playVid();
+                    }
                 }
             },
             resetPlayCount:function(){
                 this.playCount=0;
-                clearInterval(this.intervalId);
+                if(this.intervalId){
+                    clearInterval(this.intervalId);
+                    this.intervalId=undefined;
+                }
+            },
+            startCounting:function(){
+                console.log(this.intervalId);
+                if(!this.intervalId){
+                    console.log('starting to count');
+                    var ppMultiplier = 1;
+                    if(this.pingPongActive){                                        //backward and forward will count as 1
+                        ppMultiplier=2;
+                        console.log(ppMultiplier);
+                    }
+                    var interval = this.$.vid.duration*(1/this.speed)*ppMultiplier*1000;
+                    console.log(interval);
+                    this.intervalId = setInterval(this.incrementPlayCount.bind(this),interval);
+                }
             },
             getExt:function(){
                 var testVid = document.createElement('video');
@@ -164,12 +189,15 @@
                 }
             },
             autoResume:function(){
-                if(this.state==='pause') this.playVid();
+                if(this.state==='pause'){
+                    this.playVid();
+                } else {
+                    this.interrupt = true;
+                }
             },
             increaseSpeed:function(e,d,s){
                 e.stopPropagation();
                 this.mobileCtrlReset();
-                this.autoResume();
                 if(this.speed<1){
                     this.speed *= 2;
                 } else {
@@ -177,11 +205,11 @@
                 }
                 this.$.vid.playbackRate=this.speed;
                 this.$.vidReverse.playbackRate=this.speed;
+                this.autoResume();
             },
             decreaseSpeed:function(e,d,s){
                 e.stopPropagation();
                 this.mobileCtrlReset();
-                this.autoResume();
                 if(this.speed<1){
                     this.speed /= 2;
                 } else {
@@ -189,12 +217,20 @@
                 }
                 this.$.vid.playbackRate=this.speed;
                 this.$.vidReverse.playbackRate=this.speed;
+                this.autoResume();
             },
             reversePlayback:function(e,d,s){
+                console.log('reverse method called');
                 if(e) {
                     e.stopPropagation();
                     this.mobileCtrlReset();
+                    this.resetPlayCount();
+                    this.checkState();
+                    if(this.pingPongActive){
+                        this.deactivatePingPong();
+                    }
                 }
+                
                 if(this.playMode === 'reverse'){
                     this.$.vidReverse.pause();
                     this.$.vidReverse.setAttribute('hidden',"true");
@@ -202,6 +238,7 @@
                     this.$.vid.currentTime=0;
                     this.$.vid.play();
                     this.playMode = 'forward';
+                    console.log('play forward');
                 } else {
                     this.$.vid.pause();
                     this.$.vid.setAttribute('hidden',"true");
@@ -209,8 +246,9 @@
                     this.$.vidReverse.currentTime=0;
                     this.$.vidReverse.play();
                     this.playMode = 'reverse';
+                    console.log('play backward');
                 }
-                this.checkState();
+                
             },
             checkState:function(){
                 if(this.state==='pause') this.state='play';
@@ -225,11 +263,10 @@
                 }
             },
             activatePingPong:function(){
-                this.$.vid.removeAttribute('loop');
-                this.$.vid.play();
-                this.$.vidReverse.removeAttribute('loop');
-                this.$.vidReverse.play();
                 this.pingPongActive=true;
+                this.$.vid.removeAttribute('loop');
+                this.$.vidReverse.removeAttribute('loop');
+                this.playVid();
                 this.checkState();
             },
             deactivatePingPong:function(){
@@ -238,28 +275,26 @@
                 this.pingPongActive=false;
             },
             playVid:function(){
+                this.resetPlayCount();
                 this.$.vid.play();
                 this.$.vidReverse.play();
                 this.state='play';
             },
             pauseVid:function(){
+                this.resetPlayCount();
                 this.$.vid.pause();
                 this.$.vidReverse.pause();
-                this.resetPlayCount();
                 this.state='pause';
             },
             stateChanged:function(attrName, oldVal, newVal){
                 this.triggerToggleEvent();
             },
             toggleState:function(e,d,s){
-                if(!this.hideTimeOut){                          //for mobile case
-                    this.showCtrls();
-                }
-                e.target.blur();
+                if(!this.hideTimeOut) this.showCtrls();                //for mobile case
                 if(this.state==='play' || this.state === undefined){
-                this.pauseVid();
+                    this.pauseVid();
                 } else if (this.state ==='pause') {
-                this.playVid();
+                    this.playVid();
                 }
               //this.triggerToggleEvent();
             },

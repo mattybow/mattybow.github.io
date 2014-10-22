@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/paper-ripple/paper-ripple.html">
 
-<polymer-element name="paper-fa-icon-button" attributes="faclass size">
+<polymer-element name="paper-fa-icon-button" attributes="faclass size facolor">
 	<template>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<style>
@@ -26,7 +26,6 @@
 			  outline:0;
 			}
 			.fa{
-			  color:#aaa;
 			  text-decoration:none;
 			  display:block;
 			  margin-right:auto;
@@ -64,12 +63,13 @@
 		</style>
 		<div class="button">
 			<paper-ripple id="ripple" class="circle recenteringTouch"></paper-ripple>
-			<i class="fa {{faclass}}"></i>
+			<i class="fa {{faclass}}" _style="color:{{facolor}};"></i>
 		</div>
 	</template>
 	<script>
 		Polymer('paper-fa-icon-button', {
-			faclass:"fa-twitter"
+			faclass:"fa-twitter",
+			facolor:"black"
 		});
 	</script>
 </polymer-element>

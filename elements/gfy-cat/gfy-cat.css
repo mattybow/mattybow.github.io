@@ -43,8 +43,6 @@ video {
   clear: both; }
 
 #gfyCtrlBox svg {
-  width: 100%;
-  height: auto;
   display: block;
   margin-bottom: 5%; }
   #gfyCtrlBox svg:hover {
@@ -61,7 +59,8 @@ playpause-svg.shown {
   opacity: 1; }
 
 .speedCtrl {
-  position: relative; }
+  position: relative;
+  max-height: 30%; }
 
 #speed {
   position: relative;
@@ -72,7 +71,11 @@ playpause-svg.shown {
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   opacity: 0.7;
-  width: 100%; }
+  width: 100%;
+  height: 10%; }
+
+.speedCtrl > .bttn {
+  height: 50%; }
 
 .bttn:hover {
   opacity: 1; }

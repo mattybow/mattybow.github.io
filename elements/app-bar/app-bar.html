@@ -3,14 +3,13 @@
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-fa-icon-button/paper-fa-icon-button.html">
 <link rel="import" href="../menu-hamburger/menu-hamburger.html">
-<polymer-element name="app-bar" attributes="items itemPos logo logoPos social">
+<polymer-element name="app-bar" attributes="items itemPos logo logoPos social color">
 	<template>
 		<style>
 			:host {
 				display: block;
 				background:transparent;
 				z-index:100;
-				color:#aaa;
 				position:absolute;
 				width:100%;
 			}
@@ -26,7 +25,6 @@
 				padding-top:20px;
 				display:inline-block;
 				position:absolute;
-				color:#aaa;
 				white-space:nowrap;
 			}
 			paper-button::shadow #ripple ,paper-icon-button::shadow #ripple{
@@ -111,16 +109,16 @@
 			<content select="img"></content>
 			<content select=".brand"></content>
 		</div>
-		<div class="{{itemPos}} item-wrapper">
+		<div class="{{itemPos}} item-wrapper" style="color:{{color}}">
 			<template repeat={{items}}>
 				<div class="stage">
 				<paper-button label="{{}}" id="{{}}"></paper-button>
 				</div>
 			</template>
 			<div class="social">
-				<template repeat="{{social}}">
+				<template repeat="{{social as social}}">
 					<div class="stage">
-						<paper-fa-icon-button faclass="{{}}" class="{{}}" size="35"></paper-fa-icon-button>
+						<paper-fa-icon-button faclass="{{social}}" class="{{social}}" size="35" facolor="{{color}}"></paper-fa-icon-button>
 					</div>
 				</template>
 			</div>
@@ -136,6 +134,7 @@
 				this.items=[];
 				this.social=[];
 				this.itemsHidden=false;
+				this.color='black';
 			},
 			domReady:function(){
 				this.scrollObj = document.getElementsByClassName('parallax')[0];
