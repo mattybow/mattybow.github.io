@@ -3,10 +3,8 @@
 <svg width="60px" height="60px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
     <g>
         <g>
-            <path d="M48,30L2.14719,57.7786L2.14719,2.22145L48,30Z" style="fill:none;stroke-width:1.2px;stroke:black;stroke-opacity:0.662745;"/>
-        </g>
-        <g>
-            <path d="M12,30L57.8528,2.22145L57.8528,57.7786L12,30Z" style="fill:none;stroke-width:1.2px;stroke:black;stroke-opacity:0.662745;"/>
+            <path d="M45.4798,30L6.04689,53.8893L6.04689,6.11072Z" style="fill:none;stroke-width:1.03px;stroke:black;stroke-opacity:0.658824;"/>
+            <path d="M14.5202,30L53.9531,6.11072L53.9531,53.8893Z" style="fill:none;stroke-width:1.03px;stroke:black;stroke-opacity:0.658824;"/>
         </g>
     </g>
 </svg>
