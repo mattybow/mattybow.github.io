@@ -40,7 +40,7 @@
                         </svg>
                     </div>
                 </div>
-                <div id="pingpong" >
+                <div id="pingpong">
                     <div class="bttn" on-mouseup="{{togglePingPong}}" title="pingpong playback">
                         <svg version="1.1" id="speedDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.41421;"> 
                             <g>
@@ -133,16 +133,19 @@
             incrementPlayCount:function(){
                 this.playCount++;
                 console.log("playCount=" + this.playCount,"endCount="+this.ntimes);
-                if(this.playCount===this.ntimes || this.interrupt){
+                var userIntervention = this.interrupt;                              //make copy of interrupt flag because pauseVid will clear flag
+                if(this.playCount===this.ntimes || userIntervention){
                     this.pauseVid();
-                    if(this.interrupt){
-                        this.interrupt = false;
+                    if(userIntervention){
                         this.playVid(true);                                         //if user has pressed a control during playback, reset the playCount
                     }
                 }
             },
             resetPlayCount:function(){
                 this.playCount=0;
+            },
+            clearInterrupt:function(){
+                this.interrupt = false;
             },
             pingPongActiveChanged:function(){
                 this.toggleNTimes();
@@ -236,14 +239,6 @@
                 this.autoResume(false);
             },
             reversePlayback:function(e,d,s){
-                if(e) {
-                    e.stopPropagation();
-                    this.mobileCtrlReset();
-                    if(this.pingPongActive){
-                        this.deactivatePingPong();
-                    }
-                }
-                
                 if(this.playMode === 'reverse'){
                     this.playMode = 'forward';
                     console.log('play forward');
@@ -251,7 +246,25 @@
                     this.playMode = 'reverse';
                     console.log('play backward');
                 }
+
+                if(e) {
+                    e.stopPropagation();
+                    this.mobileCtrlReset();
+                    this.updateReverseUI();
+                    if(this.pingPongActive){
+                        this.deactivatePingPong();
+                        this.playMode='reverse';                                //when pingpong is cancelled by activation of reverse playback, update the ui
+                        this.updateReverseUI();
+                    }
+                }
                 
+            },
+            updateReverseUI:function(forceState){
+                if(this.playMode==='forward' || forceState===false){
+                    this.$.reverse.classList.remove('active');
+                } else {
+                    this.$.reverse.classList.add('active');
+                }
             },
             rePlay:function(){
                 this.playVid();
@@ -262,6 +275,7 @@
                 this.mobileCtrlReset();
                 if(this.pingPongActive){
                     this.deactivatePingPong();
+                    if(this.playMode!=='forward') this.playMode='forward';      //when pingpong is explicitly cancelled, forward mode playback is initiated
                 } else {
                     this.activatePingPong();
                 }
@@ -269,12 +283,18 @@
             activatePingPong:function(){
                 this.pingPongActive=true;
                 this.$.pingpong.classList.add('active');
-                this.autoResume(true);
+                this.autoResume(true);                                          //autoPlays or triggers interrupt
+                this.updateReverseUI(false);                                    //forces reverse UI control to deactivate
+                this.removeLoop();
             },
             deactivatePingPong:function(){
                 this.pingPongActive=false;
                 this.$.pingpong.classList.remove('active');
                 this.autoResume(true);
+            },
+            removeLoop:function(){
+                this.$.vid.removeAttribute('loop');
+                this.$.vidReverse.removeAttribute('loop');
             },
             playModeChanged:function(){
                 var reset = !this.pingPongActive;
@@ -282,6 +302,7 @@
             },
             playVid:function(reset){
                 if(reset){
+                    this.clearInterrupt();
                     this.resetPlayCount();
                     this.rewind();
                 }
@@ -324,7 +345,6 @@
                 } else if (this.state ==='pause') {
                     this.playVid();
                 }
-              //this.triggerToggleEvent();
             },
             triggerToggleEvent:function(){
                 var that = this;
