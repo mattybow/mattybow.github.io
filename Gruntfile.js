@@ -124,7 +124,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('something', ['requirejs:js']);
-  grunt.registerTask('build',['sass:vendor','sass:dist','vulcanize','exec:build']);
+  grunt.registerTask('build',['sass:vendor','sass:dist','vulcanize']);
   grunt.registerTask('serve',['build','connect:server','watch']);
 
 };

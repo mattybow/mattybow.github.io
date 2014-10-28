@@ -13,28 +13,23 @@ Awesome, this kind of works.  This is my first blog post, hopefully one of many.
 
 Initially, I wanted to put a few animated [`x-gifs`][xgifs] in the first post, but the box and the dragon totally hosed the memory.  That's where [gfycat][gfycat] and [`gfy-cat`][gfy-cat] comes in.  I thought, this might be a good candidate for encapsulation in a polymer component.  If you want to give it a try, here's the [source][gfy-cat].  If you have no idea what I'm talking about, click here or scroll down to see the more detailed explanation.
 
-###Demo:
-<hr>
+###Demo
 
 {% include xGifCatsFlex.html %}
 
 <br>
 
-###Features:
-<hr>
+###Features
 
 1. gif src or gfycat gfyName attribute
 2. controls done with svgs
-3. optional svg animations
-4. web component
+3. web component
 
 One thing that x-gif has over gfy-cat is background transparency is preserved.  The cube is a prime example, its background can be transparent, but in a `<video>` element, that's not possible. 
 
-###Details:
-<hr>
+###Details
 
-####Gifs:
-I love gifs, choosy moms choose gif, but there are several problems with gifs.  Performance sucks, especially with multiple gifs and/or large gifs.  No playback controls.  Not a new problem.
+Gifs--I love gifs, choosy moms choose gif, but there are several problems with gifs.  Performance sucks, especially with multiple gifs and/or large gifs.  No playback controls.  Not a new problem.
 
 Common solution is to display the gif as a `<video>` element.
 
