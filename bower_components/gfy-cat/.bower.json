@@ -1,0 +1,42 @@
+{
+  "name": "gfy-cat",
+  "version": "0.0.3",
+  "description": "displaying a gif src as a html5 video element through polymer webcomponent",
+  "license": "MIT",
+  "authors": [
+    "Matt Bow <mattybow@gmail.com>"
+  ],
+  "main": "dist/gfy-cat/gfy-cat.html",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "gfy-cat",
+    "gfycat",
+    "gif"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.4.1",
+    "core-elements": "Polymer/core-elements#~0.4.2"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.2.0",
+    "modernizr": "~2.8.3",
+    "x-gif": "~0.1.1"
+  },
+  "homepage": "https://github.com/mattybow/gfy-cat",
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.3",
+    "commit": "561fde7f2e8a490b3a81decc26edb1aba00a81e2"
+  },
+  "_source": "git://github.com/mattybow/gfy-cat.git",
+  "_target": "~0.0.3",
+  "_originalSource": "gfy-cat",
+  "_direct": true
+}
