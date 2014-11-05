@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "gfy-cat webcomponent"
+date:   2014-11-14 16:15:47
+categories: polymer gfycat webcomponents
+image: kitten-sm.jpg
+snapshot: lex-sm.jpg
+polymer: yes
+customResource: custResXGIF.html
+---
+Testing 123.
+
+Awesome, this kind of works.  This is my first blog post, hopefully one of many.  In the coming months I'll be posting my experiments, trials, failures, and frustrations with using various front end technologies.  This is record of the things that I'm interested in.  I'm hoping that this will also serve as a platform for me to find others that are interested in similar things.
+
+Initially, I was experimenting with [polymer](https://www.polymer-project.org/) when I made this first post.  I wanted to put a few animated [`x-gifs`][xgifs] in the post just for fun and then quickly learned about the weaknesses of gif.
+
+Displaying the morphing box and the dragon totally hosed my browser's memory.  That's where [gfycat][gfycat] and [`gfy-cat`][gfy-cat] comes in.  I thought, this might be a good candidate for encapsulation in a polymer component.  If you want to give it a try, here's the [source](https://github.com/mattybow/gfy-cat).  If you have no idea what I'm talking about, scroll down to see the more detailed explanation.
+
+###Demo
+
+{% include xGifCatsFlex.html %}
+
+<br>
+
+###Features
+
+1. gif src or gfycat gfyName attribute
+2. controls done with svgs
+3. web component
+
+One thing that x-gif has over gfy-cat is background transparency is preserved.  The blobby cube above is a prime example, its background can be transparent, but in a `<video>` element, that's not possible. 
+
+###Details
+
+Gifs--I love gifs, choosy moms choose gif, but there are several problems with gifs.  Performance sucks, especially with multiple gifs and/or large gifs.  No playback controls.  Not a new problem.
+
+Common solution is to display the gif as a `<video>` element.
+
+[Gfycat][gfycat] does just this.  It is a conversion service that also hosts the converted gifs thru AWS.
+
+So what wth is gfy-cat?  It's a polymer element.  It acts just as a normal html tag would with attributes that control the way it is displayed.  It takes in either a src attribute or the gfyName returned by gfycat and displays your gif as a video element complete with playback controls.  There are other attributes that will allow you to control how many times it loops, what the controls look like, and how large it is compared to it's parent element.
+
+This is not a perfect solution because iOS safari has so many limitations on `<video>`.
+
+###Lessons Learned
+
+####[IE and svgs](http://1pxsolidtomato.com/2014/10/08/quest-for-scalable-svg-text/)
+
+Svgs without a height specified, despite the `<svg>` having the `viewBox` attribute, IE will default the height to 150px.  The solution was what is known as the [intrisic aspect ratio trick](http://alistapart.com/article/creating-intrinsic-ratios-for-video/).  This uses padding-bottom, which causes the below problem.
+
+
+####[Firefox and padding-bottom](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox)
+
+With flexbox, firefox assesses padding-bottom differently than all other browsers.  Normally, padding-bottom is calculated off the width, but according to the [stack answer](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox), firefox is the only one following the spec correctly and basing it off the respective dimension.
+
+
+####[iOS safari and `<video>`](https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/device-specificconsiderations/device-specificconsiderations.html)
+
+iOS safari doesn't support `loop`, `autoplayback`, loading of metadata on page load, `playbackRate`, simultaneous playback of multiple videos.  The worst part of these unsupported behaviors is the metadata which tells us what the aspect ratio is.  As a result, for iOS devices, I set the height equal to the width and then when the user clicks play, on `loadedmetadata` event, I resize the height to match the video.
+
+
+
+####[IE and polymer bindings in inline style](https://code.google.com/p/dart/issues/detail?id=17075)
+
+Sigh, IE, why?!?!?  For some reason, in IE, data bindings in the inline style attribute don't work and you need to put a `_` infront of style.  Crazy.
+
+
+
+####file paths
+
+When building the dist files for a [bower](http://bower.io/docs/creating-packages/) package, it's probable that you'll need to restructure any paths that you're using in dev because in the download, it'll likely go into a bower_components folder and then into it's own folder.  I used [grunt-replace](https://github.com/outaTiME/grunt-replace) to fix and flatten my files.
+
+
+####vulcanization
+
+It seems that you cannot vulcanize some elements and then use other elements by html importing them ala carte.  It's all or nothing because vulcanizing loads polymer.js and another html import tries to run polymer.js a second time.  So if you do this:
+
+~~~ html
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="gfy-cat-demo.vulcanized.html">
+~~~
+
+you get this 
+
+~~~
+Uncaught HierarchyRequestError: Failed to execute 'appendChild' on 'Node': Nodes of type 'HTML' may not be inserted inside nodes of type '#document'.
+~~~
+
+####[Updating `<source>` inside `<video>`](http://qwt.io/dmthigh/fyVb)
+
+When changing the source element I could not get it to load the new asset even when calling `video.load()`.  The [W3 spec](http://qwt.io/dmthigh/fyVb) says that you should instead use the video `src` attribute.
+
+ 
+
+[flexbox]:   http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[xgifs]: https://github.com/geelen/x-gif
+[gfycat]: http://gfycat.com/
+[gfy-cat]: http://mattbow.com/gfy-cat

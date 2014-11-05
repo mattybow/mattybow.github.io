@@ -2,8 +2,8 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    padding-top:5px;
+    padding-bottom:5px;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -11,11 +11,11 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 23px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
+    vertical-align: middle;
 
     &,
     &:visited {
@@ -110,14 +110,15 @@
 .footer-col-wrapper {
     font-size: 15px;
     color: $grey-color;
-    margin-left: -$spacing-unit / 2;
+    margin-left: $spacing-unit / 2;
+    margin-right: $spacing-unit / 2;
     @extend %clearfix;
 }
 
 .footer-col {
     float: left;
     margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    padding-left: 5%;
 }
 
 .footer-col-1 {
@@ -133,6 +134,9 @@
 .footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
+    float: right;
+    padding-right: 5%;
+    text-align:right;
 }
 
 @include media-query($on-laptop) {
@@ -162,7 +166,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding-bottom: $spacing-unit 0;
 }
 
 .page-heading {
@@ -195,12 +199,19 @@
  */
 .post-header {
     margin-bottom: $spacing-unit;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .post-title {
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
+    text-align:center;
+    color:#eee;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -209,6 +220,8 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+    padding-right: 10%;
+    padding-left: 10%;
 
     h2 {
         font-size: 32px;
@@ -471,4 +484,41 @@ app-bar /deep/ .social .fa-google-plus /deep/ paper-ripple {
 .work-text.flip-up{
     @include transform("rotateX(-90deg)");
     opacity:0;
+}
+.post{
+    h1,h2,h3,h4,h5{
+        padding-top:20px;
+    }
+}
+.logo{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    border-radius:40px;
+    background: url('/images/pickle.svg') no-repeat;
+    vertical-align:middle;
+}
+.flexbox{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow:row wrap;
+    -webkit-align-items:center;
+    align-items:center;
+}
+.flexbox>a{
+    display:-webkit-flex;
+    display:flex;
+    margin-right:5px;
+}
+.ctr{
+    text-align:center;
+}
+.snapshot{
+    width:50px;
+    height:50px;
+    background-size:cover;
+    background-position:center center;
+    display: inline-block;
+    border-radius: 25px;
 }
