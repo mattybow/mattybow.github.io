@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "personal site and blog"
+date:   2014-11-22 21:15:47
+categories: jekyll asmallorange dns 
+image: dr-jekyll-and-mr-hyde-original.png
+snapshot: the-social-network.png
+polymer: yes
+customResource: custResXGIF.html
+---
+Jekyll, I want to love you, but sometimes you make it hard.  After years of making excuses, I finally decided to make a site of my own, have a portfolio or sorts and I chose Jekyll.  Here's why:
+
+###Free is good
+
+With Jekyll, [github](http://jekyllrb.com/docs/home/#so-what-is-jekyll-exactly) hosts your assets for free and they're quite good at it with their [CDN](https://github.com/blog/1715-faster-more-awesome-github-pages).  Plus, you get all the benefits of versioning, diffing, branching, and all of github's special sauce.
+
+There are a lot of other [blog solutions](http://mashable.com/2014/05/09/16-minimalist-blogging-platforms/) out there, which I did not research in depth, but it seems like a lot of the alternatives cater to blog migration from jekyll.
+
+###Everyone's doing it
+
+ok maybe not everyone, but [this guy](http://www.colorglare.com/2014/01/10/going-public.html) and [this gal?](http://24ways.org/2013/get-started-with-github-pages/) and [this guy](http://1pxsolidtomato.com/2014/08/28/jekyll-less-gruntfile/) think it's alright, so wth not?  Also, [Jekyll](http://jekyllrb.com/) has a sexy logo along with some decent documentation.
+
+In all seriousness, I wanted to be able to write blog posts using the technology that I'm blogging about and there is just enough wiggle room to make this work inside of jekyll's blog templating structure.
+
+<br>
+<hr>
+So what makes Jekyll hard to swallow?
+
+###Build Time
+
+Maybe because it's ruby, maybe I have too many plugins, but for some reason when I'm developing locally with grunt's livereload executing jekyll build, that tasks takes anywhere from between 10-50 seconds.  I have 2 posts right now, [this guy](http://martin-thoma.com/jekyll-and-git/) has much more than me and his takes 6 minutes to build, sheesh!
+
+![alt text](/images/jekyll-build.png "build time capture")
+
+###Learning Curve
+
+Between Jekyll's use of [front matter](http://jekyllrb.com/docs/frontmatter/) and the templating framework called [Liquid](http://jekyllrb.com/docs/templates/) from Shopify, it's takes a little while to figure out how to use the directory structure and the `include`s to create different post templates.  Also, some say that Liquid is [responsible](https://github.com/jekyll/jekyll/issues/1855#issuecomment-31385063) for the long build times.
+
+ 
+
+[flexbox]:   http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[xgifs]: https://github.com/geelen/x-gif
+[gfycat]: http://gfycat.com/
+[gfy-cat]: http://mattbow.com/gfy-cat
