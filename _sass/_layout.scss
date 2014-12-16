@@ -328,7 +328,7 @@
     z-index: 1;
 }
 #top-pane{
-    height:400px;
+    height:100%;
     //background-color:violet;
 }
 #blog-pane{
@@ -454,13 +454,33 @@ $screen-sm:768px;
 }
 .transparentBG{
   opacity:1;
-  background-image:url('/images/cubistBG.svg');
+  background-color:transparent;
   background-position:50% 50%;
   background-repeat:no-repeat;
   background-size:cover;
   position:absolute;
   width:100%;
   height:100%;
+}
+
+#particles-js{
+    height:1000px;
+    width:1000px;
+    border-radius:1000px;
+    bottom: 15%;
+    position: absolute;
+    overflow: hidden;
+    left: 50%;
+    box-shadow: 0 1px 10px;
+    background-color:$blog-grey;
+}
+
+.blog-grey{
+    color: $blog-grey;
+}
+
+.blog-l-grey{
+    color: rgba(10,10,10,0.4);
 }
 
 .work-title>h2{
@@ -503,6 +523,12 @@ app-bar /deep/ .social .fa-google-plus /deep/ paper-ripple {
     h1,h2,h3,h4,h5{
         padding-top:20px;
     }
+}
+
+#pane1-text{
+  z-index:101;
+  font-weight:300;
+  margin-bottom:15px;
 }
 .logo{
     display:inline-block;
