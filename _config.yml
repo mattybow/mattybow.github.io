@@ -9,6 +9,8 @@ twitter_username: dmthigh
 github_username:  mattybow
 image: Kitten.jpg
 
+permalink: pretty
+
 # Build settings
 markdown: kramdown
 sass:

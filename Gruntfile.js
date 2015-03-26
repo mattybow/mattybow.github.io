@@ -63,6 +63,7 @@ module.exports = function(grunt) {
         "_posts/**/*",
         "_sass/**/*",
         "css/**/*",
+        "blog/**/*",
         "elements/**/*",
         "js/**/*",
         "_config.yml",
@@ -124,7 +125,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('something', ['requirejs:js']);
-  grunt.registerTask('build',['sass:vendor','sass:dist','vulcanize']);
+  grunt.registerTask('build',['sass:vendor','sass:dist']);
   grunt.registerTask('serve',['build','connect:server','watch']);
 
 };

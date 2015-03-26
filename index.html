@@ -1,8 +1,7 @@
 ---
 layout: base
 ---
-<app-bar items="['projects','blog','resume']" social="['fa-facebook','fa-twitter','fa-google-plus']" itemPos="right" color="#fff">
-</app-bar>  
+ 
 <div class="" id="parallax-maybe">
   <div class="contentpane parallax-group" id="top-pane">
     <div class="transparentBG parallax-layer parallax-back">
@@ -13,53 +12,6 @@ layout: base
       <div class="h4 blog-l-grey" id="pane1-text">developer, tinkerer</div>
     </div>
   </div>
-
-  <div class="contentpane" id="blog-pane">
-    <div class="inner">
-      <div class="post-list">
-        {% for post in site.posts %}
-          <preview-card>
-            <img src="/images/{{post.image}}" alt="some bloggy image">
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <p class="preview">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-          </preview-card>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  <div class="contentpane full-height" id="work-section">
-    <div class="col-sm-4 full-height work-pane" id="work-dev">
-      <div class="dark-grad"></div>
-      <a href="#" class="transparent-link"></a>
-      <flip-label>
-        <div class="title">dev</div>
-        <div class="descript">web development projects</div>
-      </flip-label>
-    </div>
-    <div class="col-sm-4 full-height work-pane" id="work-photo">
-      <div class="dark-grad"></div>
-      <a href="https://www.tumblr.com/blog/mattbow" class="transparent-link"></a>
-      <flip-label>
-        <div class="title">photo</div>
-        <div class="descript">photos of people and places I love</div>
-      </flip-label>
-    </div>
-    <div class="col-sm-4 full-height work-pane" id="work-vid">
-      <div class="dark-grad"></div>
-      <a href="https://vimeo.com/mattbow/videos" class="transparent-link"></a>
-      <flip-label>
-        <div class="title">vid</div>
-        <div class="descript">no budget, documentary-style short films</div>
-      </flip-label>
-    </div>
-  </div>
-
-  <div class="contentpane full-height parallax-group" id="somethingElse-pane">
-    <canvas class="hero__background" width="200" height="200" id="heroCanvas"></canvas>
-  </div>
-  <scroll-listener></scroll-listener>
 </div>
 
 

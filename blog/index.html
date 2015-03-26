@@ -1,0 +1,18 @@
+---
+layout: base
+---
+<div class="blog">
+	<div class="billboard">
+		<div class="billboard-bg"></div>
+		<div class="billboard-text">blog</div>
+	</div>
+	<div class="contentpane" id="blog-pane">
+		<div class="inner">
+		  <div class="posts">
+		    {% for post in site.posts %}
+		      {% include blog_row.html title=post.title  date=post.date tags=post.tags %}
+		    {% endfor %}
+		  </div>
+		</div>
+	</div>
+</div>

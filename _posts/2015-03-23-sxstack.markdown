@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "mobile app and data scraping"
+date:   2015-03-23 21:15:47
+image: UI-inspiration-2.jpg
+thumb: UI-inspiration-2.jpg
+snapshot: the-social-network.png
+tags: mobile scraping
+---
+sxstack mobile app [sxstack]
+
+[sxstack]:   http://sxstack.com

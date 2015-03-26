@@ -2,16 +2,13 @@
 layout: post
 title:  "gfy-cat webcomponent"
 date:   2014-11-14 16:15:47
-categories: polymer gfycat webcomponents
+tags: polymer gfycat webcomponents
 image: kitten-sm.jpg
+thumb: kitten-sm-thumb.jpg
 snapshot: lex-sm.jpg
 polymer: yes
 customResource: custResXGIF.html
 ---
-Testing 123.
-
-Awesome, this kind of works.  This is my first blog post, hopefully one of many.  In the coming months I'll be posting my experiments, trials, failures, and frustrations with using various front end technologies.  This is record of the things that I'm interested in.  I'm hoping that this will also serve as a platform for me to find others that are interested in similar things.
-
 Initially, I was experimenting with [polymer](https://www.polymer-project.org/) when I made this first post.  I wanted to put a few animated [`x-gifs`][xgifs] in the post just for fun and then quickly learned about the weaknesses of gif.
 
 Displaying the morphing box and the dragon totally hosed my browser's memory.  That's where [gfycat][gfycat] and [`gfy-cat`][gfy-cat] comes in.  I thought, this might be a good candidate for encapsulation in a polymer component.  If you want to give it a try, here's the [source](https://github.com/mattybow/gfy-cat).  If you have no idea what I'm talking about, scroll down to see the more detailed explanation.

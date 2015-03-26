@@ -1,0 +1,27 @@
+<div class="blog-row">
+	<a class="no-link-style" href="{{ post.url | prepend: site.baseurl }}">
+	<!--<div class="expand-button">
+		<svg width="50" height="50" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+		    <g>
+		        <g id="Layer2">
+		            <path d="M50,0.787916C77.1791,0.787916 99.2121,22.8209 99.2121,50C99.2121,77.1791 77.1791,99.2121 50,99.2121C22.8209,99.2121 0.787916,77.1791 0.787916,50C0.787916,22.8209 22.8209,0.787916 50,0.787916Z" style="fill:none;stroke-width:0.42px;stroke:black;"/>
+		        </g>
+		        <g id="Layer3">
+		            <g>
+		                <path d="M32.0606,58.9697L50,41.0303L67.9394,58.9697" style="fill:none;stroke-width:2px;stroke-linecap:square;stroke-linejoin:miter;stroke:black;"/>
+		            </g>
+		        </g>
+		    </g>
+		</svg>
+	</div>-->
+	<div class="colored-block"><img src="/images/{{post.thumb}}" alt="some bloggy image"></div>
+	<div class="blog-row-detail blog-row-title"><h4>title</h4>{{ include.title }}</div>
+	<div class="blog-row-detail blog-row-date"><h4>date</h4>{{ include.date | date: "%b %-d, %Y" }}</div>
+	<div class="blog-row-detail">
+		<h4>tags</h4>
+		{% for tag in include.tags %}
+		<span class="blog-row-tag">{{ tag }}</span>
+		{% endfor %}
+	</div>
+	</a>
+</div>

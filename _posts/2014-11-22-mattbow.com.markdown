@@ -2,8 +2,9 @@
 layout: post
 title:  "personal site and blog"
 date:   2014-11-22 21:15:47
-categories: jekyll asmallorange dns 
-image: dr-jekyll-and-mr-hyde-original.png
+tags: jekyll asmallorange dns 
+image: jekyll2.png
+thumb: jekyll-thumb.png
 snapshot: the-social-network.png
 polymer: yes
 customResource: custResXGIF.html
@@ -35,8 +36,6 @@ Maybe because it's ruby, maybe I have too many plugins, but for some reason when
 ###Learning Curve
 
 Between Jekyll's use of [front matter](http://jekyllrb.com/docs/frontmatter/) and the templating framework called [Liquid](http://jekyllrb.com/docs/templates/) from Shopify, it's takes a little while to figure out how to use the directory structure and the `include`s to create different post templates.  Also, some say that Liquid is [responsible](https://github.com/jekyll/jekyll/issues/1855#issuecomment-31385063) for the long build times.
-
- 
 
 [flexbox]:   http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 [xgifs]: https://github.com/geelen/x-gif

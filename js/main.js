@@ -6,7 +6,6 @@ require.config({
 		imgloaded:"imagesloaded/imagesloaded",
 		skrollr:"skrollr/dist/skrollr.min",
 		fishbone:"fishbone.js/fishbone",
-		BlurStack:"../js/blurstack",
 		particlesJS:"particles.js/particles.min"
 	}
 });
@@ -15,7 +14,6 @@ require(["jquery",
 		"imgloaded",
 		"skrollr",
 		"fishbone",
-		"BlurStack",
 		"particlesJS"],
 	function($,
 			imagesloaded,
@@ -24,27 +22,6 @@ require(["jquery",
 			blur){
 	imagesloaded('body',function(){
 		console.log('images have loaded sir');
-
-		var drawBlur = function() {
-			// Store the width and height of the canvas for below
-			var w = canvas.width;
-			var h = canvas.height;
-			// This draws the image we just loaded to our canvas
-			canvasContext.drawImage(canvasBG, 0, 0, 400, h);
-			// This blurs the contents of the entire canvas
-			blur("heroCanvas", 0, 0, w, h, 100);
-		};
-
-		var blurElements = {'heroCanvas':'/images/yosemiteColor.jpg'};
-		for (var key in blurElements){
-			var canvas = document.getElementById(key);
-			var canvasContext = canvas.getContext('2d');
-			var canvasBG = new Image();
-			canvasBG.src=blurElements[key];
-			canvasBG.onload = function() {
-				drawBlur();
-			};
-		}
 
 		particlesJS('particles-js', {
 			particles: {

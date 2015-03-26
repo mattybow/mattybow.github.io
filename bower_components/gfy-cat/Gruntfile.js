@@ -15,8 +15,8 @@ module.exports = function(grunt) {
             },
             src: [
                 'bower_components/**/*',
-                '!bower_components/core*/**/*',
-                '!bower_components/paper*/**/*',
+                'bower_components/core*/**/*',
+                'bower_components/paper*/**/*',
                 '!bower_components/gfy-cat/**/*',
                 'images/*',
                 'css/*','src/**/*', 'gfy-cat-demo.vulcanized.html','index.html','favicon.ico'
@@ -42,6 +42,14 @@ module.exports = function(grunt) {
                 },
                 {
                   match: /\/bower_components/g,
+                  replacement: ''
+                },
+                {
+                  match:/\.\.\/\.\.\/\.\.\//,
+                  replacement: '../../'
+                },
+                {
+                  match:/\.\/core-ajax\//,
                   replacement: ''
                 }
               ]
