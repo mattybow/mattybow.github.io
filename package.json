@@ -34,5 +34,8 @@
     "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^1.0.0",
     "vulcanize": "^0.4.2"
+  },
+  "dependencies": {
+    "grunt-sass": "^1.0.0"
   }
 }

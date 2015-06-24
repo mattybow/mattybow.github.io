@@ -83,7 +83,8 @@ module.exports = function(grunt) {
       },
       vendor: {
         files: {
-          "_sass/_bootstrap.scss":"bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap"
+          "_sass/_bootstrap.scss":"bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap",
+          "_sass/_slick-theme.scss":"bower_components/slick.js/slick/slick-theme.scss"
         }
       },
       dist: {

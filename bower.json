@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "fishbone.js": "~1.0.1",
     "imagesloaded": "~3.1.8",
     "requirejs": "~2.1.14",
     "skrollr": "~0.6.26",
@@ -25,6 +24,10 @@
     "polymer": "Polymer/polymer#~0.4.1",
     "x-gif": "~0.1.1",
     "snap.svg": "~0.3.0",
-    "gfy-cat": "~0.0.6"
+    "gfy-cat": "~0.0.6",
+    "slick.js": "~1.4.1",
+    "d3": "~3.5.5",
+    "fastclick": "~1.0.6",
+    "bluebird": "~2.9.24"
   }
 }

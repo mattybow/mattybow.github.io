@@ -1,18 +1,223 @@
 ---
 layout: base
 ---
- 
+<div id="menu-holder">
+  <div id="menu-back"></div>
+  <div class="nav" id="mobile-nav">
+    <ul>
+      <li><div class="list-text">PROJECTS</div></li>
+      <li><div class="list-text">ABOUT</div></li>
+      <li><div class="list-text">BLOG</div></li>
+    </ul>
+  </div>
+</div>
+<div id="hamburger-button">
+  <svg viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+      <g stroke-linecap="miter" style="fill:none;stroke-width:1px;stroke:rgb(20,20,20);">
+          <path d="M4.5,9L30,9"/>
+          <path d="M4.5,17L30,17"/>
+          <path d="M4.5,25L30,25"/>
+      </g>
+  </svg>
+</div>
 <div class="" id="parallax-maybe">
   <div class="contentpane parallax-group" id="top-pane">
-    <div class="transparentBG parallax-layer parallax-back">
-      <div id="particles-js"></div>
+    <div class="nav" id="desktop-nav">
+      <ul class="horizontal">
+        <li>PROJECTS</li>
+        <li>ABOUT</li>
+        <li>BLOG</li>
+      </ul>
     </div>
-    <div class="v-cent lato whiteText parallax-layer parallax-base" id="welcome">
-      <div class="h2 blog-grey">matt bow</div>
-      <div class="h4 blog-l-grey" id="pane1-text">developer, tinkerer</div>
+    <div class="transparentBG parallax-layer parallax-back" id="brush-bg">
     </div>
   </div>
 </div>
-
+<div class="section-container" id="work">
+  <div class="section-content">
+    <!--<div class="slick-container">
+      <div class="slick-item" id="sxstack">
+        <div class="slick-content">
+          <div class="glass blue-glass"></div>
+          <div class="slick-text"><h3>sxstack</h3></div>
+        </div>
+      </div>
+      <div class="slick-item" id="via">
+        <div class="slick-content">
+          <div class="glass blue-glass"></div>
+          <div class="slick-text"><h3>via gelato</h3></div>
+        </div>
+      </div>
+      <div class="slick-item" id="gfy">
+        <div class="slick-content">
+          <div class="glass blue-glass"></div>
+          <div class="slick-text"><h3>gfy-cat</h3></div>
+        </div>
+      </div>
+      <div class="slick-item" id="vapor">
+        <div class="slick-content">
+          <div class="glass pink-glass"></div>
+          <div class="slick-text">
+            <h3 id="vapor-text">vapor</h3>
+            <p>a backbone.js webapp for internal software version control</p>
+            <button class="btn-default btn-md">view project</button>
+          </div>
+          <img src="images/vapor_sc2.png" width="400" alt="">
+        </div>
+      </div>
+      <div class="slick-item" id="avocadyo">
+        <div class="slick-content">
+          <div class="slick-bg" style="background-color:papayawhip;"></div>
+          <div class="slick-text"><h3>avocadyo</h3></div>
+        </div>
+      </div>
+    </div>
+    <button class="prevArrow slick-button"></button>
+    <button class="nextArrow slick-button"></button>-->
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="project-pane">
+          <div class="text-pane">
+            <h3>PROJECTS</h3>
+            <div class="descript-line"></div>
+            <p class="double-spaced lg-2">
+              <span>that have challenged me to contemplate&nbsp;</span>
+              <span class="highlighted">state management</span> 
+              <span>&nbsp;and&nbsp;</span>
+              <span class="highlighted">data flow</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="project-pane">
+          <div class="project-pic right">
+            <img src="images/vapor_sc2.png" alt="project-pic">
+          </div>
+          <div class="overlay-pane">
+            <div class="proj-descript">
+              <h3>SXSTACK</h3>
+              <div class="descript-line"></div>
+              <h5>mobile web app</h5>
+            </div>
+            <div class="overlay-bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="project-pane" style="background-color:burlywood;">
+          <div class="project-pic right">
+            <img src="images/vapor_sc3_sm.png" alt="project-pic">
+          </div>
+          <div class="overlay-pane">
+            <div class="proj-descript">
+              <h3>VAPOR</h3>
+              <div class="descript-line"></div>
+              <h5>desktop web app</h5>
+            </div>
+            <div class="overlay-bg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="project-pane">
+          <div class="project-pic left">
+            <img src="images/gfy-cat_sc1.png" alt="project-pic">
+          </div>
+          <div class="overlay-pane">
+            <div class="proj-descript">
+              <h3>GFY-CAT</h3>
+              <div class="descript-line"></div>
+              <h5>polymer web component</h5>
+            </div>
+            <div class="overlay-bg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="project-pane">
+          <div class="project-pic left">
+            <img src="images/avocadyo.png" alt="project-pic">
+          </div>
+          <div class="overlay-pane">
+            <div class="proj-descript">
+              <h3>AVOCADYO</h3>
+              <div class="descript-line"></div>
+              <h5>web app</h5>
+            </div>
+            <div class="overlay-bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-container white-space-lg" id="about">
+  <div class="section-header centered">
+    <div class="img-holder">
+      <img src="images/me.jpg" alt="">
+    </div>
+    <div class="section-header-title"><h2>I am a JS developer in Austin, TX</h2></div>
+    <p>doing front-end development and data visualization</p>
+  </div>
+  <div class="section-content">
+    <div class="section-content-block">
+      <div class="section-content-text">
+        <div class="section-content-header">
+        <h4>DATA VIS</h4>
+        </div>
+        <div class="section-content-descript">
+          <p>Raw denim YOLO sriracha, sustainable wolf Wes Anderson mustache heirloom viral tote bag 8-bit kogi Vice. Cardigan sriracha farm-to-table High Life. Pug heirloom mustache bitters, salvia Pitchfork Schlitz Neutra swag single-origin coffee Pinterest vegan ethical. Ethical aesthetic yr meditation cold-pressed kogi, mixtape tilde fap Carles. Bushwick Pinterest meditation, 3 wolf moon +1 Williamsburg tattooed.</p>
+        </div>
+      </div>
+      <div class="section-content-visual">
+        <div class="image-placeholder right">svg</div>
+      </div>
+    </div>
+    <div class="section-content-block">
+      <div class="section-content-text">
+        <div class="section-content-header">
+        <h4>STATS</h4>
+        </div>
+        <div class="section-content-descript">
+          <p>Raw denim YOLO sriracha, sustainable wolf Wes Anderson mustache heirloom viral tote bag 8-bit kogi Vice. Cardigan sriracha farm-to-table High Life. Pug heirloom mustache bitters, salvia Pitchfork Schlitz Neutra swag single-origin coffee Pinterest vegan ethical. Ethical aesthetic yr meditation cold-pressed kogi, mixtape tilde fap Carles. Bushwick Pinterest meditation, 3 wolf moon +1 Williamsburg tattooed.</p>
+        </div>
+      </div>
+      <div class="section-content-visual">
+        <div class="image-placeholder left">svg</div>
+      </div>
+    </div>
+    <div class="section-content-block">
+      <div class="section-content-text">
+        <div class="section-content-header">
+        <h4>UX</h4>
+        </div>
+        <div class="section-content-descript">
+          <p>Raw denim YOLO sriracha, sustainable wolf Wes Anderson mustache heirloom viral tote bag 8-bit kogi Vice. Cardigan sriracha farm-to-table High Life. Pug heirloom mustache bitters, salvia Pitchfork Schlitz Neutra swag single-origin coffee Pinterest vegan ethical. Ethical aesthetic yr meditation cold-pressed kogi, mixtape tilde fap Carles. Bushwick Pinterest meditation, 3 wolf moon +1 Williamsburg tattooed.</p>
+        </div>
+      </div>
+      <div class="section-content-visual">
+        <div class="image-placeholder right">svg</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section-container" id="connect">
+  <div class="row">
+    <div id="wave-vis"></div>
+    <div class="col-sm-6">
+      <div class="social-links">
+        <button class="icon-facebook invisi-button"></button>
+        <button class="icon-twitter invisi-button"></button>
+        <button class="icon-gplus invisi-button"></button>
+        <button class="icon-linkedin invisi-button"></button>
+      </div>
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+</div>
 
 
