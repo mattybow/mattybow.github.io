@@ -7,15 +7,12 @@ image: kitten-sm.jpg
 thumb: kitten-sm-thumb.jpg
 snapshot: lex-sm.jpg
 polymer: yes
-customResource: custResXGIF.html
 ---
 Initially, I was experimenting with [polymer](https://www.polymer-project.org/) when I made this first post.  I wanted to put a few animated [`x-gifs`][xgifs] in the post just for fun and then quickly learned about the weaknesses of gif.
 
 Displaying the morphing box and the dragon totally hosed my browser's memory.  That's where [gfycat][gfycat] and [`gfy-cat`][gfy-cat] comes in.  I thought, this might be a good candidate for encapsulation in a polymer component.  If you want to give it a try, here's the [source](https://github.com/mattybow/gfy-cat).  If you have no idea what I'm talking about, scroll down to see the more detailed explanation.
 
 ###Demo
-
-{% include xGifCatsFlex.html %}
 
 <br>
 
@@ -25,7 +22,7 @@ Displaying the morphing box and the dragon totally hosed my browser's memory.  T
 2. controls done with svgs
 3. web component
 
-One thing that x-gif has over gfy-cat is background transparency is preserved.  The blobby cube above is a prime example, its background can be transparent, but in a `<video>` element, that's not possible. 
+One thing that x-gif has over gfy-cat is background transparency is preserved.  The blobby cube above is a prime example, its background can be transparent, but in a `<video>` element, that's not possible.
 
 ###Details
 
@@ -77,7 +74,7 @@ It seems that you cannot vulcanize some elements and then use other elements by 
 <link rel="import" href="gfy-cat-demo.vulcanized.html">
 ~~~
 
-you get this 
+you get this
 
 ~~~
 Uncaught HierarchyRequestError: Failed to execute 'appendChild' on 'Node': Nodes of type 'HTML' may not be inserted inside nodes of type '#document'.
@@ -87,7 +84,7 @@ Uncaught HierarchyRequestError: Failed to execute 'appendChild' on 'Node': Nodes
 
 When changing the source element I could not get it to load the new asset even when calling `video.load()`.  The [W3 spec](http://qwt.io/dmthigh/fyVb) says that you should instead use the video `src` attribute.
 
- 
+
 
 [flexbox]:   http://css-tricks.com/snippets/css/a-guide-to-flexbox/
 [xgifs]: https://github.com/geelen/x-gif

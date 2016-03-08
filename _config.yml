@@ -1,14 +1,13 @@
 # Site settings
 title: fickle pickle
 email: mattybow@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  drop me line, send me a link, I'd love to hear from you
+description: drop me line, send me a link, I'd love to hear from you
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://mattybow.github.io" # the base hostname & protocol for your site
 twitter_username: dmthigh
 github_username:  mattybow
 image: Kitten.jpg
-
+layout: base
 permalink: pretty
 
 # Build settings

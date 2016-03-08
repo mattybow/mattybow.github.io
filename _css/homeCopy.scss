@@ -1,0 +1,18 @@
+$light-color: #E5E5E5;
+
+.homeCopy{
+  .copy-body{
+    margin-top: 15px;
+    max-width:400px;
+  }
+  &.light{
+    color:$light-color;
+    .short-hr{
+      background-color:$light-color;
+    }
+    button{
+      border-color:$light-color;
+      color:$light-color;
+    }
+  }
+}

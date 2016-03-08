@@ -2,12 +2,11 @@
 layout: post
 title:  "personal site and blog"
 date:   2014-11-22 21:15:47
-tags: jekyll asmallorange dns 
+tags: jekyll asmallorange dns
 image: jekyll2.png
 thumb: jekyll-thumb.png
 snapshot: the-social-network.png
 polymer: yes
-customResource: custResXGIF.html
 ---
 Jekyll, I want to love you, but sometimes you make it hard.  After years of making excuses, I finally decided to make a site of my own, have a portfolio or sorts and I chose Jekyll.  Here's why:
 

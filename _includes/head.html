@@ -7,9 +7,6 @@
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
-    {% if page.polymer %}
-      <script src="/bower_components/platform/platform.js"></script>
-    {% endif %}
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -18,12 +15,5 @@
       {% assign foo = {{page.customResource}} %}
       {% include {{foo}} %}
     {% endif %}
-
-      <style>
-      @font-face{
-        font-family:'FontAwesome';
-        src:url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot');
-        src:url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.eot') format('embedded-opentype'),url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.woff') format('woff'),url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.ttf') format('truetype'),url('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/fonts/fontawesome-webfont.svg') format('svg')
-      }
-      </style>
+    
 </head>

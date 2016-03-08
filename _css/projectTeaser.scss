@@ -1,0 +1,23 @@
+#projectTeaser{
+  display:flex;
+  flex-flow: row wrap;
+  .left{
+    text-align: right;
+  }
+  .container{
+    padding:0 10px;
+  }
+  .homeCopy{
+    height:400px;
+    position:relative;
+    .container{
+      position:absolute;
+      left:0;
+      bottom:30px;
+      padding:0;
+    }
+  }
+}
+.split{
+  width:50%;
+}
