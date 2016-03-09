@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomeCopy from './homeCopy';
-import '../_css/experimentsTeaser.scss';
+import '../_styles/experimentsTeaser.scss';
 
 export default class ExperimentsTeaser extends Component{
   render(){

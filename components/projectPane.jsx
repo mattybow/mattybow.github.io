@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import {Link} from 'react-router';
-import '../_css/projectPane.scss';
+import '../_styles/projectPane.scss';
 
 export default class ProjectPane extends Component{
   render(){

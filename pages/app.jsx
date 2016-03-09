@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../_sass/_base.scss';
-import '../_css/common.scss';
+import '../_styles/base.scss';
+import '../_styles/common.scss';
 
 export default class App extends Component{
   render(){

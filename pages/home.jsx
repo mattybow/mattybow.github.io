@@ -4,7 +4,7 @@ import ProjectTeaser from '../components/projectTeaser';
 import ExperimentsTeaser from '../components/experimentsTeaser';
 import SocialLinks from '../components/socialLinks';
 import Footer from '../components/footer';
-import '../_css/home.scss';
+import '../_styles/home.scss';
 
 export default class HomePage extends Component{
   render(){

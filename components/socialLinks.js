@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../_sass/_font-icons.scss';
+import '../_styles/_font-icons.scss';
 
 export default class SocialLinks extends Component{
   render(){

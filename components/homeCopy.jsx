@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames'
-import '../_css/homeCopy.scss';
+import '../_styles/homeCopy.scss';
 
 export default class HomeCopy extends Component{
   render(){

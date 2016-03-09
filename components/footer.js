@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import '../_css/footer.scss';
+import '../_styles/footer.scss';
 
 class FooterLinks extends Component{
   render(){

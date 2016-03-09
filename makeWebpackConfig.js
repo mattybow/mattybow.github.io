@@ -1,5 +1,36 @@
 import path from 'path';
 var webpack = require('webpack');
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+import { createRoutes } from 'react-router';
+import routes from './pages/routes';
+console.log(routes);
+
+function reduceRoutes(routes){
+  const routeArray = [];
+  recurseRoutes(routes);
+  function recurseRoutes(routeObj, prevPath){
+    const { path } = routeObj
+    const route = prevPath ? `${prevPath}${path}/` : path;
+    if('childRoutes' in routeObj){
+      return routeObj.childRoutes.map(child => {
+        return recurseRoutes(child, route);
+      });
+    }
+    routeArray.push(route);
+  }
+  return routeArray.map(route => '..'+route);
+}
+
+function getPaths(){
+  var startingRoute = createRoutes(routes)[0];
+  const paths = reduceRoutes(startingRoute);
+  console.log(paths);
+  return paths;
+}
+
+
 
 function getJsxLoader(env){
   let jsxLoader = {
@@ -29,16 +60,16 @@ function getJsxLoader(env){
 
 function makeModuleLoaderConfig(env){
   const jsxLoader = getJsxLoader(env);
+  const isBuild = env === 'production';
   return {
     module: {
       loaders: [
         jsxLoader,
         {
-          test: /\.css?$/,
-          loaders: ['style', 'raw']
-        }, {
           test: /\.scss?$/,
-          loader: 'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+          loader: isBuild ?
+            ExtractTextPlugin.extract(['css','sass']) :
+            'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
         }, {
           loader: 'url-loader?limit=1000000',
           test: /\.(gif|jpg|png|woff.*|woff2|eot.*|otf.*|ttf.*|svg.*)$/
@@ -62,7 +93,8 @@ const devOnlyConfig = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: 'http://localhost:5000/static/'
+    publicPath: 'http://localhost:5000/static/',
+    libraryTarget: 'umd'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -72,7 +104,7 @@ const devOnlyConfig = {
     extensions: ['', '.js', '.jsx']
   }
 };
-
+const paths = getPaths();
 const buildOnlyConfig = {
   entry: {
     app:"./js/index"
@@ -80,8 +112,12 @@ const buildOnlyConfig = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/dist/'
+    libraryTarget: 'umd'
   },
+  plugins: [
+    new ExtractTextPlugin("styles.css"),
+    new StaticSiteGeneratorPlugin("app", paths, {path:__dirname})
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   }
@@ -90,9 +126,10 @@ const buildOnlyConfig = {
 
 export default function makeConfig(mode){
   const moduleLoaderConfig = makeModuleLoaderConfig(mode);
-  if(mode === 'production'){  //for build process
-    return {...buildOnlyConfig, ...moduleLoaderConfig};
-  } else {
-    return {...devOnlyConfig, ...moduleLoaderConfig};
+  switch(mode){
+    case 'production':
+      return {...buildOnlyConfig, ...moduleLoaderConfig};
+    case 'development':
+      return {...devOnlyConfig, ...moduleLoaderConfig};
   }
 };

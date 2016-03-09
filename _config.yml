@@ -1,5 +1,5 @@
 # Site settings
-title: fickle pickle
+title: mattbow portfolio
 email: mattybow@gmail.com
 description: drop me line, send me a link, I'd love to hear from you
 baseurl: "" # the subpath of your site, e.g. /blog/
@@ -12,8 +12,6 @@ permalink: pretty
 
 # Build settings
 markdown: kramdown
-sass:
-    sass_dir: _sass
 
 include:
   - .nojekyll

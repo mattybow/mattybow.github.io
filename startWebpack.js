@@ -1,8 +1,7 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
-import makeConfig from './webpack.config';
+import makeConfig from './makeWebpackConfig';
 const config = makeConfig('development');
-console.log(config);
 var port  = 5000;
 
 new WebpackDevServer(webpack(config), {

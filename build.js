@@ -1,11 +1,10 @@
-import webpack from 'webpack';
-import makeConfig from './webpack.config';
-
-const config = makeConfig('production');
-
-webpack(config, (err,stats) => {
-  if(err){
-    console.log(err);
-  }
-  console.log(stats);
+require('babel-core/register')({
+  presets: ['es2015', 'react', 'stage-0']
 });
+require.extensions['.scss'] = () => {
+  return;
+};
+require.extensions['.css'] = () => {
+  return;
+};
+require('./buildRoutes');

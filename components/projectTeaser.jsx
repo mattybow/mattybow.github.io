@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProjectPane from './projectPane';
 import HomeCopy from './homeCopy';
-import '../_css/projectTeaser.scss';
+import '../_styles/projectTeaser.scss';
 
 class ProjectTeaser extends Component{
   render(){
