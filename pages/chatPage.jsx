@@ -10,7 +10,8 @@ export default class ChatPage extends Component{
       title:"Chat App",
       date:"March 2016",
       technologies:["react", "express", "mysql", "redux"],
-      description:"simple real-time messaging app"
+      description:"simple real-time messaging app",
+      site:"http://babel-alpha-chat1.herokuapp.com/"
     }
     return <ProjectView details={details}
                         imageUrl="/images/avocadyo_horizontal.png">

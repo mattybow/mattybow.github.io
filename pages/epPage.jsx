@@ -11,7 +11,8 @@ export default class EpPage extends Component{
       title:"Endorsement Primary",
       date:"March 2016",
       technologies:["react", "redux", "express", "mysql", "mongo", "nginx", "ubuntu"],
-      description:"react app for tracking endorsements during the 2016 primary election"
+      description:"react app for tracking endorsements during the 2016 primary election",
+      site:"http://endorsementprimary.mattbow.com/endorsements"
     }
     return <ProjectView details={details}
                         imageUrl="/images/endorsement_ortho_sc.png">

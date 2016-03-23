@@ -9,7 +9,7 @@ class ProjectTeaser extends Component{
       <div className="left split">
         <div className="container">
           <HomeCopy header="Projects"
-                    subtext={`Clean and readable code is the goal.
+                    subtext={`Good code is clean and readable.
                       Building with React and redux promote a declarative style that is both
                       manageable and easily understood`}
                     btnText="see work"

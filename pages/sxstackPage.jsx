@@ -9,7 +9,8 @@ export default class SxstackPage extends Component{
       title:"Sxstack",
       date:"March 2016",
       technologies:["react", "express", "mysql", "redux"],
-      description:"react reflux app for south by attendees scheduling when to see artists"
+      description:"react reflux app for south by attendees scheduling when to see artists",
+      site:"http://sxmusiclist.herokuapp.com/"
     }
     return <ProjectView details={details}
                         imageUrl="/images/sxstack_horizontal.png">

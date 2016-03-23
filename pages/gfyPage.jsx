@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectView from '../components/projectView';
 import Markdown from 'react-remarkable';
+import SingleCol from '../components/singleCol';
 
 const CONCEPT_TEXT = `
 I was experimenting with
@@ -72,19 +73,19 @@ export default class GfyPage extends Component{
       title:"Gfy-cat",
       date:"November 2014",
       technologies:["polymer", "grunt", "bower"],
-      description:"A polymer webcomponent for displaying gifs as video elements"
+      description:"A polymer webcomponent for displaying gifs as video elements",
+      site:"http://mattbow.com/gfy-cat/"
     }
     return <ProjectView details={details}
                         imageUrl="/images/gfy-cat-horizontal.png">
-      <div style={{maxWidth:500, margin:'2em auto'}}>
+      <SingleCol>
         <div className="project-text-heading">CONCEPT</div>
         <Markdown source={CONCEPT_TEXT} />
         <div className="project-text-heading">IMPLEMENTATION</div>
         <div style={{padding:'0 1em'}}>
           <Markdown source={IMPLEMENTATION} />
         </div>
-
-      </div>
+      </SingleCol>
     </ProjectView>
   }
 }

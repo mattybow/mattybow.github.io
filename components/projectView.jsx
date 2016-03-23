@@ -26,7 +26,7 @@ class Detail extends Component{
 
 export default class ProjectView extends Component{
   render(){
-    const {date, technologies, description, title} = this.props.details;
+    const {date, technologies, description, title, site} = this.props.details;
     return <div>
       <div style={{position:'fixed', top:0, left:0, zIndex:1}}>
         <Link to="/">
@@ -74,6 +74,13 @@ export default class ProjectView extends Component{
             <Detail detailName="Description">
               <div>{description}</div>
             </Detail>
+            {site ? <Detail detailName="Site">
+              <a href={site} target="_blank">
+                <div style={{wordWrap:'break-word'}}>
+                  {site.replace(/http(s)?:\/\//,'')}
+                </div>
+              </a>
+            </Detail> : ''}
           </div>
 
         </div>

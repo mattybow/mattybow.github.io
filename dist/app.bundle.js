@@ -25095,7 +25095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            { className: 'container' },
 	            _react2.default.createElement(_homeCopy2.default, { header: 'Projects',
-	              subtext: 'Clean and readable code is the goal. Building with React and redux promote a declarative style that is both manageable and easily understood',
+	              subtext: 'Good code is clean and readable. Building with React and redux promote a declarative style that is both manageable and easily understood',
 	              btnText: 'see work',
 	              path: '/projects',
 	              className: 'mobile-only' }),
@@ -25763,7 +25763,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              null,
-	              'last updated Mar 2 2016'
+	              'last updated Mar 23 2016'
 	            ),
 	            _react2.default.createElement(
 	              'div',
@@ -25916,7 +25916,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Endorsement Primary",
 	        date: "March 2016",
 	        technologies: ["react", "redux", "express", "mysql", "mongo", "nginx", "ubuntu"],
-	        description: "react app for tracking endorsements during the 2016 primary election"
+	        description: "react app for tracking endorsements during the 2016 primary election",
+	        site: "http://endorsementprimary.mattbow.com/endorsements"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
@@ -26089,6 +26090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var technologies = _props$details.technologies;
 	      var description = _props$details.description;
 	      var title = _props$details.title;
+	      var site = _props$details.site;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -26176,7 +26178,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	                  null,
 	                  description
 	                )
-	              )
+	              ),
+	              site ? _react2.default.createElement(
+	                Detail,
+	                { detailName: 'Site' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: site, target: '_blank' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: { wordWrap: 'break-word' } },
+	                    site.replace(/http(s)?:\/\//, '')
+	                  )
+	                )
+	              ) : ''
 	            )
 	          )
 	        ),
@@ -36795,6 +36810,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
 
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36823,15 +36842,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Gfy-cat",
 	        date: "November 2014",
 	        technologies: ["polymer", "grunt", "bower"],
-	        description: "A polymer webcomponent for displaying gifs as video elements"
+	        description: "A polymer webcomponent for displaying gifs as video elements",
+	        site: "http://mattbow.com/gfy-cat/"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: '/images/gfy-cat-horizontal.png' },
 	        _react2.default.createElement(
-	          'div',
-	          { style: { maxWidth: 500, margin: '2em auto' } },
+	          _singleCol2.default,
+	          null,
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'project-text-heading' },
@@ -36996,7 +37016,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Sxstack",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "react reflux app for south by attendees scheduling when to see artists"
+	        description: "react reflux app for south by attendees scheduling when to see artists",
+	        site: "http://sxmusiclist.herokuapp.com/"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
@@ -37168,7 +37189,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Chat App",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "simple real-time messaging app"
+	        description: "simple real-time messaging app",
+	        site: "http://babel-alpha-chat1.herokuapp.com/"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
@@ -37357,7 +37379,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "via gelato hawaii",
 	        date: "October 2015",
 	        technologies: ["meteor", "heroku", "mongo", "aws"],
-	        description: "Business website and content management system made with meteorJs"
+	        description: "Business website and content management system made with meteorJs",
+	        site: "http://www.viagelatohawaii.com/"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,

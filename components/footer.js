@@ -53,7 +53,7 @@ export default class Footer extends Component{
 
         <div className="right-side" style={{padding:'20px 0', textAlign:'right'}}>
           <div>v0.0.0</div>
-          <div>last updated Mar 2 2016</div>
+          <div>last updated Mar 23 2016</div>
           <div>Austin, TX</div>
         </div>
       </div>
