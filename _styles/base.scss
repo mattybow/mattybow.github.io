@@ -8,7 +8,7 @@ $spacing-unit:     30px;
 
 $text-color:       #565a5c;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #21ADAD;
 
 $grey-color:       #5E5B52;
 $grey-color-light: lighten($grey-color, 45%);
@@ -121,7 +121,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: darken($brand-color, 10%);
     }
 
     &:hover {

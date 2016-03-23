@@ -22,6 +22,17 @@
 .split{
   width:50%;
 }
+@media(max-width:768px) and (orientation: portrait){
+  #projectTeaser{
+    .right .container{
+      padding:0;
+    }
+    .left .container{
+      padding:0;
+      margin-right:20px;
+    }
+  }
+}
 @media(max-width:414px){
   .split{
     width:100%;
@@ -29,6 +40,9 @@
   #projectTeaser{
     .left{
       text-align: left;
+      .container{
+        margin-right:0px;
+      }
     }
     .container{
       padding:0;

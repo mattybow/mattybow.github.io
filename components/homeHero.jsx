@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../_styles/hero.scss';
+//http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg
 
 export default class HomeHero extends Component{
   render(){
@@ -34,7 +35,7 @@ export default class HomeHero extends Component{
       top:0,bottom:0,left:0,right:0,
       backgroundSize:'cover',
       zIndex:0,
-      backgroundImage:'url("http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg")'
+      backgroundImage:'url("/images/colorado.jpg")'
     }
     return <div style={containerStyle}>
       <div className="flex-parent-row"

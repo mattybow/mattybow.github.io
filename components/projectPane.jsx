@@ -20,7 +20,9 @@ export default class ProjectPane extends Component{
           <div className="proj-descript">
             <div className="flex-parent-row" style={{marginBottom:'.5em', width:'100%'}}>
               <div className="flex-child-expand" style={{fontSize:'1.3em'}}>{projName}</div>
-              <div className="icon-arrow icon-lg"></div>
+              <div className="icon-arrow icon-lg" style={{
+                  marginRight:'-1em'
+                }}></div>
             </div>
             <div className="descript-line"></div>
             <div style={{fontSize:'.8em', width:'50%'}}>{descript}</div>

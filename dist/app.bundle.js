@@ -24741,31 +24741,31 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _epPage2 = _interopRequireDefault(_epPage);
 
-	var _gfyPage = __webpack_require__(312);
+	var _gfyPage = __webpack_require__(313);
 
 	var _gfyPage2 = _interopRequireDefault(_gfyPage);
 
-	var _reduxPage = __webpack_require__(313);
+	var _reduxPage = __webpack_require__(314);
 
 	var _reduxPage2 = _interopRequireDefault(_reduxPage);
 
-	var _sxstackPage = __webpack_require__(314);
+	var _sxstackPage = __webpack_require__(315);
 
 	var _sxstackPage2 = _interopRequireDefault(_sxstackPage);
 
-	var _vaporPage = __webpack_require__(315);
+	var _vaporPage = __webpack_require__(316);
 
 	var _vaporPage2 = _interopRequireDefault(_vaporPage);
 
-	var _chatPage = __webpack_require__(316);
+	var _chatPage = __webpack_require__(317);
 
 	var _chatPage2 = _interopRequireDefault(_chatPage);
 
-	var _projectsPage = __webpack_require__(317);
+	var _projectsPage = __webpack_require__(318);
 
 	var _projectsPage2 = _interopRequireDefault(_projectsPage);
 
-	var _viaPage = __webpack_require__(318);
+	var _viaPage = __webpack_require__(319);
 
 	var _viaPage2 = _interopRequireDefault(_viaPage);
 
@@ -24957,6 +24957,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg
+
 	var HomeHero = function (_Component) {
 	  _inherits(HomeHero, _Component);
 
@@ -25000,7 +25002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        top: 0, bottom: 0, left: 0, right: 0,
 	        backgroundSize: 'cover',
 	        zIndex: 0,
-	        backgroundImage: 'url("http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg")'
+	        backgroundImage: 'url("/images/colorado.jpg")'
 	      };
 	      return _react2.default.createElement(
 	        'div',
@@ -25104,7 +25106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(_projectPane2.default, { imgSrc: 'https://scontent.cdninstagram.com/t51.2885-15/e15/10946620_1595655620676469_1929700559_n.jpg',
 	              projName: 'VIA GELATO HAWAII',
 	              url: '/projects/via',
-	              descript: 'meteor app and content management' }),
+	              descript: 'Business website and content management system made with meteorJs' }),
 	            _react2.default.createElement(_projectPane2.default, { imgSrc: '/images/gfy-cat_sc1.png',
 	              projName: 'GFY-CAT',
 	              url: '/projects/gfy-cat',
@@ -25122,7 +25124,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            { className: 'container' },
 	            _react2.default.createElement(_homeCopy2.default, { header: 'Projects',
-	              subtext: 'Clean and readable code is the goal. Building with React and redux promote a declarative style that is both manageable and easily understood',
+	              subtext: 'Good code is clean and readable. Building with React and redux promote a declarative style that is both manageable and easily understood',
 	              btnText: 'see work',
 	              path: '/projects',
 	              className: 'desktop-only' }),
@@ -25133,7 +25135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(_projectPane2.default, { imgSrc: '/images/sxstack.png',
 	              projName: 'SXSTACK',
 	              url: '/projects/sxstack',
-	              descript: 'react app' }),
+	              descript: 'react reflux app for south by attendees scheduling when to see artists' }),
 	            _react2.default.createElement(_projectPane2.default, { imgSrc: '/images/avocadyo.png',
 	              projName: 'AVOCADYO',
 	              url: '/projects/chat',
@@ -25225,7 +25227,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                  { className: 'flex-child-expand', style: { fontSize: '1.3em' } },
 	                  projName
 	                ),
-	                _react2.default.createElement('div', { className: 'icon-arrow icon-lg' })
+	                _react2.default.createElement('div', { className: 'icon-arrow icon-lg', style: {
+	                    marginRight: '-1em'
+	                  } })
 	              ),
 	              _react2.default.createElement('div', { className: 'descript-line' }),
 	              _react2.default.createElement(
@@ -25674,29 +25678,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { className: 'flex-row-parent social-links' },
 	        _react2.default.createElement(
 	          'div',
-	          { style: { padding: '0 10px 0 0' } },
+	          { className: 'social-link' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '' },
+	            { href: 'https://www.linkedin.com/in/mattybow', target: '_blank' },
 	            'linkedin'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { style: { padding: '0 10px', borderRight: '1px solid slategrey', borderLeft: '1px solid slategrey' } },
+	          { className: 'social-link' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '' },
+	            { href: 'http://stackoverflow.com/cv/mattybow', target: '_blank' },
 	            'stackoverflow'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { style: { padding: '0 0 0 10px' } },
+	          { className: 'social-link' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '' },
-	            'twitter'
+	            { href: 'https://github.com/mattybow', target: '_blank' },
+	            'github'
 	          )
 	        )
 	      );
@@ -25729,20 +25733,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	            { className: 'left-side', style: { padding: '20px 0' } },
 	            _react2.default.createElement(
 	              'div',
-	              { style: { marginBottom: '1em', color: 'grey', textAlign: 'left', fontWeight: 500, fontSize: '.8em' } },
-	              'CONTACT ME'
+	              { style: { color: 'grey', textAlign: 'left' } },
+	              _react2.default.createElement(
+	                'span',
+	                { style: { fontWeight: 500, fontSize: '.8em' } },
+	                'CONTACT ME'
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'div',
 	              { style: { letterSpacing: 1 } },
-	              'matt@mattbow.com'
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'mailto:matt@mattbow.com' },
+	                'matt@mattbow.com'
+	              )
 	            ),
 	            _react2.default.createElement(SocialLinks, null)
 	          ),
 	          _react2.default.createElement('div', { className: 'flex-child-expand' }),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'right-side', style: { paddingTop: 20, textAlign: 'right' } },
+	            { className: 'right-side', style: { padding: '20px 0', textAlign: 'right' } },
 	            _react2.default.createElement(
 	              'div',
 	              null,
@@ -25876,7 +25888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _outsetCol2 = _interopRequireDefault(_outsetCol);
 
-	var _articleImg = __webpack_require__(311);
+	var _articleImg = __webpack_require__(312);
 
 	var _articleImg2 = _interopRequireDefault(_articleImg);
 
@@ -25966,7 +25978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              'Each endorsement is tied to an endorser and each endorser is assigned tags based on their reputation (according to wikipedia).'
 	            )
 	          ),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-eer-diag.png' }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-eer-diag.png', contain: true }),
 	          _react2.default.createElement(
 	            _singleCol2.default,
 	            null,
@@ -26121,7 +26133,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                } },
 	              _react2.default.createElement(
 	                'div',
-	                { style: {
+	                { className: 'project-details-title', style: {
 	                    paddingTop: '.5em',
 	                    borderTop: '1px solid rgba(0,0,0,.1)',
 	                    letterSpacing: 1 } },
@@ -36671,37 +36683,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
+	__webpack_require__(311);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var OutsetCol = function OutsetCol(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    { style: {
-	        width: "calc(100% - (100% - 500px)/2)",
-	        marginLeft: 'auto',
-	        display: 'flex',
-	        flexFlow: 'row nowrap'
+	    { className: 'layout-outset-col', style: {
+	        marginLeft: 'auto'
 	      } },
 	    _react2.default.createElement(
 	      'div',
-	      { style: { flex: "1" } },
-	      props.children
+	      { className: 'outset-left' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        props.children
+	      )
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { style: {
+	      { className: 'outset-right', style: {
 	          marginBottom: 25,
-	          marginLeft: '1em',
-	          flex: "2",
 	          position: 'relative'
 	        } },
-	      _react2.default.createElement('div', { style: {
-	          position: 'absolute',
-	          top: 0, bottom: 25, right: 0, left: 0,
-	          backgroundSize: 'cover',
-	          backgroundPosition: "50% 50%",
-	          backgroundImage: 'url("' + props.imgSrc + '")'
-	        } })
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement('div', { style: {
+	            position: 'absolute',
+	            top: 0, bottom: 0, right: 0, left: 0,
+	            backgroundSize: 'cover',
+	            backgroundPosition: "50% 50%",
+	            backgroundImage: 'url("' + props.imgSrc + '")'
+	          } })
+	      )
 	    )
 	  );
 	};
@@ -36710,6 +36727,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 311 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36722,23 +36745,34 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _classnames = __webpack_require__(228);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	__webpack_require__(309);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ArticleImg = function ArticleImg(props) {
+	  var classes = (0, _classnames2.default)("flex-parent-column", { "layout-single-col": props.contain });
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'flex-parent-column',
+	    { className: classes,
 	      style: {
 	        marginBottom: '1em'
 	      } },
-	    _react2.default.createElement('img', { src: props.src, alt: '' })
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'container', style: { width: '100%' } },
+	      _react2.default.createElement('img', { src: props.src, style: { width: '100%' }, alt: '' })
+	    )
 	  );
 	};
 
 	exports.default = ArticleImg;
 
 /***/ },
-/* 312 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36825,7 +36859,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = GfyPage;
 
 /***/ },
-/* 313 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36843,6 +36877,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _projectView = __webpack_require__(244);
 
 	var _projectView2 = _interopRequireDefault(_projectView);
+
+	var _reactRemarkable = __webpack_require__(246);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36868,13 +36910,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Redux Talk",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "ajdsflasdj asdfljasldf asld;kfjas al;sdfja asdfdjk"
+	        description: "slides and demo for meetup talk on react and redux"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: '/images/yosemite-ig.jpg' },
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'project-text' },
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'CONCEPT'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'write up coming soon',
+	              "\n"
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -36885,7 +36945,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ReduxPage;
 
 /***/ },
-/* 314 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36903,6 +36963,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _projectView = __webpack_require__(244);
 
 	var _projectView2 = _interopRequireDefault(_projectView);
+
+	var _reactRemarkable = __webpack_require__(246);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36928,13 +36996,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Sxstack",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "ajdsflasdj asdfljasldf asld;kfjas al;sdfja asdfdjk"
+	        description: "react reflux app for south by attendees scheduling when to see artists"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: '/images/sxstack_horizontal.png' },
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'project-text' },
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'CONCEPT'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'write up coming soon',
+	              "\n"
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -36945,7 +37031,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = SxstackPage;
 
 /***/ },
-/* 315 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36963,6 +37049,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _projectView = __webpack_require__(244);
 
 	var _projectView2 = _interopRequireDefault(_projectView);
+
+	var _reactRemarkable = __webpack_require__(246);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36988,13 +37082,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Vapor",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "ajdsflasdj asdfljasldf asld;kfjas al;sdfja asdfdjk"
+	        description: "backbone app for in-house software development"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: '/images/vapor_horizontal.png' },
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'project-text' },
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'CONCEPT'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'write up coming soon',
+	              "\n"
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -37005,7 +37117,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = VaporPage;
 
 /***/ },
-/* 316 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37023,6 +37135,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _projectView = __webpack_require__(244);
 
 	var _projectView2 = _interopRequireDefault(_projectView);
+
+	var _reactRemarkable = __webpack_require__(246);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37048,13 +37168,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Chat App",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "ajdsflasdj asdfljasldf asld;kfjas al;sdfja asdfdjk"
+	        description: "simple real-time messaging app"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: '/images/avocadyo_horizontal.png' },
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'project-text' },
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'CONCEPT'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'write up coming soon',
+	              "\n"
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -37065,7 +37203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ChatPage;
 
 /***/ },
-/* 317 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37168,7 +37306,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 318 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37186,6 +37324,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _projectView = __webpack_require__(244);
 
 	var _projectView2 = _interopRequireDefault(_projectView);
+
+	var _reactRemarkable = __webpack_require__(246);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _singleCol = __webpack_require__(308);
+
+	var _singleCol2 = _interopRequireDefault(_singleCol);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37211,13 +37357,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "via gelato hawaii",
 	        date: "October 2015",
 	        technologies: ["meteor", "heroku", "mongo", "aws"],
-	        description: "Business website and content management system"
+	        description: "Business website and content management system made with meteorJs"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
 	        { details: details,
 	          imageUrl: 'https://scontent.cdninstagram.com/t51.2885-15/e15/10946620_1595655620676469_1929700559_n.jpg' },
-	        _react2.default.createElement('div', null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'project-text' },
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'CONCEPT'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'write up coming soon',
+	              "\n"
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);

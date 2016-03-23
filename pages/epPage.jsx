@@ -77,7 +77,7 @@ export default class EpPage extends Component{
           </SingleCol>
 
 
-          <ArticleImg src="/images/endrs-eer-diag.png"/>
+          <ArticleImg src="/images/endrs-eer-diag.png" contain={true}/>
           <SingleCol>
             <Markdown>
               {"\n"}{"\n"}

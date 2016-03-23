@@ -22,7 +22,7 @@ class ProjectTeaser extends Component{
           <ProjectPane imgSrc="https://scontent.cdninstagram.com/t51.2885-15/e15/10946620_1595655620676469_1929700559_n.jpg"
                         projName="VIA GELATO HAWAII"
                         url="/projects/via"
-                        descript="meteor app and content management"/>
+                        descript="Business website and content management system made with meteorJs"/>
           <ProjectPane imgSrc="/images/gfy-cat_sc1.png"
                         projName="GFY-CAT"
                         url="/projects/gfy-cat"
@@ -36,7 +36,7 @@ class ProjectTeaser extends Component{
       <div className="right split">
         <div className="container">
           <HomeCopy header="Projects"
-                    subtext={`Clean and readable code is the goal.
+                    subtext={`Good code is clean and readable.
                       Building with React and redux promote a declarative style that is both
                       manageable and easily understood`}
                     btnText="see work"
@@ -49,7 +49,7 @@ class ProjectTeaser extends Component{
           <ProjectPane imgSrc="/images/sxstack.png"
                         projName="SXSTACK"
                         url="/projects/sxstack"
-                        descript="react app"/>
+                        descript="react reflux app for south by attendees scheduling when to see artists"/>
           <ProjectPane imgSrc="/images/avocadyo.png"
                         projName="AVOCADYO"
                         url="/projects/chat"

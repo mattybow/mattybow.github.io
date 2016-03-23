@@ -29,9 +29,11 @@ class SocialLinks extends Component{
     </span>));
 
     return <div className="flex-row-parent social-links">
-      <div style={{padding:'0 10px 0 0'}}><a href="">linkedin</a></div>
-      <div style={{padding:'0 10px', borderRight:'1px solid slategrey', borderLeft:'1px solid slategrey'}}><a href="">stackoverflow</a></div>
-      <div style={{padding:'0 0 0 10px'}}><a href="">twitter</a></div>
+      <div className="social-link"><a href="https://www.linkedin.com/in/mattybow" target="_blank">linkedin</a></div>
+      <div className="social-link">
+        <a href="http://stackoverflow.com/cv/mattybow" target="_blank">stackoverflow</a>
+      </div>
+      <div className="social-link"><a href="https://github.com/mattybow" target="_blank">github</a></div>
     </div>;
   }
 }
@@ -41,13 +43,15 @@ export default class Footer extends Component{
     return <div id="footer">
       <div className="flex-parent-row start">
         <div className="left-side" style={{padding:'20px 0' }}>
-          <div style={{marginBottom:'1em', color:'grey', textAlign:'left', fontWeight:500, fontSize:'.8em'}}>CONTACT ME</div>
-          <div style={{letterSpacing:1}}>matt@mattbow.com</div>
+          <div style={{color:'grey', textAlign:'left'}}>
+            <span style={{fontWeight:500, fontSize:'.8em'}}>CONTACT ME</span>
+          </div>
+          <div style={{letterSpacing:1}}><a href="mailto:matt@mattbow.com">matt@mattbow.com</a></div>
           <SocialLinks />
         </div>
         <div className="flex-child-expand"></div>
 
-        <div className="right-side" style={{paddingTop:20, textAlign:'right'}}>
+        <div className="right-side" style={{padding:'20px 0', textAlign:'right'}}>
           <div>v0.0.0</div>
           <div>last updated Mar 2 2016</div>
           <div>Austin, TX</div>

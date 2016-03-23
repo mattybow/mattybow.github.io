@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import cx from 'classnames';
+import '../_styles/singleCol.scss'
 
 var ArticleImg = (props) => {
-  return <div className="flex-parent-column"
+  const classes = cx("flex-parent-column", {"layout-single-col": props.contain} );
+  return <div className={classes}
               style={{
                 marginBottom:'1em'
               }}>
-    <img src={props.src} alt=""/>
+    <div className="container" style={{width:'100%'}}>
+      <img src={props.src} style={{ width:'100%' }} alt=""/>
+    </div>
   </div>
 }
 

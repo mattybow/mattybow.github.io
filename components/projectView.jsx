@@ -54,7 +54,7 @@ export default class ProjectView extends Component{
                        position:'relative',
                        zIndex:1
                      }}>
-              <div style={{
+              <div className="project-details-title" style={{
                   paddingTop:'.5em',
                   borderTop:'1px solid rgba(0,0,0,.1)',
                   letterSpacing:1}}>

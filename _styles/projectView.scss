@@ -18,7 +18,11 @@
 .link-to-home-from-page{
   padding:1.5em 5em;
 }
-@media(max-width:414px){
+
+@media(max-width:768px){
+  .project-details-title{
+    margin-top:1em;
+  }
   .project-details{
     width:100%;
   }

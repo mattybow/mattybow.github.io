@@ -14,11 +14,34 @@
     margin:0;
   }
 }
-.social-links{
-  justify-content: flex-end;
+.social-link{
+  padding:0 10px;
+  border-right:1px solid slategrey;
+  border-left:1px solid slategrey;
+  &:first-child{
+    padding:0 10px 0 0;
+    border:none;
+  }
+  &:last-child{
+    padding:0 10px 0 10px;
+    border:none;
+  }
 }
 .circled{
   display:inline-block;
   padding:3px 0;
   margin-left: 5px;
+}
+@media(max-width:414px){
+  .social-link{
+    padding:0;
+    border:none;
+    width:100%;
+    &:first-child{
+      padding:0;
+    }
+    &:last-child{
+      padding:0;
+    }
+  }
 }
