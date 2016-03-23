@@ -72,23 +72,31 @@ export default class EpPage extends Component{
               redundancy of data points.  The twitter data was stored in a mongodb
               instance.
               {"\n"}
+              Aside from the initial data gather, I used a mysql instance to store
+              the structured data.  I chose a relational db for its foreign key
+              constraints, join capabilities, and data integrity which meant writing
+              less code.
+              {"\n"}
               Each endorsement is tied to an endorser and each endorser is assigned
               tags based on their reputation (according to wikipedia).
             </Markdown>
-          </SingleCol>
-
-
-          <ArticleImg src="/images/endrs-eer-diag.png" contain={true}/>
-          <SingleCol>
+            <ArticleImg src="/images/endrs-eer-diag.png"/>
             <Markdown>
-              {"\n"}{"\n"}
+              {"\n"}
+              ### CMS
+              {"\n"}
               In lieu of
               an algorithm to parse tweets, which is not a trivial task, given the
               varied nature of language and implied context, I created
               an interface to manually input the endorsements.
               {"\n"}
+
             </Markdown>
           </SingleCol>
+          <ArticleImg src="/images/endrs-data-sc1.png" width="50%" screenShot={true}/>
+          <ArticleImg src="/images/endrs-data-sc2.png" width="50%" screenShot={true}/>
+          <ArticleImg src="/images/endrs-data-sc3.png" width="50%" screenShot={true}/>
+          <ArticleImg src="/images/endrs-data-sc4.png" width="50%" screenShot={true}/>
         </div>
     </ProjectView>
   }

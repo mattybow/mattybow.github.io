@@ -25976,22 +25976,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	              "\n",
 	              'I employed twitter\'s [streaming api](https://dev.twitter.com/streaming/reference/post/statuses/filter) to gather the raw data on endorsements.  I filtered on `endorse` the candidate\'s first and last name which meant a significant amount of redundancy of data points.  The twitter data was stored in a mongodb instance.',
 	              "\n",
+	              'Aside from the initial data gather, I used a mysql instance to store the structured data.  I chose a relational db for its foreign key constraints, join capabilities, and data integrity which meant writing less code.',
+	              "\n",
 	              'Each endorsement is tied to an endorser and each endorser is assigned tags based on their reputation (according to wikipedia).'
-	            )
-	          ),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-eer-diag.png', contain: true }),
-	          _react2.default.createElement(
-	            _singleCol2.default,
-	            null,
+	            ),
+	            _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-eer-diag.png' }),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
 	              "\n",
+	              '### CMS',
 	              "\n",
 	              'In lieu of an algorithm to parse tweets, which is not a trivial task, given the varied nature of language and implied context, I created an interface to manually input the endorsements.',
 	              "\n"
 	            )
-	          )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc1.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc2.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc3.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc4.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }
@@ -36770,6 +36773,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var ArticleImg = function ArticleImg(props) {
 	  var classes = (0, _classnames2.default)("flex-parent-column", { "layout-single-col": props.contain });
+
 	  return _react2.default.createElement(
 	    'div',
 	    { className: classes,
@@ -36778,8 +36782,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'container', style: { width: '100%' } },
-	      _react2.default.createElement('img', { src: props.src, style: { width: '100%' }, alt: '' })
+	      { className: 'container', style: { width: 'ontouchstart' in window && props.screenShot ? 'calc(100% - 4em)' : props.width || '100%' } },
+	      _react2.default.createElement('img', { className: props.screenShot ? "shadow" : '', src: props.src, style: { width: '100%' }, alt: '' })
 	    )
 	  );
 	};
