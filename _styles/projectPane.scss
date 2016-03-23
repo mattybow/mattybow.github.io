@@ -24,12 +24,7 @@
 }
 .project-pic{
     height:100%;
-}
-.project-pic.right{
-    right:0;
-}
-.project-pic.left{
-    left:0;
+    position:relative;
 }
 .project-pic img{
     height:100%;
@@ -106,4 +101,23 @@
         width:150px;
         height:150px;
     }
+}
+@media(max-width:414px){
+  .project-pic img{
+      height:auto;
+      width:100%;
+  }
+  .project-pane{
+    height:400px;
+    width:100%;
+    background-color:transparent;
+    .overlay-pane{
+        opacity:1;
+        transform:translate3d(0,0,0);
+    }
+    .overlay-bg{
+        opacity:1;
+        transform:scale(3) rotateZ(30deg) translate3d(0,0,0);
+    }
+  }
 }

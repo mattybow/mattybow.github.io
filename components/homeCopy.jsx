@@ -7,7 +7,9 @@ export default class HomeCopy extends Component{
   render(){
     const { header, subtext, btnText, light } = this.props;
 
-    const classes = cx("homeCopy",{
+    const classes = cx("homeCopy",
+      this.props.className,
+      {
       light : light
     });
     return <div className={classes}>
@@ -20,9 +22,6 @@ export default class HomeCopy extends Component{
           <p>{subtext}
           </p>
         </div>
-        { btnText ? <Link to={this.props.path || "/"}>
-            <button className="btn-default">{btnText}</button>
-          </Link> : '' }
       </div>
     </div>;
   }

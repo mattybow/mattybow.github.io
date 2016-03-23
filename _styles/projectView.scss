@@ -1,0 +1,31 @@
+.project-text-heading{
+  font-size: .8em;
+  font-weight:500;
+  margin:3em 0 1em;
+}
+.project-text{
+  margin:2em auto;
+
+  overflow-x:hidden;
+}
+.project-details{
+  margin:0 0 0 2em;
+  width:33%;
+}
+.project-banner{
+  height:400px;
+}
+.link-to-home-from-page{
+  padding:1.5em 5em;
+}
+@media(max-width:414px){
+  .project-details{
+    width:100%;
+  }
+  .project-banner{
+    height:300px;
+  }
+  .link-to-home-from-page{
+    padding:1.2em 1.5em;
+  }
+}

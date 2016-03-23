@@ -6,8 +6,14 @@ export default class ProjectPane extends Component{
   render(){
     const {imgSrc,projName,descript} = this.props;
     return <div className="project-pane">
-      <div className="project-pic left">
-        <img src={imgSrc} alt="project-pic" />
+      <div className="project-pic">
+        <img className="desktop-only" src={imgSrc} alt="project-pic" />
+        <div className="mobile-only"
+             style={{
+               backgroundImage:`url("${imgSrc}")`,
+               backgroundSize:'cover',
+               position:'absolute',top:0,bottom:0,left:0,right:0
+             }}></div>
       </div>
       <Link to={this.props.url || '/'}>
         <div className="overlay-pane">

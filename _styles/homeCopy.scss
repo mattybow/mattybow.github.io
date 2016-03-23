@@ -16,3 +16,9 @@ $light-color: #E5E5E5;
     }
   }
 }
+@media(max-width:414px){
+  .homeCopy{
+    margin-left:2em;
+    margin-right:2em;
+  }
+}

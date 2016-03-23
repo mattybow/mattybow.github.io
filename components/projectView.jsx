@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import '../_styles/projectView.scss';
 
 class Detail extends Component{
   render(){
@@ -29,37 +30,38 @@ export default class ProjectView extends Component{
     return <div>
       <div style={{position:'fixed', top:0, left:0, zIndex:1}}>
         <Link to="/">
-          <div style={{padding:'1.5em 5em'}}>
+          <div className="link-to-home-from-page">
             <img style={{width:50}} src="/images/signature.png" alt=""/>
           </div>
         </Link>
       </div>
       <div style={{marginTop:'5em', position:'relative'}}>
       </div>
-      <div className="flex-parent-row start">
+      <div className="flex-parent-row wrap start">
         <div className="flex-child-expand" style={{backgroundColor:'white'}}>
 
           <div style={{
-              height:400,
               width:'100%',
               backgroundImage:`url("${this.props.imageUrl}")`,
               backgroundSize:'cover',
               backgroundPosition:'50% 50%',
               position:'relative',
               zIndex:0
-            }}></div>
+            }} className="project-banner"></div>
         </div>
-        <div style={{margin:"0 2em", width:'33%'}} >
-          <div style={{padding:'.5em 0 0 30%',
-                       borderTop:'1px solid rgba(0,0,0,.1)',
+        <div className="project-details" >
+          <div style={{padding:'0 0 0 30%',
                        position:'relative',
                        zIndex:1
                      }}>
               <div style={{
-                  fontWeight:500,
-                  fontSize:'1.5em',
+                  paddingTop:'.5em',
+                  borderTop:'1px solid rgba(0,0,0,.1)',
                   letterSpacing:1}}>
-                  {title}
+                  <span style={{
+                    fontWeight:500,
+                    fontSize:'1.5em',
+                    }}>{title}</span>
               </div>
           </div>
           <div className="details">
@@ -79,7 +81,7 @@ export default class ProjectView extends Component{
 
       </div>
 
-      <div style={{padding:'0 5em'}}>
+      <div>
         {this.props.children}
       </div>
     </div>

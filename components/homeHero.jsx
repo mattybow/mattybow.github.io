@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../_styles/hero.scss';
 
 export default class HomeHero extends Component{
   render(){
@@ -24,7 +25,6 @@ export default class HomeHero extends Component{
       opacity:0.8,
       fontWeight:500,
       fontSize:'1.2em',
-      padding:'.5em 5em 0 1em',
       borderBottom:`${lineHeight}px solid transparent`,
       borderTop:`${lineHeight}px solid rgba(0,0,0,.1)`,
       alignSelf:'flex-start'
@@ -39,11 +39,11 @@ export default class HomeHero extends Component{
     return <div style={containerStyle}>
       <div className="flex-parent-row"
         style={{height:lineHeight, width:'100%', position:'relative', zIndex:1}}>
-        <div style={nameStyle}>
-          <img style={{width:100}} src="/images/signature.png" alt=""/>
+        <div style={nameStyle} id="name-line">
+          <img id="hero-signature" src="/images/signature.png" alt=""/>
         </div>
         <div className="flex-child-expand"></div>
-        <div style={titleStyle}>js developer</div>
+        <div style={titleStyle}  id="title-line">js developer</div>
       </div>
       <div className="bg" style={bgStyle}></div>
     </div>;

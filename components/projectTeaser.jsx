@@ -8,6 +8,13 @@ class ProjectTeaser extends Component{
     return <div className="container-lg" id="projectTeaser">
       <div className="left split">
         <div className="container">
+          <HomeCopy header="Projects"
+                    subtext={`Clean and readable code is the goal.
+                      Building with React and redux promote a declarative style that is both
+                      manageable and easily understood`}
+                    btnText="see work"
+                    path="/projects"
+                    className="mobile-only"/>
           <ProjectPane imgSrc="/images/endorsement_ortho_sc.png"
                         projName="ENDORSEMENT PRIMARY"
                         url="/projects/endorsement"
@@ -33,7 +40,8 @@ class ProjectTeaser extends Component{
                       Building with React and redux promote a declarative style that is both
                       manageable and easily understood`}
                     btnText="see work"
-                    path="/projects"/>
+                    path="/projects"
+                    className="desktop-only" />
           <ProjectPane imgSrc="/images/yosemite-ig.jpg"
                         projName="REDUX TALK"
                         url="/projects/redux"

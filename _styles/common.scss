@@ -26,6 +26,9 @@
 .flex-row-end{
   justify-content:flex-end;
 }
+.flex-row-space-between{
+  justify-content:space-between;
+}
 .flex-row-space-around{
   justify-content:space-around;
 }
@@ -37,4 +40,16 @@
 }
 .flex-child-start{
   align-self:flex-start;
+}
+.mobile-only{
+  display:none;
+}
+
+@media(max-width:414px){
+  .desktop-only{
+    display:none;
+  }
+  .mobile-only{
+    display:block;
+  }
 }

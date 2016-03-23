@@ -5,6 +5,7 @@
     text-align: right;
   }
   .container{
+    overflow:hidden;
     padding:0 10px;
   }
   .homeCopy{
@@ -20,4 +21,26 @@
 }
 .split{
   width:50%;
+}
+@media(max-width:414px){
+  .split{
+    width:100%;
+  }
+  #projectTeaser{
+    .left{
+      text-align: left;
+    }
+    .container{
+      padding:0;
+      margin-bottom:15px;
+    }
+    .homeCopy{
+      height:200px;
+      margin-bottom:50px;
+      .container{
+        top:0;
+        bottom:0;
+      }
+    }
+  }
 }
