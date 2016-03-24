@@ -68,7 +68,7 @@ export default class EpPage extends Component{
               {"\n"}
               I employed twitter's [streaming api](https://dev.twitter.com/streaming/reference/post/statuses/filter)
               to gather the raw data on endorsements.  I filtered on `endorse` the
-              candidate's first and last name which meant a significant amount of
+              candidate&apos;s first and last name which meant a significant amount of
               redundancy of data points.  The twitter data was stored in a mongodb
               instance.
               {"\n"}

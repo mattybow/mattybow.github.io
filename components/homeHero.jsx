@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ResponsiveImage from '../_util/responsiveImage';
 import '../_styles/hero.scss';
 //http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg
 
@@ -46,7 +47,7 @@ export default class HomeHero extends Component{
         <div className="flex-child-expand"></div>
         <div style={titleStyle}  id="title-line">js developer</div>
       </div>
-      <div className="bg" style={bgStyle}></div>
+      <ResponsiveImage className="bg" style={bgStyle} src={"/images/colorado.jpg"} />
     </div>;
   }
 }
