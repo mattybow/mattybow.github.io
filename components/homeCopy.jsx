@@ -13,7 +13,7 @@ export default class HomeCopy extends Component{
       light : light
     });
     return <div className={classes}>
-      <div className="container">
+      <div className="container" style={{paddingRight:'2em'}}>
         <div className="copy-header">
           <h2>{header}</h2>
         </div>

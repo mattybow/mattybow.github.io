@@ -25392,7 +25392,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { className: classes },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'container' },
+	          { className: 'container', style: { paddingRight: '2em' } },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'copy-header' },
