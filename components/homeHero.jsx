@@ -20,7 +20,7 @@ export default class HomeHero extends Component{
       fontSize:'1.2em',
       padding:'0 1em .5em 5em',
       borderTop:`${lineHeight}px solid transparent`,
-      borderBottom:`${lineHeight}px solid rgba(0,0,0,.1)`,
+      borderBottom:`${lineHeight}px solid rgba(0,0,0,.2)`,
       alignSelf:'flex-end'
     };
     const titleStyle = {
@@ -28,7 +28,7 @@ export default class HomeHero extends Component{
       fontWeight:500,
       fontSize:'1.2em',
       borderBottom:`${lineHeight}px solid transparent`,
-      borderTop:`${lineHeight}px solid rgba(0,0,0,.1)`,
+      borderTop:`${lineHeight}px solid rgba(0,0,0,.2)`,
       alignSelf:'flex-start'
     };
     const bgStyle={
@@ -47,7 +47,7 @@ export default class HomeHero extends Component{
         <div className="flex-child-expand"></div>
         <div style={titleStyle}  id="title-line">js developer</div>
       </div>
-      <ResponsiveImage className="bg" style={bgStyle} src={"/images/colorado.jpg"} />
+      <ResponsiveImage className="bg" style={bgStyle} src={"/images/lbj-cover.jpg"} />
     </div>;
   }
 }

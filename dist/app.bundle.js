@@ -24990,7 +24990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        fontSize: '1.2em',
 	        padding: '0 1em .5em 5em',
 	        borderTop: lineHeight + 'px solid transparent',
-	        borderBottom: lineHeight + 'px solid rgba(0,0,0,.1)',
+	        borderBottom: lineHeight + 'px solid rgba(0,0,0,.2)',
 	        alignSelf: 'flex-end'
 	      };
 	      var titleStyle = {
@@ -24998,7 +24998,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        fontWeight: 500,
 	        fontSize: '1.2em',
 	        borderBottom: lineHeight + 'px solid transparent',
-	        borderTop: lineHeight + 'px solid rgba(0,0,0,.1)',
+	        borderTop: lineHeight + 'px solid rgba(0,0,0,.2)',
 	        alignSelf: 'flex-start'
 	      };
 	      var bgStyle = {
@@ -25027,7 +25027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'js developer'
 	          )
 	        ),
-	        _react2.default.createElement(_responsiveImg2.default, { className: 'bg', style: bgStyle, src: "/images/colorado.jpg" })
+	        _react2.default.createElement(_responsiveImg2.default, { className: 'bg', style: bgStyle, src: "/images/lbj-cover.jpg" })
 	      );
 	    }
 	  }]);
