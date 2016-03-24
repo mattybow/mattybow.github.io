@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 const breakpoints = [
-  { name:'mobile', limit:414, suffix:'m' },
-  { name:'tablet', limit:768, suffix:'t' },
+  { name:'mobile', limit:768, suffix:'m' },
   { name:'laptop', limit:1440, suffix:'l' },
   { name:'desktop', limit:2056, suffix:'d' }
 ];

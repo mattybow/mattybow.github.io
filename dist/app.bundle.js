@@ -25063,7 +25063,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var breakpoints = [{ name: 'mobile', limit: 414, suffix: 'm' }, { name: 'tablet', limit: 768, suffix: 't' }, { name: 'laptop', limit: 1440, suffix: 'l' }, { name: 'desktop', limit: 2056, suffix: 'd' }];
+	var breakpoints = [{ name: 'mobile', limit: 768, suffix: 'm' }, { name: 'laptop', limit: 1440, suffix: 'l' }, { name: 'desktop', limit: 2056, suffix: 'd' }];
 
 	var ResponsiveImage = function (_Component) {
 	  _inherits(ResponsiveImage, _Component);
