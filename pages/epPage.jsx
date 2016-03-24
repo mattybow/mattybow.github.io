@@ -15,7 +15,7 @@ export default class EpPage extends Component{
       site:"http://endorsementprimary.mattbow.com/endorsements"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/endorsement_ortho_sc.png">
+                        imageUrl="/images/endorsements-banner.png">
         <div className="project-text">
           <SingleCol>
             <div className="project-text-heading">CONCEPT</div>

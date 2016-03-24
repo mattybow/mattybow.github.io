@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ResponsiveImage from '../_util/responsiveImage';
+import ResponsiveImage from './responsiveImg';
 import '../_styles/hero.scss';
 //http://api.oxfordhouse.nl/wp-content/uploads/2015/10/DSCF2947_1.jpg
 

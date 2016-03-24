@@ -12,7 +12,7 @@ export default class VaporPage extends Component{
       description:"backbone app for in-house software development"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/vapor_horizontal.png">
+                        imageUrl="/images/vapor-banner.png">
       <div className="project-text">
         <SingleCol>
           <div className="project-text-heading">CONCEPT</div>

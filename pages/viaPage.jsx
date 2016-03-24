@@ -13,7 +13,7 @@ export default class ViaPage extends Component{
       site:"http://www.viagelatohawaii.com/"
     }
     return <ProjectView details={details}
-                        imageUrl="https://scontent.cdninstagram.com/t51.2885-15/e15/10946620_1595655620676469_1929700559_n.jpg">
+                        imageUrl="/images/via-banner.jpg">
       <div className="project-text">
         <SingleCol>
           <div className="project-text-heading">CONCEPT</div>

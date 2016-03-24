@@ -13,7 +13,7 @@ export default class SxstackPage extends Component{
       site:"http://sxmusiclist.herokuapp.com/"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/sxstack_horizontal.png">
+                        imageUrl="/images/sxstack-banner.png">
       <div className="project-text">
         <SingleCol>
           <div className="project-text-heading">CONCEPT</div>

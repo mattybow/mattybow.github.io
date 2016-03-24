@@ -14,7 +14,7 @@ export default class ChatPage extends Component{
       site:"http://babel-alpha-chat1.herokuapp.com/"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/avocadyo_horizontal.png">
+                        imageUrl="/images/avocadyo-banner.png">
       <div className="project-text">
         <SingleCol>
           <div className="project-text-heading">CONCEPT</div>

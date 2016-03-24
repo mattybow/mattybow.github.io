@@ -77,7 +77,7 @@ export default class GfyPage extends Component{
       site:"http://mattbow.com/gfy-cat/"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/gfy-cat-horizontal.png">
+                        imageUrl="/images/gfy-cat-banner.png">
       <SingleCol>
         <div className="project-text-heading">CONCEPT</div>
         <Markdown source={CONCEPT_TEXT} />

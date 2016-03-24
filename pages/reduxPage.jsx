@@ -12,7 +12,7 @@ export default class ReduxPage extends Component{
       description:"slides and demo for meetup talk on react and redux"
     }
     return <ProjectView details={details}
-                        imageUrl="/images/yosemite-ig.jpg">
+                        imageUrl="/images/yosemite-ig-banner.jpg">
       <div className="project-text">
         <SingleCol>
           <div className="project-text-heading">CONCEPT</div>

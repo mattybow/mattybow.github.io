@@ -19,7 +19,7 @@ class ProjectTeaser extends Component{
                         projName="ENDORSEMENT PRIMARY"
                         url="/projects/endorsement"
                         descript="react app for tracking endorsements during the 2016 primary election"/>
-          <ProjectPane imgSrc="https://scontent.cdninstagram.com/t51.2885-15/e15/10946620_1595655620676469_1929700559_n.jpg"
+          <ProjectPane imgSrc="/images/via-sc.jpg"
                         projName="VIA GELATO HAWAII"
                         url="/projects/via"
                         descript="Business website and content management system made with meteorJs"/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import ResponsiveImage from './responsiveImg';
 import '../_styles/projectView.scss';
 
 class Detail extends Component{
@@ -39,15 +40,15 @@ export default class ProjectView extends Component{
       </div>
       <div className="flex-parent-row wrap start">
         <div className="flex-child-expand" style={{backgroundColor:'white'}}>
-
-          <div style={{
-              width:'100%',
-              backgroundImage:`url("${this.props.imageUrl}")`,
-              backgroundSize:'cover',
-              backgroundPosition:'50% 50%',
-              position:'relative',
-              zIndex:0
-            }} className="project-banner"></div>
+          <ResponsiveImage className="project-banner"
+                           src={this.props.imageUrl}
+                           style={{
+                               width:'100%',
+                               backgroundSize:'cover',
+                               backgroundPosition:'50% 50%',
+                               position:'relative',
+                               zIndex:0
+                             }}/>
         </div>
         <div className="project-details" >
           <div style={{padding:'0 0 0 30%',
