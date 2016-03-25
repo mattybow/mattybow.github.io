@@ -37016,7 +37016,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "Redux Talk",
 	        date: "March 2016",
 	        technologies: ["react", "express", "mysql", "redux"],
-	        description: "slides and demo for meetup talk on react and redux"
+	        description: "slides and demo for meetup talk on react and redux",
+	        site: "http://mattbow.com/redux-dev-talk/"
 	      };
 	      return _react2.default.createElement(
 	        _projectView2.default,
