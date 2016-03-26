@@ -26009,7 +26009,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
@@ -26051,7 +26051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              null,
 	              '### Data',
 	              "\n",
-	              'I employed twitter\'s [streaming api](https://dev.twitter.com/streaming/reference/post/statuses/filter) to gather the raw data on endorsements.  I filtered on `endorse` the candidate\'s first and last name which meant a significant amount of redundancy of data points.  The twitter data was stored in a mongodb instance.',
+	              'I employed twitter\'s [streaming api]("https://dev.twitter.com/streaming/reference/post/statuses/filter") to gather the raw data on endorsements.  I filtered on `endorse` the candidate\'s first and last name which meant a significant amount of redundancy of data points.  The twitter data was stored in a mongodb instance.',
 	              "\n",
 	              'Aside from the initial data gather, I used a mysql instance to store the structured data.  I chose a relational db for its foreign key constraints, join capabilities, and data integrity which meant writing less code.',
 	              "\n",
@@ -26062,6 +26062,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              _reactRemarkable2.default,
 	              null,
 	              "\n",
+	              _react2.default.createElement('br', null),
 	              '### CMS',
 	              "\n",
 	              'In lieu of an algorithm to parse tweets, which is not a trivial task, given the varied nature of language and implied context, I created an interface to manually input the endorsements.',
@@ -26071,7 +26072,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc1.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc2.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc3.png', width: '50%', screenShot: true }),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc4.png', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-data-sc4.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'One success was in making a dropdown component that was flexible enough to accommodate several use cases in both the cms app and the primary app',
+	              "\n",
+	              'The **endorser dropdowns**',
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-dd-sc1.png' }),
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-dd-sc3.png' }),
+	              "\n",
+	              'and the **tag dropdown** for selecting or creating tags to assign to an endorser',
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-dd-sc2.png' }),
+	              _react2.default.createElement('br', null),
+	              '### App',
+	              "\n",
+	              'The app runs on the same server that hosts the databases and the cms. I used nginx to proxy the requests for the different domains.'
+	            )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-app-sc1.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-app-sc2.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/endrs-app-sc3.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              'The app never made it to release due to time constraints and the shear amount of man hours it would have taken to go through the tweet data, verify the data, and include all of the analytical features that would have made the app useful.',
+	              "\n"
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -26099,6 +26133,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react2 = _interopRequireDefault(_react);
 
 	var _reactRouter = __webpack_require__(159);
+
+	var _footer = __webpack_require__(240);
+
+	var _footer2 = _interopRequireDefault(_footer);
 
 	var _responsiveImg = __webpack_require__(223);
 
@@ -26284,7 +26322,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          'div',
 	          null,
 	          this.props.children
-	        )
+	        ),
+	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -36910,7 +36949,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var CONCEPT_TEXT = '\nI was experimenting with\n[polymer](https://www.polymer-project.org/)\nwhen I made this first post.  Polymer seemed to be promising\ntechnology for making reusable web comoponents without too much overhead.\n\n\nWhile making the post, I put a few animated [`x-gifs`](https://github.com/geelen/x-gif)\nin and then quickly learned about some of the weaknesses of gif.\n\nDisplaying a large gif or too many overwhelmed my browser\'s memory.  A common\nsolution is to display the gif as a `<video>` element.  [Gfycat](http://gfycat.com/) is a\nservice that converts gifs into video files and hosts them thru AWS.\n\nI thought, this might be a good candidate for encapsulation in a polymer\ncomponent, so I wrote [`gfy-cat`](http://mattbow.com/gfy-cat).\nSource [here](https://github.com/mattybow/gfy-cat).\n\nTesting this on multiple browsers was a pain to say the least.  In the end,\nwriting gfy-cat was a good experience in trying to write\na piece of software intended for use by other developers.  There are a lot of\ncasese to consider';
 
-	var IMPLEMENTATION = '\n- #### [IE and svgs](http://1pxsolidtomato.com/2014/10/08/quest-for-scalable-svg-text/)\n\nSvgs without a height specified, despite the `<svg>` having the `viewBox`\nattribute, IE will default the height to 150px.  The solution was what is known\nas the [intrisic aspect ratio trick](http://alistapart.com/article/creating-intrinsic-ratios-for-video/).\nThis uses padding-bottom, which causes the below problem.\n\n\n- #### [Firefox and padding-bottom](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox)\n\nWith flexbox, firefox assesses padding-bottom differently than all other browsers.\nNormally, padding-bottom is calculated off the width, but according to the\n[stack answer](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox),\nfirefox is the only one following the spec correctly and basing it off the respective dimension.\n\n\n- #### [iOS safari and `<video>`](https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/device-specificconsiderations/device-specificconsiderations.html)\n\niOS safari doesn\'t support `loop`, `autoplayback`, loading of metadata on\npage load, `playbackRate`, simultaneous playback of multiple videos.  The\nworst part of these unsupported behaviors is the metadata which tells us what\nthe aspect ratio is.  As a result, for iOS devices, I set the height equal to\nthe width and then when the user clicks play, on `loadedmetadata` event, I\nresize the height to match the video.\n\n- #### [IE and polymer bindings in inline style](https://code.google.com/p/dart/issues/detail?id=17075)\n\nIn IE, data bindings in the inline style attribute don\'t work and you need to\nput a `_` infront of style.  Crazy.\n\n- #### file paths\n\nWhen building the dist files for a [bower](http://bower.io/docs/creating-packages/)\npackage, it\'s probable that you\'ll need to restructure any paths that you\'re\n using in dev because in the download, it\'ll likely go into a bower_components\n folder and then into it\'s own folder.  I used\n [grunt-replace](https://github.com/outaTiME/grunt-replace) to fix\n and flatten my files.\n';
+	var IMPLEMENTATION = '\n### [IE and svgs](http://1pxsolidtomato.com/2014/10/08/quest-for-scalable-svg-text/)\n\nSvgs without a height specified, despite the `<svg>` having the `viewBox`\nattribute, IE will default the height to 150px.  The solution was what is known\nas the [intrisic aspect ratio trick](http://alistapart.com/article/creating-intrinsic-ratios-for-video/).\nThis uses padding-bottom, which causes the below problem.\n\n\n### [Firefox and padding-bottom](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox)\n\nWith flexbox, firefox assesses padding-bottom differently than all other browsers.\nNormally, padding-bottom is calculated off the width, but according to the\n[stack answer](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox),\nfirefox is the only one following the spec correctly and basing it off the respective dimension.\n\n\n### [iOS safari and `<video>`](https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/device-specificconsiderations/device-specificconsiderations.html)\n\niOS safari doesn\'t support `loop`, `autoplayback`, loading of metadata on\npage load, `playbackRate`, simultaneous playback of multiple videos.  The\nworst part of these unsupported behaviors is the metadata which tells us what\nthe aspect ratio is.  As a result, for iOS devices, I set the height equal to\nthe width and then when the user clicks play, on `loadedmetadata` event, I\nresize the height to match the video.\n\n### [IE and polymer bindings in inline style](https://code.google.com/p/dart/issues/detail?id=17075)\n\nIn IE, data bindings in the inline style attribute don\'t work and you need to\nput a `_` infront of style.  Crazy.\n\n### file paths\n\nWhen building the dist files for a [bower](http://bower.io/docs/creating-packages/)\npackage, it\'s probable that you\'ll need to restructure any paths that you\'re\n using in dev because in the download, it\'ll likely go into a bower_components\n folder and then into it\'s own folder.  I used\n [grunt-replace](https://github.com/outaTiME/grunt-replace) to fix\n and flatten my files.\n';
 
 	var GfyPage = function (_Component) {
 	  _inherits(GfyPage, _Component);
@@ -36951,7 +36990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { style: { padding: '0 1em' } },
+	            null,
 	            _react2.default.createElement(_reactRemarkable2.default, { source: IMPLEMENTATION })
 	          )
 	        )
@@ -36991,6 +37030,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _singleCol = __webpack_require__(309);
 
 	var _singleCol2 = _interopRequireDefault(_singleCol);
+
+	var _articleImg = __webpack_require__(313);
+
+	var _articleImg2 = _interopRequireDefault(_articleImg);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37032,15 +37075,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
-	              'write up coming soon',
+	              'In search of a way to create a universal app, I tried out several alternatives to reflux:',
+	              "\n",
+	              '+ [nuclearJs]("https://optimizely.github.io/nuclear-js/")',
+	              "\n",
+	              '+ [martyJs]("http://martyjs.org/")',
+	              "\n",
+	              '+ [altJs]("http://alt.js.org/")',
+	              "\n",
+	              '[**Redux**]("http://redux.js.org/") emerged as the option with the most support and as I learned more about the project, it became clear that redux was the best mutation of [flux]("https://facebook.github.io/flux/") (of which today, has features similar to redux)',
+	              "\n",
+	              'Redux taught me about *composition*, *wrappers/containers*, *pure functions*, and really got me into *es2015*.  I felt inspired to share my findings with other devs in Austin by giving a talk on Redux at the August 2015 [Bleeding Edge Web Meetup]("http://edgeatx.github.io/").',
 	              "\n"
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'IMPLEMENTATION'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              '### Presentation',
+	              "\n",
+	              '[Dan Abramov]("https://twitter.com/dan_abramov") gave an inspiring dev talk at React Conf EU 2015 in which his presentation was an example of his technology.  By using react and redux in the presentation itself, I could live code within the presentation to help people understand the moving parts.',
+	              "\n",
+	              'The challenge of delivering a talk is that your audience\'s ability and familiarity with the subject varies a lot.  So before I could start talking about Redux, I felt it appropriate to give a primer on React. I especially like this nested component that illustrates the idea of `state` and `props`:'
 	            )
-	          )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/redux-pres-sc1.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              "\n",
+	              'If you view the slides online, they won\'t make too much sense without editing the source on the fly and knowing where to click.  The video of the presentation is here:'
+	            ),
+	            _react2.default.createElement('iframe', { width: '500', height: '315', src: 'https://www.youtube.com/embed/43P44vyNwaw?t=29m42s', frameborder: '0', allowfullscreen: true }),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              _react2.default.createElement('br', null),
+	              '### App',
+	              "\n",
+	              'The example app that goes with the presentation is called igParks. It is an app that allows you to see pictures people are uploading from the 69 US National Parks.'
+	            )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-sc1.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }

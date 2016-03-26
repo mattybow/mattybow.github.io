@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import Footer from './footer';
 import ResponsiveImage from './responsiveImg';
 import '../_styles/projectView.scss';
 
@@ -92,6 +93,7 @@ export default class ProjectView extends Component{
       <div>
         {this.props.children}
       </div>
+      <Footer/>
     </div>
   }
 }

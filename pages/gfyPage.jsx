@@ -27,7 +27,7 @@ a piece of software intended for use by other developers.  There are a lot of
 casese to consider`;
 
 const IMPLEMENTATION = `
-- #### [IE and svgs](http://1pxsolidtomato.com/2014/10/08/quest-for-scalable-svg-text/)
+### [IE and svgs](http://1pxsolidtomato.com/2014/10/08/quest-for-scalable-svg-text/)
 
 Svgs without a height specified, despite the \`<svg>\` having the \`viewBox\`
 attribute, IE will default the height to 150px.  The solution was what is known
@@ -35,7 +35,7 @@ as the [intrisic aspect ratio trick](http://alistapart.com/article/creating-intr
 This uses padding-bottom, which causes the below problem.
 
 
-- #### [Firefox and padding-bottom](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox)
+### [Firefox and padding-bottom](http://stackoverflow.com/questions/23717953/padding-bottom-top-not-working-in-flexbox-layout-firefox)
 
 With flexbox, firefox assesses padding-bottom differently than all other browsers.
 Normally, padding-bottom is calculated off the width, but according to the
@@ -43,7 +43,7 @@ Normally, padding-bottom is calculated off the width, but according to the
 firefox is the only one following the spec correctly and basing it off the respective dimension.
 
 
-- #### [iOS safari and \`<video>\`](https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/device-specificconsiderations/device-specificconsiderations.html)
+### [iOS safari and \`<video>\`](https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/device-specificconsiderations/device-specificconsiderations.html)
 
 iOS safari doesn't support \`loop\`, \`autoplayback\`, loading of metadata on
 page load, \`playbackRate\`, simultaneous playback of multiple videos.  The
@@ -52,12 +52,12 @@ the aspect ratio is.  As a result, for iOS devices, I set the height equal to
 the width and then when the user clicks play, on \`loadedmetadata\` event, I
 resize the height to match the video.
 
-- #### [IE and polymer bindings in inline style](https://code.google.com/p/dart/issues/detail?id=17075)
+### [IE and polymer bindings in inline style](https://code.google.com/p/dart/issues/detail?id=17075)
 
 In IE, data bindings in the inline style attribute don't work and you need to
 put a \`_\` infront of style.  Crazy.
 
-- #### file paths
+### file paths
 
 When building the dist files for a [bower](http://bower.io/docs/creating-packages/)
 package, it's probable that you'll need to restructure any paths that you're
@@ -82,7 +82,7 @@ export default class GfyPage extends Component{
         <div className="project-text-heading">CONCEPT</div>
         <Markdown source={CONCEPT_TEXT} />
         <div className="project-text-heading">IMPLEMENTATION</div>
-        <div style={{padding:'0 1em'}}>
+        <div>
           <Markdown source={IMPLEMENTATION} />
         </div>
       </SingleCol>

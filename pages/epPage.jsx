@@ -18,7 +18,7 @@ export default class EpPage extends Component{
                         imageUrl="/images/endorsements-banner.png">
         <div className="project-text">
           <SingleCol>
-            <div className="project-text-heading">CONCEPT</div>
+            <div className="project-text-heading">BACKGROUND</div>
             <Markdown>
               I set out to create a site that informed people on candidates.
               I considered producing an analytical tool on the logical fallacies in
@@ -66,7 +66,7 @@ export default class EpPage extends Component{
             <Markdown>
               ### Data
               {"\n"}
-              I employed twitter's [streaming api](https://dev.twitter.com/streaming/reference/post/statuses/filter)
+              I employed twitter&apos;s [streaming api]("https://dev.twitter.com/streaming/reference/post/statuses/filter")
               to gather the raw data on endorsements.  I filtered on `endorse` the
               candidate&apos;s first and last name which meant a significant amount of
               redundancy of data points.  The twitter data was stored in a mongodb
@@ -83,6 +83,7 @@ export default class EpPage extends Component{
             <ArticleImg src="/images/endrs-eer-diag.png"/>
             <Markdown>
               {"\n"}
+              <br/>
               ### CMS
               {"\n"}
               In lieu of
@@ -90,13 +91,43 @@ export default class EpPage extends Component{
               varied nature of language and implied context, I created
               an interface to manually input the endorsements.
               {"\n"}
-
             </Markdown>
           </SingleCol>
           <ArticleImg src="/images/endrs-data-sc1.png" width="50%" screenShot={true}/>
           <ArticleImg src="/images/endrs-data-sc2.png" width="50%" screenShot={true}/>
           <ArticleImg src="/images/endrs-data-sc3.png" width="50%" screenShot={true}/>
           <ArticleImg src="/images/endrs-data-sc4.png" width="50%" screenShot={true}/>
+          <SingleCol>
+            <Markdown>
+              One success was in making a dropdown component that was flexible enough
+              to accommodate several use cases in both the cms app and the primary
+              app
+              {"\n"}
+              The **endorser dropdowns**
+              <ArticleImg src="/images/endrs-dd-sc1.png" />
+              <ArticleImg src="/images/endrs-dd-sc3.png" />
+              {"\n"}
+              and the **tag dropdown** for selecting or creating tags to assign to an endorser
+              <ArticleImg src="/images/endrs-dd-sc2.png" />
+              <br/>
+              ### App
+              {"\n"}
+              The app runs on the same server that hosts the databases and the cms.
+              I used nginx to proxy the requests for the different domains.
+            </Markdown>
+          </SingleCol>
+          <ArticleImg src="/images/endrs-app-sc1.png" width="50%" screenShot={true}/>
+          <ArticleImg src="/images/endrs-app-sc2.png" width="50%" screenShot={true}/>
+          <ArticleImg src="/images/endrs-app-sc3.png" width="50%" screenShot={true}/>
+          <SingleCol>
+            <Markdown>
+              The app never made it to release due to time constraints and the
+              shear amount of man hours it would have taken to go through the tweet
+              data, verify the data, and include all of the analytical features that
+              would have made the app useful.
+              {"\n"}
+            </Markdown>
+          </SingleCol>
         </div>
     </ProjectView>
   }
