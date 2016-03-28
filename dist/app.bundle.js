@@ -24749,23 +24749,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reduxPage2 = _interopRequireDefault(_reduxPage);
 
-	var _sxstackPage = __webpack_require__(316);
+	var _sxstackPage = __webpack_require__(317);
 
 	var _sxstackPage2 = _interopRequireDefault(_sxstackPage);
 
-	var _vaporPage = __webpack_require__(317);
+	var _vaporPage = __webpack_require__(318);
 
 	var _vaporPage2 = _interopRequireDefault(_vaporPage);
 
-	var _chatPage = __webpack_require__(318);
+	var _chatPage = __webpack_require__(319);
 
 	var _chatPage2 = _interopRequireDefault(_chatPage);
 
-	var _projectsPage = __webpack_require__(319);
+	var _projectsPage = __webpack_require__(320);
 
 	var _projectsPage2 = _interopRequireDefault(_projectsPage);
 
-	var _viaPage = __webpack_require__(320);
+	var _viaPage = __webpack_require__(321);
 
 	var _viaPage2 = _interopRequireDefault(_viaPage);
 
@@ -25840,7 +25840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              null,
-	              'last updated Mar 23 2016'
+	              'last updated Mar 28 2016'
 	            ),
 	            _react2.default.createElement(
 	              'div',
@@ -26320,7 +26320,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          null,
+	          { style: { paddingBottom: '5em' } },
 	          this.props.children
 	        ),
 	        _react2.default.createElement(_footer2.default, null)
@@ -37035,6 +37035,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _articleImg2 = _interopRequireDefault(_articleImg);
 
+	var _iFrame = __webpack_require__(316);
+
+	var _iFrame2 = _interopRequireDefault(_iFrame);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37118,17 +37122,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	              "\n",
 	              'If you view the slides online, they won\'t make too much sense without editing the source on the fly and knowing where to click.  The video of the presentation is here:'
 	            ),
-	            _react2.default.createElement('iframe', { width: '500', height: '315', src: 'https://www.youtube.com/embed/43P44vyNwaw?t=29m42s', frameborder: '0', allowfullscreen: true }),
+	            _react2.default.createElement(_iFrame2.default, { src: 'https://www.youtube.com/embed/43P44vyNwaw?t=29m42s' }),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
 	              _react2.default.createElement('br', null),
 	              '### App',
 	              "\n",
-	              'The example app that goes with the presentation is called igParks. It is an app that allows you to see pictures people are uploading from the 69 US National Parks.'
+	              'The example app that goes with the presentation is called igParks. It is an app that allows you to see pictures people are uploading from the 69 US National Parks.',
+	              "\n",
+	              'IgParks demonstrates state management with Redux.  In Redux, state is stored in a single tree that any component can read, and even derive a different state or an altered form of that state.  An example of shared state is whether or not the user is logged in.  If there user is not logged in, the user is prompted to login, the follow buttons on the parks page are not displayed, and there is no avatar to display.  Once login occurs, the follow buttons are rendered, the user\'s avatar and on each page change, the user is not prompted to login.',
+	              "\n",
+	              '[React-redux]("https://github.com/reactjs/react-redux") provides a wrapper with helpers to allow dispatching of actions, defining injected props from or based on the single store, and employing pure-render functionality.  It also illustrates how to do asnychronous data requests, pagination (on scroll), and authorization across routes.',
+	              "\n",
+	              '(*It is not available live in it\'s full functional format due to instagram\'s api changes which will render the git cloned version also inoperable come June 2016*)'
 	            )
 	          ),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-sc1.png', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parks-cropped.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parkView.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user-liked.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }
@@ -37141,6 +37154,66 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Iframe = function (_Component) {
+	  _inherits(Iframe, _Component);
+
+	  function Iframe() {
+	    _classCallCheck(this, Iframe);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Iframe).apply(this, arguments));
+	  }
+
+	  _createClass(Iframe, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'iframe-wrapper', style: {
+	            position: 'relative',
+	            height: 300
+	          } },
+	        _react2.default.createElement('iframe', { style: {
+	            position: 'absolute',
+	            top: 0, bottom: 0, left: 0, right: 0
+	          },
+	          width: '100%',
+	          height: '100%',
+	          src: this.props.src,
+	          frameborder: '0',
+	          allowfullscreen: true })
+	      );
+	    }
+	  }]);
+
+	  return Iframe;
+	}(_react.Component);
+
+	exports.default = Iframe;
+
+/***/ },
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37227,7 +37300,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = SxstackPage;
 
 /***/ },
-/* 317 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37313,7 +37386,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = VaporPage;
 
 /***/ },
-/* 318 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37339,6 +37412,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _singleCol = __webpack_require__(309);
 
 	var _singleCol2 = _interopRequireDefault(_singleCol);
+
+	var _articleImg = __webpack_require__(313);
+
+	var _articleImg2 = _interopRequireDefault(_articleImg);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37380,13 +37457,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
 	              'write up coming soon',
-	              "\n"
+	              "\n",
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/chat-sc1.png', width: '80%', screenShot: true })
 	            )
 	          )
 	        )
@@ -37400,7 +37478,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ChatPage;
 
 /***/ },
-/* 319 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37503,7 +37581,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = ProjectsPage;
 
 /***/ },
-/* 320 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37529,6 +37607,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _singleCol = __webpack_require__(309);
 
 	var _singleCol2 = _interopRequireDefault(_singleCol);
+
+	var _articleImg = __webpack_require__(313);
+
+	var _articleImg2 = _interopRequireDefault(_articleImg);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37570,15 +37652,68 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
-	              'write up coming soon',
+	              'Via Gelato Hawaii\'s site is made with [meteorJs]("https://www.meteor.com/").  Meteor takes an interesting approach to streamlining some of the most commonly built features in webapps.  State is managed through a clientside data store called mini-mongo and a regular mongodb instance on the backend.  Meteor manages sessions, broadcasts updates to data changes on the backend to all connected or authorized users, handles basic user login, and a provides a unified api for getting and setting data that a developer theoretically only has to write once.',
+	              "\n",
+	              'Admittedly, Via\'s site doesn\'t need all of Meteor\'s sophisticated technology to display what is largely static data.  However, Via wanted to be able to change flavors on a daily basis and modify hours, and site images at will.  In the interest of empowering non-techincal users the ability to change the site\'s content without requiring a developer, it seemed a CMS built with Meteor was in order.'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'IMPLEMENTATION'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              '### App',
+	              "\n",
+	              'Meteor has a templating system that allows for reactive elements.  You can change the data and the update to the UI will happen without having to imperatively manipulate the DOM.  As is often the case, data from the server is used in the UI and in Meteor, when you attach a cursor\'s result to the UI, it conveniently makes the element reactive.  However, there were also many cases in which data should not be synced to the server, such as form state, validation errors, and UI state that you still want to be reactive but the api for it can be cumbersome.',
+	              "\n",
+	              'Despite the conveniences of Meteor, its all-encompassing, non-traditional approach to application development made it difficult to use certain plugins and while its plugin library, [atmosphere]("https://atmospherejs.com/") seems well supported, it still seems like a fringe dependency that might become a liability one day.',
+	              "\n",
+	              'The slideshow at the beginning of the site uses [slick]("http://kenwheeler.github.io/slick/"), the map uses Conner Atherton\'s [walkway]("https://connoratherton.com/walkway"), [sly]("http://darsa.in/sly/") for the Instagram feed, and Google\'s [recaptcha]("https://www.google.com/recaptcha/intro/index.html") and Rackspace\'s [mailgun]("https://www.mailgun.com/") for the contact form.  The front-facing website was designed by [Lina Yang]("https://www.linkedin.com/in/linahyang").'
+	            )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/via-gelato-full-page.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              "\n",
+	              _react2.default.createElement('br', null),
+	              '### CMS',
+	              "\n",
+	              'The CMS allows CRUD (create, read, update, delete) operations on flavors and assignment to the flavors of the day section of the website.  Images are uploaded to an S3 bucket and the asset address is store in the backend mongo store.',
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-flavor-add.png', width: '50%', screenShot: true }),
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-flavors.png', width: '50%', screenShot: true }),
+	              "\n",
+	              _react2.default.createElement('br', null),
+	              'Exceptions to the normal hours of operation can be scheduled through the hours tab of the admin interface.',
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-hours.png', width: '50%', screenShot: true }),
+	              "\n",
+	              _react2.default.createElement('br', null),
+	              'User permissions are also managed through the admin portion of the site.'
+	            )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-users.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(
+	            _singleCol2.default,
+	            null,
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              _react2.default.createElement('br', null),
+	              'Lastly, admin users can input new press images and assign frames that maintain the site\'s theme.',
 	              "\n"
 	            )
-	          )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-press.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }

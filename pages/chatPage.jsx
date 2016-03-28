@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProjectView from '../components/projectView';
 import Markdown from 'react-remarkable';
 import SingleCol from '../components/singleCol';
+import ArticleImg from '../components/articleImg';
 
 
 export default class ChatPage extends Component{
@@ -17,10 +18,11 @@ export default class ChatPage extends Component{
                         imageUrl="/images/avocadyo-banner.png">
       <div className="project-text">
         <SingleCol>
-          <div className="project-text-heading">CONCEPT</div>
+          <div className="project-text-heading">BACKGROUND</div>
           <Markdown>
             write up coming soon
             {"\n"}
+            <ArticleImg src="/images/chat-sc1.png" width="80%" screenShot={true}/>
           </Markdown>
         </SingleCol>
       </div>

@@ -90,7 +90,7 @@ export default class ProjectView extends Component{
 
       </div>
 
-      <div>
+      <div style={{paddingBottom:'5em'}}>
         {this.props.children}
       </div>
       <Footer/>

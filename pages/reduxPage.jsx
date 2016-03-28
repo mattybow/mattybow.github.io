@@ -3,6 +3,7 @@ import ProjectView from '../components/projectView';
 import Markdown from 'react-remarkable';
 import SingleCol from '../components/singleCol';
 import ArticleImg from '../components/articleImg';
+import Iframe from '../components/iFrame';
 
 export default class ReduxPage extends Component{
   render(){
@@ -64,7 +65,7 @@ export default class ReduxPage extends Component{
             editing the source on the fly and knowing where to click.  The video
             of the presentation is here:
           </Markdown>
-          <iframe width="500" height="315" src="https://www.youtube.com/embed/43P44vyNwaw?t=29m42s" frameborder="0" allowfullscreen></iframe>
+          <Iframe src="https://www.youtube.com/embed/43P44vyNwaw?t=29m42s"/>
           <Markdown>
             <br/>
             ### App
@@ -72,9 +73,31 @@ export default class ReduxPage extends Component{
             The example app that goes with the presentation is called igParks.
             It is an app that allows you to see pictures people are uploading from
             the 69 US National Parks.
+            {"\n"}
+            IgParks demonstrates state management with Redux.  In Redux, state is
+            stored in a single tree that any component can read, and even derive
+            a different state or an altered form of that state.  An example of shared 
+            state is whether or not the user is logged in.  If there user is not
+            logged in, the user is prompted to login, the follow buttons on the parks
+            page are not displayed, and there is no avatar to display.  Once login
+            occurs, the follow buttons are rendered, the user's avatar and on each
+            page change, the user is not prompted to login.
+            {"\n"}
+            [React-redux]("https://github.com/reactjs/react-redux") provides a
+            wrapper with helpers to allow dispatching of actions, defining injected
+            props from or based on the single store, and employing pure-render
+            functionality.  It also illustrates how to do asnychronous data
+            requests, pagination (on scroll), and authorization across routes.
+            {"\n"}
+            (*It is not available live in it&apos;s full functional format due to
+            instagram&apos;s api changes which will render the git cloned version
+            also inoperable come June 2016*)
           </Markdown>
         </SingleCol>
-        <ArticleImg src="/images/igParks-sc1.png" width="50%" screenShot={true}/>
+        <ArticleImg src="/images/igParks-parks-cropped.png" width="50%" screenShot={true}/>
+        <ArticleImg src="/images/igParks-parkView.png" width="50%" screenShot={true}/>
+        <ArticleImg src="/images/igParks-user.png" width="50%" screenShot={true}/>
+        <ArticleImg src="/images/igParks-user-liked.png" width="50%" screenShot={true}/>
       </div>
     </ProjectView>
   }
