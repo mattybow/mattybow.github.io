@@ -37141,7 +37141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parks-cropped.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parkView.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user.png', width: '50%', screenShot: true }),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user-liked.png', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user-like.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }

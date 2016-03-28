@@ -76,7 +76,7 @@ export default class ReduxPage extends Component{
             {"\n"}
             IgParks demonstrates state management with Redux.  In Redux, state is
             stored in a single tree that any component can read, and even derive
-            a different state or an altered form of that state.  An example of shared 
+            a different state or an altered form of that state.  An example of shared
             state is whether or not the user is logged in.  If there user is not
             logged in, the user is prompted to login, the follow buttons on the parks
             page are not displayed, and there is no avatar to display.  Once login
@@ -97,7 +97,7 @@ export default class ReduxPage extends Component{
         <ArticleImg src="/images/igParks-parks-cropped.png" width="50%" screenShot={true}/>
         <ArticleImg src="/images/igParks-parkView.png" width="50%" screenShot={true}/>
         <ArticleImg src="/images/igParks-user.png" width="50%" screenShot={true}/>
-        <ArticleImg src="/images/igParks-user-liked.png" width="50%" screenShot={true}/>
+        <ArticleImg src="/images/igParks-user-like.png" width="50%" screenShot={true}/>
       </div>
     </ProjectView>
   }
