@@ -13,8 +13,8 @@ export default class Iframe extends Component{
               width="100%"
               height="100%"
               src={this.props.src}
-              frameborder="0"
-              allowfullscreen>
+              frameBorder="0"
+              allowFullScreen>
       </iframe>
     </div>;
   }

@@ -25840,7 +25840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              null,
-	              'last updated Mar 28 2016'
+	              'last updated Mar 30 2016'
 	            ),
 	            _react2.default.createElement(
 	              'div',
@@ -37201,8 +37201,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          width: '100%',
 	          height: '100%',
 	          src: this.props.src,
-	          frameborder: '0',
-	          allowfullscreen: true })
+	          frameBorder: '0',
+	          allowFullScreen: true })
 	      );
 	    }
 	  }]);
@@ -37240,6 +37240,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _singleCol2 = _interopRequireDefault(_singleCol);
 
+	var _articleImg = __webpack_require__(313);
+
+	var _articleImg2 = _interopRequireDefault(_articleImg);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37248,8 +37252,52 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SxstackPage = function (_Component) {
-	  _inherits(SxstackPage, _Component);
+	var TimeFormat = function (_Component) {
+	  _inherits(TimeFormat, _Component);
+
+	  function TimeFormat() {
+	    _classCallCheck(this, TimeFormat);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(TimeFormat).apply(this, arguments));
+	  }
+
+	  _createClass(TimeFormat, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'flex-parent-row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'time-format',
+	            style: {
+	              width: '50%',
+	              textAlign: 'right'
+	            } },
+	          _react2.default.createElement(
+	            'div',
+	            { style: { paddingRight: '1em' } },
+	            this.props.time
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { style: { paddingLeft: '1em' } },
+	            'Courtney Barnett'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TimeFormat;
+	}(_react.Component);
+
+	var SxstackPage = function (_Component2) {
+	  _inherits(SxstackPage, _Component2);
 
 	  function SxstackPage() {
 	    _classCallCheck(this, SxstackPage);
@@ -37280,13 +37328,81 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
-	              'write up coming soon',
+	              '[South by Southwest]("https://en.wikipedia.org/wiki/South_by_Southwest") (SXSW) or South by for short, is a festival for music, film, and technology held in Austin TX every March.  Some go for the free alcohol, the copious parties, or any number of other reasons, but for me, South by music is a chance to see new artists and bands.  NPR\'s [Austin 100]("http://apps.npr.org/austin/") has been particularly helpful for browsing the upward of 2,000 acts that come to Austin, but even then, planning out a schedule can be difficult.',
+	              "\n",
+	              'During South by, bands play up to 7 or 8 times over the course of 4 days. They might play 1 or 2 official SXSW showcases in the evening, which is documented by the official SXSW app, but the remainder and often the majority of the shows are during the day at unofficial events.  (design by [Cameron Miller]("https://www.behance.net/cmillergraphicdesign"))',
+	              "\n",
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/sxstack-artist-showtimes.png', width: '60%', screenShot: true }),
+	              _react2.default.createElement('br', null),
+	              'Something to note, SXSW is a festival that takes place across Austin\'s downtown.  Bars large and small, open lots and warehouses become venues.  So location and time are important pieces of data.',
+	              "\n",
+	              '[Do512]("http://2016.do512.com/") and [ShowlistAustin]("http://showlistaustin.com/") do a pretty good job of compiling all of the different show times, locations, but in 2015 nothing existed that focused on building an itinerary for seeing particular artists.'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'IMPLEMENTATION'
+	            ),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              '### Data',
+	              "\n",
+	              'I wrote a script to run all of the routes for the pages of events from do512.  The data was event based, so each event had a start time and a location.  The artist and the time they went on stage, which sometimes was not given, was listed under unstructured HTML.  Sigh the joys of scraping data.',
+	              "\n",
+	              'Aside from inconsistent naming of bands or artists was the problem of parsing out the correct time.  There are so many ways the people at do512 list out time that is perfectly readable by a human but difficult for an algorithm.  Here are a few examples:',
 	              "\n"
+	            ),
+	            _react2.default.createElement(TimeFormat, { time: '12:30p' }),
+	            _react2.default.createElement(TimeFormat, { time: '1230p' }),
+	            _react2.default.createElement(TimeFormat, { time: '1230' }),
+	            _react2.default.createElement(TimeFormat, { time: 'Noon' }),
+	            _react2.default.createElement(TimeFormat, { time: '12 - 1p' }),
+	            _react2.default.createElement(TimeFormat, { time: '12p-1' }),
+	            _react2.default.createElement(
+	              _reactRemarkable2.default,
+	              null,
+	              "\n",
+	              _react2.default.createElement('br', null),
+	              'Also, sometimes the artist name came before and sometimes after the listed time.  I ended up with almost 9,000 records for shows.',
+	              "\n",
+	              'I also wanted the webapp to work without a connection.  My initial thought was to download all of the showtimes, the shows on your list, and the venue information and it for the most part could work offline. In hindsight, this was a feature that ended up driving the decisions for other things in the app, some of which was costly timewise to develop.',
+	              _react2.default.createElement('br', null),
+	              '### App Since the DOM can\'t handle scrolling 9,000 things at once, I used a library that does what react\'s [FixedDataTable]("https://facebook.github.io/fixed-data-table/") would later come out with.  The basic idea is to display only what the user can see in their viewport plus some buffer above and below.  The benefit of using React in this case is that it takes care of the DOM operations during scrolling through its reconciler.',
+	              "\n",
+	              _react2.default.createElement(_articleImg2.default, { src: 'https://s3-us-west-1.amazonaws.com/sxlist/screenshots/sxstack-scroll.gif', width: '60%', screenShot: true }),
+	              _react2.default.createElement('br', null),
+	              'A lot of the challenges with the front-end centered around the scroll position.',
+	              _react2.default.createElement(
+	                'ul',
+	                null,
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'changing the header\'s labels when scrolling to a new day or a different hour'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'scrolling to the correct hour and date when applying a filter'
+	                ),
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  'retaining scroll position when switching between tabs'
+	                )
+	              ),
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/sxstack-date-selection.png', width: '60%', screenShot: true }),
+	              _react2.default.createElement(_articleImg2.default, { src: '/images/sxstack-show-details.png', width: '60%', screenShot: true }),
+	              _react2.default.createElement('br', null),
+	              'In retrospect, given the time contraints on the app, the UI should have been less ambitious to accommodate features like sharing lists between users.  Also, using [Reflux]("https://github.com/reflux/refluxjs"), to manage shared state in separate stores was less intuitive and more prohibitive than I had predicted.',
+	              "\n",
+	              'I did use the app during the festival, along with some other friends'
 	            )
 	          )
 	        )
@@ -37327,6 +37443,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _singleCol2 = _interopRequireDefault(_singleCol);
 
+	var _articleImg = __webpack_require__(313);
+
+	var _articleImg2 = _interopRequireDefault(_articleImg);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37366,15 +37486,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'project-text-heading' },
-	              'CONCEPT'
+	              'BACKGROUND'
 	            ),
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
 	              'write up coming soon',
 	              "\n"
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'project-text-heading' },
+	              'IMPLEMENTATION'
 	            )
-	          )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/vapor-main.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/vapor-release-tab.png', width: '50%', screenShot: true })
 	        )
 	      );
 	    }
@@ -37462,11 +37589,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              _reactRemarkable2.default,
 	              null,
-	              'write up coming soon',
+	              'Fresh out of developing sql for Samsung Austin Semiconductor, I still wanted to maintain in touch with my former coworkers.  I decided to make a basic chat app to bypass SAS\'s websense web filter and experiment with [socket.io]("http://socket.io/")',
 	              "\n",
-	              _react2.default.createElement(_articleImg2.default, { src: '/images/chat-sc1.png', width: '80%', screenShot: true })
+	              'The app is very barebones.  It only really works with a persistent connection.  Once the connection is lost, the user is shown to have left the chat.  I could have used firebase to store messages not delivered to a client that was connected.',
+	              "\n",
+	              _react2.default.createElement(_articleImg2.default, { src: 'http://i.giphy.com/3o7WTB6Y99sMzHhvjy.gif', width: '60%', screenShot: true }),
+	              "\n",
+	              'Admittedly lacking any sort of privacy in the app, other than having to know the web address, I put in a feature to disconnect other clients',
+	              "\n"
 	            )
-	          )
+	          ),
+	          _react2.default.createElement(_articleImg2.default, { src: 'http://i.giphy.com/l2QZZS1MaTBI39caY.gif', width: '50%', screenShot: true })
 	        )
 	      );
 	    }
