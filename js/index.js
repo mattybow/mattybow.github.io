@@ -1,11 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { browserHistory, Router, createRoutes } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import useScroll from 'scroll-behavior/lib/useSimpleScroll'
+import { useRouterHistory, Router, createRoutes } from 'react-router';
 import routes from '../pages/routes';
 
+const appHistory = useScroll(useRouterHistory(createBrowserHistory))();
 if (typeof document !== 'undefined') {
-  render(<Router onUpdate={() => window.scrollTo(0, 0)}
-                  history={browserHistory}
+  render(<Router history={appHistory}
                   routes={routes} />, document.getElementById('root'));
 }
 

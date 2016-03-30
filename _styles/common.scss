@@ -47,15 +47,3 @@ iframe{
 .flex-child-start{
   align-self:flex-start;
 }
-.mobile-only{
-  display:none;
-}
-
-@media(max-width:414px){
-  .desktop-only{
-    display:none;
-  }
-  .mobile-only{
-    display:block;
-  }
-}

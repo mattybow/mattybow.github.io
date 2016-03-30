@@ -63,7 +63,7 @@
     bottom:0;
     left:0;
     right:0;
-    padding:40px;
+    padding:3em;
     color:#fff;
     z-index:1;
     text-align: left;
@@ -115,6 +115,9 @@
   }
 }
 @media(max-width:414px){
+  .proj-descript{
+    padding:2em;
+  }
   .project-pic img{
       height:auto;
       width:100%;

@@ -1,11 +1,12 @@
 import React, { Component }from 'react';
 import {Link} from 'react-router';
+import cx from 'classnames';
 import '../_styles/projectPane.scss';
 
 export default class ProjectPane extends Component{
   render(){
-    const {imgSrc,projName,descript} = this.props;
-    return <div className="project-pane">
+    const {imgSrc,projName,descript,className} = this.props;
+    return <div className={cx("project-pane",className)}>
       <div className="project-pic">
         <img className="desktop-only" src={imgSrc} alt="project-pic" />
         <div className="mobile-only"

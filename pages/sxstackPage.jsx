@@ -101,6 +101,7 @@ export default class SxstackPage extends Component{
             for other things in the app, some of which was costly timewise to develop.
             <br/>
             ### App
+            {"\n"}
             Since the DOM can't handle scrolling 9,000 things at once, I used a library
             that does what react's [FixedDataTable]("https://facebook.github.io/fixed-data-table/")
             would later come out with.  The basic idea is to display only what the
@@ -123,11 +124,10 @@ export default class SxstackPage extends Component{
             <br/>
             In retrospect, given the time contraints on the app, the UI should have been
             less ambitious to accommodate features like sharing lists between
-            users.  Also, using [Reflux]("https://github.com/reflux/refluxjs"),
+            users.  Also, using [Reflux]("https://github.com/reflux/refluxjs")
             to manage shared state in separate stores was less intuitive and more
-            prohibitive than I had predicted.
-            {"\n"}
-            I did use the app during the festival, along with some other friends
+            prohibitive than I had predicted.  It was a valuable learning experience
+            in building a mobile webapp.
 
           </Markdown>
         </SingleCol>

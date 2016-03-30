@@ -91,7 +91,7 @@ export default class ReduxPage extends Component{
             {"\n"}
             (*It is not available live in it&apos;s full functional format due to
             instagram&apos;s api changes which will render the git cloned version
-            also inoperable come June 2016*)
+            also **inoperable come June 2016***)
           </Markdown>
         </SingleCol>
         <ArticleImg src="/images/igParks-parks-cropped.png" width="50%" screenShot={true}/>
