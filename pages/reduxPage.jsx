@@ -98,6 +98,7 @@ export default class ReduxPage extends Component{
         <ArticleImg src="/images/igParks-parkView.png" width="50%" screenShot={true}/>
         <ArticleImg src="/images/igParks-user.png" width="50%" screenShot={true}/>
         <ArticleImg src="/images/igParks-user-like.png" width="50%" screenShot={true}/>
+        <br/>
       </div>
     </ProjectView>
   }

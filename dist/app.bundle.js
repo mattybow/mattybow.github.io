@@ -76,6 +76,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _routes2 = _interopRequireDefault(_routes);
 
+	__webpack_require__(337);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var appHistory = (0, _useSimpleScroll2.default)((0, _reactRouter.useRouterHistory)(_createBrowserHistory2.default))();
@@ -26803,124 +26805,60 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var FooterLinks = function (_Component) {
-	  _inherits(FooterLinks, _Component);
+	var SocialLinks = function SocialLinks(props) {
+	  var outerStyle = {
+	    padding: '50px 40px 10px'
+	  };
 
-	  function FooterLinks() {
-	    _classCallCheck(this, FooterLinks);
+	  var style = {
+	    display: 'inline-block',
+	    fontSize: '1.5em'
+	  };
+	  //,"icon-github-circled","icon-stackoverflow"
+	  var iconClasses = ["icon-twitter", "icon-linkedin"];
+	  var icons = iconClasses.map(function (iconClass) {
+	    return _react2.default.createElement(
+	      'span',
+	      { className: 'circled' },
+	      _react2.default.createElement('span', { className: iconClass })
+	    );
+	  });
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(FooterLinks).apply(this, arguments));
-	  }
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'flex-row-parent social-links' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'social-link' },
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'https://www.linkedin.com/in/mattybow', target: '_blank' },
+	        'linkedin'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'social-link' },
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'http://stackoverflow.com/cv/mattybow', target: '_blank' },
+	        'stackoverflow'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'social-link' },
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'https://github.com/mattybow', target: '_blank' },
+	        'github'
+	      )
+	    )
+	  );
+	};
 
-	  _createClass(FooterLinks, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'span',
-	          { className: 'footer-link' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/about' },
-	            'About'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'span',
-	          { className: 'footer-link' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/contact' },
-	            'Contact'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'span',
-	          { className: 'footer-link' },
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/blog' },
-	            'Blog'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return FooterLinks;
-	}(_react.Component);
-
-	var SocialLinks = function (_Component2) {
-	  _inherits(SocialLinks, _Component2);
-
-	  function SocialLinks() {
-	    _classCallCheck(this, SocialLinks);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialLinks).apply(this, arguments));
-	  }
-
-	  _createClass(SocialLinks, [{
-	    key: 'render',
-	    value: function render() {
-	      var outerStyle = {
-	        padding: '50px 40px 10px'
-	      };
-
-	      var style = {
-	        display: 'inline-block',
-	        fontSize: '1.5em'
-	      };
-	      //,"icon-github-circled","icon-stackoverflow"
-	      var iconClasses = ["icon-twitter", "icon-linkedin"];
-	      var icons = iconClasses.map(function (iconClass) {
-	        return _react2.default.createElement(
-	          'span',
-	          { className: 'circled' },
-	          _react2.default.createElement('span', { className: iconClass })
-	        );
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'flex-row-parent social-links' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'social-link' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: 'https://www.linkedin.com/in/mattybow', target: '_blank' },
-	            'linkedin'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'social-link' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: 'http://stackoverflow.com/cv/mattybow', target: '_blank' },
-	            'stackoverflow'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'social-link' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: 'https://github.com/mattybow', target: '_blank' },
-	            'github'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SocialLinks;
-	}(_react.Component);
-
-	var Footer = function (_Component3) {
-	  _inherits(Footer, _Component3);
+	var Footer = function (_Component) {
+	  _inherits(Footer, _Component);
 
 	  function Footer() {
 	    _classCallCheck(this, Footer);
@@ -26972,7 +26910,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _react2.default.createElement(
 	              'div',
 	              null,
-	              'last updated Mar 30 2016'
+	              'last updated Mar 31 2016'
 	            ),
 	            _react2.default.createElement(
 	              'div',
@@ -38041,7 +37979,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'container', style: { width: 'ontouchstart' in window && props.screenShot ? 'calc(100% - 4em)' : props.width || '100%' } },
+	      { className: 'container article-img', style: { width: 'ontouchstart' in window && props.screenShot ? '' : props.width || '100%' } },
 	      _react2.default.createElement('img', { className: props.screenShot ? "shadow" : '', src: props.src, style: { width: '100%' }, alt: '' })
 	    )
 	  );
@@ -38279,7 +38217,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parks-cropped.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-parkView.png', width: '50%', screenShot: true }),
 	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user.png', width: '50%', screenShot: true }),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user-like.png', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/igParks-user-like.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement('br', null)
 	        )
 	      );
 	    }
@@ -38779,7 +38718,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	              "\n"
 	            )
 	          ),
-	          _react2.default.createElement(_articleImg2.default, { src: 'http://i.giphy.com/l2QZZS1MaTBI39caY.gif', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: 'http://i.giphy.com/l2QZZS1MaTBI39caY.gif', width: '50%', screenShot: true }),
+	          _react2.default.createElement('br', null)
 	        )
 	      );
 	    }
@@ -39026,7 +38966,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	              "\n"
 	            )
 	          ),
-	          _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-press.png', width: '50%', screenShot: true })
+	          _react2.default.createElement(_articleImg2.default, { src: '/images/via-admin-press.png', width: '50%', screenShot: true }),
+	          _react2.default.createElement('br', null)
 	        )
 	      );
 	    }
@@ -39036,6 +38977,254 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_react.Component);
 
 	exports.default = ViaPage;
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	(function () {
+
+	  var React = __webpack_require__(1);
+
+	  var originalCreateElement = React.createElement;
+
+	  // Moved if Math.abs(downX - upX) > MOVE_THRESHOLD;
+	  var MOVE_THRESHOLD = 8;
+	  var TOUCH_DELAY = 1000;
+
+	  var touchKeysToStore = [
+	    'clientX',
+	    'clientY',
+	    'pageX',
+	    'pageY',
+	    'screenX',
+	    'screenY',
+	    'radiusX',
+	    'radiusY'
+	  ];
+
+	  var touchEvents = {
+	    downPos: {},
+	    lastPos: {}
+	  };
+
+	  var isDisabled = function (element) {
+	    if (!element) {
+	      return false;
+	    }
+	    var disabled = element.getAttribute('disabled');
+
+	    return disabled !== false && disabled !== null;
+	  };
+
+	  var focusAndCheck = function (event, target) {
+	    var myTarget = target || event.currentTarget;
+
+	    if (isDisabled(myTarget)) {
+	      return;
+	    }
+
+	    myTarget.focus();
+
+	    switch (myTarget.type) {
+	      case 'checkbox':
+	        myTarget.checked = !myTarget.checked;
+	        event.preventDefault();
+	        break;
+	      case 'radio':
+	        myTarget.checked = true;
+	        event.preventDefault();
+	        break;
+	    }
+	  };
+
+	  var handleType = {
+	    input: function (event) {
+	      focusAndCheck(event);
+	      event.stopPropagation();
+	    },
+	    textarea: function (event) {
+	      focusAndCheck(event);
+	      event.stopPropagation();
+	    },
+	    select: function (event) {
+	      focusAndCheck(event);
+	      event.stopPropagation();
+	    },
+	    label: function (event) {
+	      var input;
+
+	      var forTarget = event.currentTarget.getAttribute('for');
+
+	      if (forTarget) {
+	        input = document.getElementById(forTarget);
+	      } else {
+	        input = event.currentTarget.querySelectorAll('input, textarea, select')[0];
+	      }
+
+	      if (input) {
+	        focusAndCheck(event, input);
+	      }
+	      event.preventDefault();
+	    }
+	  };
+
+	  var fakeClickEvent = function (event) {
+	    event.fastclick = true;
+	    event.type = 'click';
+	    event.button = 0;
+	  };
+
+	  var copyTouchKeys = function (touch, target) {
+	    if (touch) {
+	      for (var i = 0; i < touchKeysToStore.length; i += 1) {
+	        var key = touchKeysToStore[i];
+	        target[key] = touch[key];
+	      }
+	    }
+	  };
+
+	  var noTouchHappened = function () {
+	    return !touchEvents.touched || new Date().getDate() > touchEvents.lastTouchDate + TOUCH_DELAY;
+	  };
+
+	  var invalidateIfMoreThanOneTouch = function (event) {
+	    touchEvents.invalid = event.touches && event.touches.length > 1 || touchEvents.invalid;
+	  };
+
+	  var onMouseEvent = function (callback, event) {
+	    // Prevent any mouse events if we touched recently
+	    if (typeof callback === 'function' && noTouchHappened()) {
+	      callback(event);
+	    }
+	    if (event.type === 'click') {
+	      touchEvents.invalid = false;
+	      touchEvents.touched = false;
+	      touchEvents.moved = false;
+	    }
+	  };
+
+	  var onTouchStart = function (callback, event) {
+	    touchEvents.invalid = false;
+	    touchEvents.moved = false;
+	    touchEvents.touched = true;
+	    touchEvents.lastTouchDate = new Date().getTime();
+
+	    copyTouchKeys(event.touches[0], touchEvents.downPos);
+	    copyTouchKeys(event.touches[0], touchEvents.lastPos);
+
+	    invalidateIfMoreThanOneTouch(event);
+
+	    if (typeof callback === 'function') {
+	      callback(event);
+	    }
+	  };
+
+	  var onTouchMove = function (callback, event) {
+	    touchEvents.touched = true;
+	    touchEvents.lastTouchDate = new Date().getTime();
+
+	    copyTouchKeys(event.touches[0], touchEvents.lastPos);
+
+	    invalidateIfMoreThanOneTouch(event);
+
+	    if (Math.abs(touchEvents.downPos.clientX - touchEvents.lastPos.clientX) > MOVE_THRESHOLD ||
+	      Math.abs(touchEvents.downPos.clientY - touchEvents.lastPos.clientY) > MOVE_THRESHOLD) {
+	      touchEvents.moved = true;
+	    }
+
+	    if (typeof callback === 'function') {
+	      callback(event);
+	    }
+	  };
+
+	  var onTouchEnd = function (callback, onClick, type, event) {
+	    touchEvents.touched = true;
+	    touchEvents.lastTouchDate = new Date().getTime();
+
+	    invalidateIfMoreThanOneTouch(event);
+
+	    if (typeof callback === 'function') {
+	      callback(event);
+	    }
+
+	    if (!touchEvents.invalid && !touchEvents.moved) {
+	      var box = event.currentTarget.getBoundingClientRect();
+
+	      if (touchEvents.lastPos.clientX - (touchEvents.lastPos.radiusX || 0) <= box.right &&
+	        touchEvents.lastPos.clientX + (touchEvents.lastPos.radiusX || 0) >= box.left &&
+	        touchEvents.lastPos.clientY - (touchEvents.lastPos.radiusY || 0) <= box.bottom &&
+	        touchEvents.lastPos.clientY + (touchEvents.lastPos.radiusY || 0) >= box.top) {
+
+	        if (!isDisabled(event.currentTarget)) {
+	          if (typeof onClick === 'function') {
+	            copyTouchKeys(touchEvents.lastPos, event);
+	            fakeClickEvent(event);
+	            onClick(event);
+	          }
+
+	          if (!event.defaultPrevented && handleType[type]) {
+	            handleType[type](event);
+	          }
+	        }
+	      }
+	    }
+	  };
+
+	  var propsWithFastclickEvents = function (type, props) {
+	    var newProps = {};
+
+	    // Loop over props
+	    for (var key in props) {
+	      // Copy props to newProps
+	      newProps[key] = props[key];
+	    }
+
+	    // Apply our wrapped mouse and touch handlers
+	    newProps.onClick = onMouseEvent.bind(null, props.onClick);
+	    newProps.onMouseDown = onMouseEvent.bind(null, props.onMouseDown);
+	    newProps.onMouseMove = onMouseEvent.bind(null, props.onMouseMove);
+	    newProps.onMouseUp = onMouseEvent.bind(null, props.onMouseUp);
+	    newProps.onTouchStart = onTouchStart.bind(null, props.onTouchStart);
+	    newProps.onTouchMove = onTouchMove.bind(null, props.onTouchMove);
+	    newProps.onTouchEnd = onTouchEnd.bind(null, props.onTouchEnd, props.onClick, type);
+
+	    if (typeof Object.freeze === 'function') {
+	      Object.freeze(newProps);
+	    }
+
+	    return newProps;
+	  };
+
+	  React.createElement = function () {
+	    // Convert arguments to array
+	    var args = Array.prototype.slice.call(arguments);
+
+	    var type = args[0];
+	    var props = args[1];
+
+	    // Check if basic element & has onClick prop
+	    if (type && typeof type === 'string' && (
+	      (props && typeof props.onClick === 'function') || handleType[type]
+	    )) {
+	      // Add our own events to props
+	      args[1] = propsWithFastclickEvents(type, props || {});
+	    }
+
+	    // Apply args to original createElement function
+	    return originalCreateElement.apply(null, args);
+	  };
+
+	  if (typeof React.DOM === 'object') {
+	    for (var key in React.DOM) {
+	      React.DOM[key] = React.createElement.bind(null, key);
+	    }
+	  }
+
+	})();
+
 
 /***/ }
 /******/ ])

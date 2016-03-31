@@ -97,6 +97,7 @@ export default class ViaPage extends Component{
           </Markdown>
         </SingleCol>
         <ArticleImg src="/images/via-admin-press.png" width="50%" screenShot={true}/>
+        <br/>
       </div>
     </ProjectView>
   }

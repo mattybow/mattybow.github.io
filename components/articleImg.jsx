@@ -9,7 +9,7 @@ var ArticleImg = (props) => {
               style={{
                 marginBottom:'1em'
               }}>
-    <div className="container" style={{width:'ontouchstart' in window && props.screenShot ? 'calc(100% - 4em)' : props.width || '100%' }}>
+    <div className="container article-img" style={{width:'ontouchstart' in window && props.screenShot ? '' : props.width || '100%' }}>
       <img className={props.screenShot ? "shadow" : ''} src={props.src} style={{ width:'100%' }} alt=""/>
     </div>
   </div>

@@ -38,6 +38,7 @@ export default class ChatPage extends Component{
           </Markdown>
         </SingleCol>
         <ArticleImg src="http://i.giphy.com/l2QZZS1MaTBI39caY.gif" width="50%" screenShot={true}/>
+        <br/>
       </div>
     </ProjectView>
   }

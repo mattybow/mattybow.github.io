@@ -162,6 +162,9 @@ hr {
   display: flex;
   flex-flow: row wrap;
   align-items: center; }
+html, body {
+  -webkit-tap-highlight-color: transparent; }
+
 ul {
   margin-left: 2em; }
 
@@ -334,6 +337,10 @@ iframe {
   .touch .project-pane .overlay-bg {
     opacity: 1;
     transform: scale(3) rotateZ(30deg) translate3d(0, 0, 0); }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .proj-descript {
+    padding: 2em; } }
 
 @media (max-width: 414px) {
   .proj-descript {
@@ -604,7 +611,11 @@ iframe {
   .project-banner {
     height: 300px; }
   .link-to-home-from-page {
-    padding: 1.2em 1.5em; } }
+    padding: 1.2em 2.5em; } }
+
+@media (max-width: 414px) {
+  .link-to-home-from-page {
+    padding: 1.2em 2em; } }
 .layout-single-col {
   max-width: 500px;
   margin-left: auto;
@@ -613,9 +624,22 @@ iframe {
 img.shadow {
   box-shadow: 0 10px 20px #A0A0A0; }
 
+.article-img {
+  width: 100%; }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .article-img {
+    width: calc(100% - 10em); } }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .article-img {
+    width: calc(100% - 5em); } }
+
 @media (max-width: 414px) {
   .layout-single-col {
-    padding: 0 2em; } }
+    padding: 0 2em; }
+  .article-img {
+    width: calc(100% - 4em); } }
 .layout-outset-col {
   display: flex;
   flex-flow: row nowrap;

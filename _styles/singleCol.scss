@@ -6,8 +6,24 @@
 img.shadow{
   box-shadow: 0 10px 20px #A0A0A0;
 }
+.article-img{
+  width:100%;
+}
+@media(max-width:1024px) and (orientation:landscape){
+  .article-img{
+    width:calc(100% - 10em);
+  }
+}
+@media(max-width:768px) and (orientation:portrait){
+  .article-img{
+    width:calc(100% - 5em);
+  }
+}
 @media(max-width:414px){
   .layout-single-col{
     padding:0 2em;
+  }
+  .article-img{
+    width:calc(100% - 4em);
   }
 }

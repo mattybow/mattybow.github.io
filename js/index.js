@@ -4,6 +4,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import useScroll from 'scroll-behavior/lib/useSimpleScroll'
 import { useRouterHistory, Router, createRoutes } from 'react-router';
 import routes from '../pages/routes';
+import 'react-fastclick';
 
 const appHistory = useScroll(useRouterHistory(createBrowserHistory))();
 if (typeof document !== 'undefined') {
