@@ -24,6 +24,7 @@ var SocialLinks = (props) => {
       <a href="http://stackoverflow.com/cv/mattybow" target="_blank">stackoverflow</a>
     </div>
     <div className="social-link"><a href="https://github.com/mattybow" target="_blank">github</a></div>
+    <div className="social-link"><a href="https://www.instagram.com/mattybow/" target="_blank">instagram</a></div>
   </div>;
 
 }

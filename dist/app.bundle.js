@@ -26853,6 +26853,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { href: 'https://github.com/mattybow', target: '_blank' },
 	        'github'
 	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'social-link' },
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'https://www.instagram.com/mattybow/', target: '_blank' },
+	        'instagram'
+	      )
 	    )
 	  );
 	};

@@ -546,11 +546,9 @@ iframe {
 
 .social-link {
   padding: 0 10px;
-  border-right: 1px solid slategrey;
-  border-left: 1px solid slategrey; }
+  border-right: 1px solid slategrey; }
   .social-link:first-child {
-    padding: 0 10px 0 0;
-    border: none; }
+    padding: 0 10px 0 0; }
   .social-link:last-child {
     padding: 0 10px 0 10px;
     border: none; }
